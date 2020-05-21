@@ -1,0 +1,51 @@
+@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+@import '../../../node_modules/bootstrap/scss/functions.scss';
+@import '../../../node_modules/bootstrap/scss/variables';
+
+* {
+  margin: 0;
+  padding: 0;
+  //line-height: 0;
+}
+.block-grid {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+$enable-responsive-font-sizes: true;
+
+$font-size-40: 2.5rem; // 40
+$font-size-24: 1.5rem; // 24
+$font-size-body20: 1.25rem; //20
+$font-size-18: 1.125rem; //18
+$font-size-body14: 0.875rem; //14 body
+$font-size-body12: 0.75rem;
+$color-dark-gray: #312829;
+$color-black: #000000;
+$color-orange: #db4b1a;
+$color-dark-orange: #c2451b;
+$color-red: #ed5c4d;
+$color-white: #eff2f1;
+$color-light-gray: #b0b0b0;
+$color-blue: #03ada7;
+$color-dark-blue: #039792;
+
+.text__heading_size_h1 {
+  @include font-size($font-size-40);
+  font-weight: 600;
+}
+.text__heading_size_h2 {
+  @include font-size($font-size-24);
+}
+.text__heading_size_h3 {
+  @include font-size($font-size-18);
+}
+
+.text__heading_size_l {
+  @include font-size($font-size-body20);
+}
+.text__heading_size_m {
+  @include font-size($font-size-body14);
+}
+.text__heading_size_s {
+  @include font-size($font-size-body12);
+}

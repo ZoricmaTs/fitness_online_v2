@@ -1,0 +1,60 @@
+@import '../../node_modules/bootstrap/scss/bootstrap';
+@import '../assets/scss/variables.scss';
+
+.offers-block {
+  display: block;
+  margin: auto;
+  width: 963px;
+}
+.offers-block-bg {
+  background-color: $color-white;
+}
+.offer {
+  display: inline-block;
+  width: 291px;
+  margin-top: -54px;
+  margin-bottom: 62px;
+  padding: 30px 20px 46px 20px;
+  color: $color-white;
+  background-color: $color-dark-gray;
+  &__heading {
+    font-weight: 700;
+    line-height: 28px;
+    text-align: right;
+    margin-bottom: 0;
+  }
+  &__body {
+    line-height: 16px;
+    text-align: right;
+    margin-bottom: 0;
+  }
+  &__img {
+  }
+  &__img-1 {
+    position: relative;
+
+    // &:before {
+    //   position: absolute;
+    //   content: url('../assets/img/Ellipse.svg');
+    //   top: 0;
+    //   left: 0;
+    // }
+  }
+}
+.offers-block > div:nth-of-type(2) {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+.offers-block > div:nth-of-type(3) {
+  position: relative;
+  transform-style: preserve-3d; //на задний план оранж квадрат
+  &::after {
+    position: absolute;
+    content: '';
+    top: 50px;
+    width: 291px;
+    height: 245px;
+    background-color: $color-orange;
+    transform: translateZ(-1px); //на задний план оранж квадрат
+  }
+}

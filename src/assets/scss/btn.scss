@@ -1,0 +1,86 @@
+@import '../../node_modules/bootstrap/scss/bootstrap';
+@import '../assets/scss/variables.scss';
+
+.btn {
+  &__title {
+    border-radius: 0 !important;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 0.05em;
+    min-width: 188px;
+    padding: 10px 0;
+    box-sizing: border-box;
+  }
+
+  &__title_color_orangew {
+    border: 2px solid $color-orange;
+    color: $color-white;
+    background-color: $color-orange;
+    &:focus {
+      background: $color-dark-orange;
+      border: $color-dark-orange solid 2px;
+    }
+    &:hover {
+      background: $color-dark-orange;
+      border: $color-dark-orange solid 2px;
+    }
+  }
+  &__title_color_orangeb {
+    border: 2px solid $color-orange;
+    color: $color-dark-gray;
+    background-color: $color-orange;
+    &:focus {
+      background: $color-dark-orange;
+      border: $color-dark-orange solid 2px;
+    }
+    &:hover {
+      background: $color-dark-orange;
+      border: $color-dark-orange solid 2px;
+    }
+  }
+  &__title_color_transp-orange {
+    border: 2px solid $color-orange;
+    color: $color-black;
+    background-color: transparent;
+    &:focus {
+      border: $color-dark-orange solid 2px;
+    }
+    &:hover {
+      border: $color-dark-orange solid 2px;
+    }
+  }
+  //--------
+  &__title_color_blue {
+    border: 2px solid $color-blue;
+    color: $color-white;
+    background-color: $color-blue;
+    &:focus {
+      background-color: $color-dark-blue;
+      border: $color-dark-blue solid 2px;
+    }
+    &:hover {
+      background-color: $color-dark-blue;
+      border: $color-dark-blue solid 2px;
+    }
+  }
+  &__title_color_transp-blue {
+    border: 2px solid $color-blue;
+    color: $color-black;
+    background-color: transparent;
+    &:focus {
+      border: $color-dark-blue solid 2px;
+    }
+    &:hover {
+      border: $color-dark-blue solid 2px;
+    }
+  }
+}
+.btn-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 396px;
+}
+.marg20 {
+  margin-left: 20px;
+}

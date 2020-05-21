@@ -1,0 +1,94 @@
+@import '../../node_modules/bootstrap/scss/bootstrap';
+@import '../assets/scss/variables.scss';
+
+.footer-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 45px;
+  padding-bottom: 23px;
+  // border-bottom: 1px solid $color-white;
+  &__color_gray {
+    background-color: $color-dark-gray;
+  }
+  &__logo {
+  }
+  &__text {
+    font-style: normal;
+    font-weight: normal;
+    line-height: 15px;
+    @include font-size(13px);
+    color: $color-white;
+    width: 188px;
+  }
+  &__link-email {
+    font-weight: 700;
+    font-style: normal;
+    @include font-size(13px);
+    color: $color-white;
+    line-height: 16px;
+  }
+  &__menu {
+    width: 135px;
+    margin-left: 123px;
+    margin-right: 73px;
+  }
+  &__menu-heading {
+    font-weight: 600;
+    line-height: 19px;
+    @include font-size(16px);
+    color: $color-white;
+  }
+  &__menu-heading_blue {
+    color: $color-blue;
+  }
+  &__menu-list {
+  }
+  &__menu-item {
+    list-style-type: none;
+    text-decoration: solid;
+    cursor: pointer;
+    text-decoration: underline;
+    font-style: normal;
+    font-weight: normal;
+    margin-bottom: 5px;
+    line-height: 16px;
+  }
+  &__menu-link {
+    color: $color-white;
+    &:hover,
+    &:focus {
+      color: $color-light-gray;
+    }
+  }
+  &__inst-img {
+    display: flex;
+    flex-wrap: wrap;
+    width: 294px;
+  }
+  &__img:nth-child(2),
+  &__img:nth-child(5) {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+  &__img:nth-child(1),
+  &__img:nth-child(2),
+  &__img:nth-child(3) {
+    margin-bottom: 10px;
+  }
+}
+
+.footer-blockcopy {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 814px;
+  margin: 0 auto;
+  border-top: 1px solid $color-white;
+  padding-top: 15px;
+  padding-bottom: 40px;
+}
+.footer-blockcopy__text {
+  line-height: 14px;
+  color: $color-white;
+}

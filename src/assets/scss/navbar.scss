@@ -1,0 +1,97 @@
+@import '../../node_modules/bootstrap/scss/bootstrap';
+@import '../assets/scss/variables.scss';
+
+.logo {
+  &__min {
+    position: relative;
+    font-family: 'Sacramento';
+    font-style: normal;
+    font-weight: normal;
+    @include font-size($h1-font-size);
+    color: $color-blue;
+    max-width: 133px;
+    max-height: 56px;
+    &::after {
+      position: absolute;
+      bottom: 0px;
+      right: 5px;
+      font-family: 'Jura';
+      @include font-size(15px);
+      content: 'онлайн';
+      color: $color-orange;
+    }
+  }
+  &__title {
+    position: relative;
+    font-family: 'Sacramento';
+    font-style: normal;
+    font-weight: normal;
+    max-width: 488px;
+    max-height: 177px;
+    //border: 1px solid white;
+    @include font-size(160px);
+    color: $color-orange;
+    &::after {
+      position: absolute;
+      bottom: 20px;
+      right: 5px;
+      font-family: 'Jura';
+      @include font-size($font-size-body20);
+      content: 'онлайн';
+      color: $color-dark-gray;
+    }
+  }
+}
+.navb-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: $color-white;
+}
+.navb-soc {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 768px;
+}
+
+//navbar----------------------------------------------------------------------
+.navb {
+  width: 560px;
+  margin: auto 0;
+  color: $color-dark-gray;
+  &__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0;
+  }
+}
+.navb__item {
+  list-style-type: none;
+  cursor: pointer;
+  padding: 0 5px;
+  &:focus {
+    background-color: $color-blue;
+  }
+  &:hover {
+    background-color: $color-blue;
+  }
+}
+.social {
+  &__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 84px;
+    margin-bottom: 0;
+  }
+  &__item {
+    list-style-type: none;
+    cursor: pointer;
+  }
+  &__heading {
+  }
+}
