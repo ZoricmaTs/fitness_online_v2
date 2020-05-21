@@ -7,18 +7,18 @@
       <img src="../assets/img/Arrow.svg" alt="backlink" />
       Назад
     </router-link>
-    <form class="singup" @submit.prevent="registers">
+    <form class="singup" @submit.prevent="getRoleRegister">
       <h1 class="singup__heading text__heading_size_h1">Регистрация</h1>
       <div class="form-block">
         <div class="singup__err text__heading_size_h3">
           {{ errArray['email'] ? errArray['email'].toString() : '' }}
         </div>
         <input
-          type="name"
-          name="name"
+          type="text"
+          name="first_name"
           placeholder="Ваше имя"
           class="singup__input text__heading_size_h2"
-          v-model="name"
+          v-model="first_name"
         />
       </div>
       <div class="form-block">
@@ -127,10 +127,11 @@
 </template>
 
 <script>
+import AuthorizationService from '@/services/AuthorizationService.js'
 export default {
   data() {
     return {
-      name: '',
+      first_name: '',
       email: '',
       password: '',
       password_confirmation: '',
@@ -140,7 +141,21 @@ export default {
     }
   },
 
-  methods: {}
+  methods: {
+    getRoleRegister() {
+      AuthorizationService.register(
+        this.first_name,
+        this.email,
+        this.role,
+        this.password,
+        this.password_confirmation
+      ).then(response => {
+        if (response.data.success == true) {
+          alert('wtf')
+        }
+      })
+    }
+  }
 }
 </script>
 
