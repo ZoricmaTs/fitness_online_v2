@@ -33,12 +33,25 @@ export default {
       bodyFormData
     )
   },
-  register(first_name, email, password, password_confirmation) {
+  register(first_name, email, role, password, password_confirmation) {
     var bodyFormData = new FormData() //+
     bodyFormData.set('first_name', first_name)
     bodyFormData.set('email', email)
+    bodyFormData.set('role', role)
     bodyFormData.set('password', password)
     bodyFormData.set('password_confirmation', password_confirmation)
-    return apiClientPost.post(`/user`, bodyFormData)
+    return apiClientPost.post(
+      `/signup?token=FFPOZGMXGNHWUYOP3TSOEC7HEI`,
+      bodyFormData
+    )
+  },
+  confirmAccount(email, confirmation_code) {
+    var bodyFormData = new FormData() //+
+    bodyFormData.set('email', email)
+    bodyFormData.set('confirmation_code', confirmation_code)
+    return apiClientPost.post(
+      `/confirm?token=FFPOZGMXGNHWUYOP3TSOEC7HEI`,
+      bodyFormData
+    )
   }
 }

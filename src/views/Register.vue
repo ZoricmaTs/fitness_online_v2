@@ -1,31 +1,28 @@
 <template>
   <section class="singup-bg block-grid">
-    <router-link
-      :to="{ name: 'Home' }"
-      class="singin__linkback text__heading_size_l"
-    >
+    <router-link :to="{ name: 'Home' }" class="singin__linkback text__heading_size_l">
       <img src="../assets/img/Arrow.svg" alt="backlink" />
       Назад
     </router-link>
     <form class="singup" @submit.prevent="getRoleRegister">
       <h1 class="singup__heading text__heading_size_h1">Регистрация</h1>
       <div class="form-block">
-        <div class="singup__err text__heading_size_h3">
-          {{ errArray['email'] ? errArray['email'].toString() : '' }}
-        </div>
+        <div
+          class="singup__err text__heading_size_h3"
+        >{{ errArray['first_name'] ? errArray['first_name'].toString() : '' }}</div>
         <input
           type="text"
           name="first_name"
           placeholder="Ваше имя"
           class="singup__input text__heading_size_h2"
           v-model="first_name"
+          required
         />
       </div>
       <div class="form-block">
-        <div class="singup__err text__heading_size_h3">
-          {{ errArray['email'] ? errArray['email'].toString() : '' }}
-        </div>
-
+        <div
+          class="singup__err text__heading_size_h3"
+        >{{ errArray['email'] ? errArray['email'].toString() : '' }}</div>
         <input
           type="email"
           name="email"
@@ -35,10 +32,9 @@
         />
       </div>
       <div class="form-block">
-        <div class="singup__err text__heading_size_h3">
-          {{ errArray['password'] ? errArray['password'].toString() : '' }}
-        </div>
-
+        <div
+          class="singup__err text__heading_size_h3"
+        >{{ errArray['password'] ? errArray['password'].toString() : '' }}</div>
         <input
           type="password"
           name="password"
@@ -48,13 +44,6 @@
         />
       </div>
       <div class="form-block">
-        <div class="singup__err text__heading_size_h3">
-          {{
-            errArray['password_confirmation']
-              ? errArray['password_confirmation'].toString()
-              : ''
-          }}
-        </div>
         <input
           type="password"
           name="password_confirmation"
@@ -77,8 +66,7 @@
           <label
             for="trainer"
             class="radio-buttons-role__label text__heading_size_h3"
-            >Хочу быть тренером</label
-          >
+          >Хочу быть тренером</label>
         </div>
         <div class="radio-buttons-role">
           <input
@@ -92,36 +80,32 @@
           <label
             for="user"
             class="radio-buttons-role__label text__heading_size_h3"
-            >Хочу тренироваться</label
-          >
+          >Хочу тренироваться</label>
         </div>
       </div>
       <label class="check option-check">
         <input class="check__input" type="checkbox" v-model="checked_policy" />
         <span class="check__box"></span>
         <div class="check__text">
-          <span class="check__text-body text__heading_size_m"
-            >Нажимая кнопку “Зарегистрироваться”, я принимаю
+          <span class="check__text-body text__heading_size_m">
+            Нажимая кнопку “Зарегистрироваться”, я принимаю
             <router-link
               :to="{ name: 'termsofservice' }"
               class="check__text-body-link"
-              >пользовательское соглашение</router-link
-            >
-            и соглашаюсь с правилами использования и обработки персональных
-            данных</span
-          >
+            >пользовательское соглашение</router-link>и соглашаюсь с правилами использования и обработки персональных
+            данных
+          </span>
         </div>
       </label>
-      <div class="check__policy signin__err" v-show="checked_policy == false">
-        “Необходимо указать, что вы согласны с политикой конфиденциальности”.
-      </div>
+      <div
+        class="check__policy signin__err"
+        v-show="checked_policy == false"
+      >“Необходимо указать, что вы согласны с политикой конфиденциальности”.</div>
       <button
         type="submit"
         :disabled="!checked_policy"
         class="btn__title btn__title_color_orangeb text__heading_size_h3 signup__btn"
-      >
-        ЗАРЕГИСТРИРОВАТЬСЯ
-      </button>
+      >ЗАРЕГИСТРИРОВАТЬСЯ</button>
     </form>
   </section>
 </template>
@@ -142,7 +126,31 @@ export default {
   },
 
   methods: {
+    validate() {
+      let isValid = true
+      if (this.password.length < 8) {
+        this.errArray = { password: ['Слишком короткий пароль'] }
+        isValid = false
+      }
+      if (this.first_name.length < 2) {
+        this.errArray = { first_name: ['Слишком короткое имя'] }
+        isValid = false
+      }
+      if (this.email.length < 6) {
+        this.errArray = { email: ['Слишком короткий email'] }
+        isValid = false
+      }
+      if (this.password != this.password_confirmation) {
+        this.errArray = { password: ['Пароли должны совпадать'] }
+        isValid = false
+      }
+      return isValid
+    },
     getRoleRegister() {
+      var valid = this.validate()
+      if (valid == false) {
+        return
+      }
       AuthorizationService.register(
         this.first_name,
         this.email,
@@ -151,7 +159,20 @@ export default {
         this.password_confirmation
       ).then(response => {
         if (response.data.success == true) {
-          alert('wtf')
+          alert(
+            'На вашу почту выслано сообщение со ссылкой для подтверждения аккаунта'
+          )
+        } else {
+          if (response.data.database_error.indexOf('already exists') != -1) {
+            this.errArray = { email: ['Такой пользователь уже существует'] }
+          }
+          if (
+            response.data.validation_errors.password_confirmation.indexOf(
+              'passwords must match'
+            ) != -1
+          ) {
+            this.errArray = { password: ['Пароли должны совпадать'] }
+          }
         }
       })
     }
