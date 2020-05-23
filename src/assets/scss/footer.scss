@@ -25,7 +25,14 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    max-width: 390px;
+    width: 390px;
+  }
+  &__copy {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 370px;
   }
   &__text {
     font-style: normal;
