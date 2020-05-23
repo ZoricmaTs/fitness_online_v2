@@ -95,3 +95,14 @@
   &__heading {
   }
 }
+
+.exit-block {
+  margin: auto 0;
+  font-style: normal;
+  font-weight: 500;
+  @include font-size(16px);
+  line-height: 19px;
+  &__btn {
+    cursor: pointer;
+  }
+}

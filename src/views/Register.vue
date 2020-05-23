@@ -104,8 +104,8 @@
       <button
         type="submit"
         :disabled="!checked_policy"
-        class="btn__title btn__title_color_orangeb text__heading_size_h3 signup__btn"
-      >ЗАРЕГИСТРИРОВАТЬСЯ</button>
+        class="btn__big btn__title_color_orangeb text__heading_size_h2 signup__btn"
+      >Зарегистрироваться</button>
     </form>
   </section>
 </template>

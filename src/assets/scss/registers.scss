@@ -137,6 +137,8 @@
 }
 
 .singup {
+  display: flex;
+  flex-direction: column;
   max-width: 545px;
   margin-right: 189px;
   background-color: $color-dark-gray;
@@ -214,11 +216,6 @@
     &:focus {
       color: $color-dark-orange;
     }
-  }
-  &__btn {
-    padding-left: 50px !important;
-    padding-right: 50px !important;
-    margin: 0 auto;
   }
 }
 .radio-buttons {
@@ -303,11 +300,11 @@
     position: absolute;
     margin-top: 20px;
     margin-left: -40px;
-    width: 26px;
-    height: 26px;
-    background: $color-white;
-    fill: $color-white;
-    border: 1px solid #e0e0e0;
+    width: 20px;
+    height: 20px;
+    background-color: $color-white;
+    //fill: $color-white;
+    border: 1px solid $color-white;
     box-sizing: border-box;
   }
 
@@ -330,9 +327,11 @@
     }
   }
   &__input:checked + &__box {
-    background: $color-white;
     fill: $color-white;
     background: url('../assets/img/checked.svg') center no-repeat;
+    background-color: $color-white;
+    //fill: $color-white;
+    border: 1px solid $color-white;
   }
 }
 

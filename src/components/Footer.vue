@@ -7,7 +7,11 @@
           Сервис по подбору тренера и тренировок. Занятия и общение в онлайн
           режиме из любой точки планеты.
         </p>
-        <a href="#" class="footer-block__link-email text__heading_size_m">fitness-online@fitness.com</a>
+        <a
+          href="#"
+          class="footer-block__link-email footer-block__link-email_color-team_gray text__heading_size_m"
+          >fitness-online@fitness.com</a
+        >
       </div>
       <div class="footer-block__menu">
         <p class="footer-block__menu-heading">
@@ -16,22 +20,46 @@
         </p>
         <ul class="footer-block__menu-list">
           <li class="footer-block__menu-item">
-            <a class="footer-block__menu-link text__heading_size_m" href="#">Регистрация</a>
+            <a
+              class="footer-block__menu-link_team_gray text__heading_size_m"
+              href="#"
+              >Регистрация</a
+            >
           </li>
           <li class="footer-block__menu-item">
-            <a class="footer-block__menu-link text__heading_size_m" href="#">Вход</a>
+            <a
+              class="footer-block__menu-link_team_gray text__heading_size_m"
+              href="#"
+              >Вход</a
+            >
           </li>
           <li class="footer-block__menu-item">
-            <a class="footer-block__menu-link text__heading_size_m" href="#">О сервисе</a>
+            <a
+              class="footer-block__menu-link_team_gray text__heading_size_m"
+              href="#"
+              >О сервисе</a
+            >
           </li>
           <li class="footer-block__menu-item">
-            <a class="footer-block__menu-link text__heading_size_m" href="#">Направления</a>
+            <a
+              class="footer-block__menu-link_team_gray text__heading_size_m"
+              href="#"
+              >Направления</a
+            >
           </li>
           <li class="footer-block__menu-item">
-            <a class="footer-block__menu-link text__heading_size_m" href="#">Вопросы и ответы</a>
+            <a
+              class="footer-block__menu-link_team_gray text__heading_size_m"
+              href="#"
+              >Вопросы и ответы</a
+            >
           </li>
           <li class="footer-block__menu-item">
-            <a class="footer-block__menu-link text__heading_size_m" href="#">Контакты</a>
+            <a
+              class="footer-block__menu-link_team_gray text__heading_size_m"
+              href="#"
+              >Контакты</a
+            >
           </li>
         </ul>
       </div>
@@ -84,7 +112,11 @@
       </div>
     </section>
     <section class="footer-blockcopy">
-      <p class="footer-blockcopy__text text__heading_size_m">Copyright © 2020</p>
+      <p
+        class="footer-blockcopy__text footer-blockcopy__text_team_gray text__heading_size_m"
+      >
+        Copyright © 2020
+      </p>
       <ul class="social__list social__heading">
         <li class="social__item">
           <a class="social__link" href="#">
@@ -98,17 +130,32 @@
         </li>
         <li class="social__item">
           <a class="social__link" href="#">
-            <img src="../assets/img/vkw.svg" width="15" height="15" alt="social media vkontakte" />
+            <img
+              src="../assets/img/vkw.svg"
+              width="15"
+              height="15"
+              alt="social media vkontakte"
+            />
           </a>
         </li>
         <li class="social__item">
           <a class="social__link" href="#">
-            <img src="../assets/img/instw.svg" width="15" height="15" alt="social media instagram" />
+            <img
+              src="../assets/img/instw.svg"
+              width="15"
+              height="15"
+              alt="social media instagram"
+            />
           </a>
         </li>
         <li class="social__item">
           <a class="social__link" href="#">
-            <img src="../assets/img/twitterw.svg" width="15" height="13" alt="social media twitter" />
+            <img
+              src="../assets/img/twitterw.svg"
+              width="15"
+              height="13"
+              alt="social media twitter"
+            />
           </a>
         </li>
       </ul>

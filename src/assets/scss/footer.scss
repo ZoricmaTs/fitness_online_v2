@@ -11,7 +11,21 @@
   &__color_gray {
     background-color: $color-dark-gray;
   }
+  &__color_white {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $color-white;
+  }
   &__logo {
+  }
+  &__lg {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 390px;
   }
   &__text {
     font-style: normal;
@@ -22,11 +36,19 @@
     width: 188px;
   }
   &__link-email {
-    font-weight: 700;
-    font-style: normal;
     @include font-size(13px);
     color: $color-white;
     line-height: 16px;
+  }
+  &__link-email_color-team_gray {
+    font-weight: 700;
+    font-style: normal;
+    color: $color-white;
+  }
+  &__link-email_color-team_white {
+    font-style: normal;
+    font-weight: 500;
+    color: $color-dark-gray;
   }
   &__menu {
     width: 135px;
@@ -54,11 +76,18 @@
     margin-bottom: 5px;
     line-height: 16px;
   }
-  &__menu-link {
+  &__menu-link_team_gray {
     color: $color-white;
     &:hover,
     &:focus {
       color: $color-light-gray;
+    }
+  }
+  &__menu-link_team_white {
+    color: $color-dark-gray;
+    &:hover,
+    &:focus {
+      color: black;
     }
   }
   &__inst-img {
@@ -90,5 +119,11 @@
 }
 .footer-blockcopy__text {
   line-height: 14px;
-  color: $color-white;
+
+  &__text_team_gray {
+    color: $color-white;
+  }
+  &__text_team_white {
+    color: $color-dark-gray;
+  }
 }
