@@ -9,10 +9,10 @@
     <span slot="header" class="form-modal__heading">ПОДТВЕРЖДЕНИЕ РЕГИСТРАЦИИ</span>
     <div class slot="body">
       <div class="form-modal__text-block">
-        <p class="form-modal__text">Спасибо! Регистрация прошла успешно.</p>
         <p class="form-modal__text">
-          На Ваш адрес e-mail пользователя отправлено письмо. Для
-          подтверждения регистрации перейдите по ссылке, указанной в нем
+          “Поздравляем! Вы успешно зарегистрированы в приложении
+          “Fitness-online”. Вашу учетную запись необходимо активировать, для
+          этого перейдите по ссылке указанной в письме”
         </p>
       </div>
       <button type="submit" class="btn header__btn-large" @click="onClose">ГОТОВО</button>

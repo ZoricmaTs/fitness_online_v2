@@ -107,15 +107,20 @@
         class="btn__big btn__title_color_orangeb text__heading_size_h2 signup__btn"
       >Зарегистрироваться</button>
     </form>
+    <MailCheck
+      v-if="showModalMailCheck"
+      @mailcheck="showModalMailCheck = !showModalMailCheck"
+      @close="showModalMailCheck = !showModalMailCheck"
+    />
   </section>
 </template>
 
 <script>
 import AuthorizationService from '@/services/AuthorizationService.js'
-import ModalInfo from '@/components/ModalInfo.vue'
+import MailCheck from '@/components/MailCheck.vue'
 export default {
   components: {
-    ModalInfo
+    MailCheck
   },
   data() {
     return {
@@ -125,7 +130,8 @@ export default {
       password_confirmation: '',
       role: '',
       errArray: {},
-      checked_policy: null
+      checked_policy: null,
+      showModalMailCheck: false
     }
   },
 
@@ -150,6 +156,11 @@ export default {
       }
       return isValid
     },
+    onRegister() {
+      console.log('Test')
+      //модальное окно подтверждения регистрации и отправки письма
+      this.showModalMailCheck = true
+    },
     getRoleRegister() {
       var valid = this.validate()
       if (valid == false) {
@@ -171,6 +182,7 @@ export default {
             confirmation_code,
             localStorage.token
           ).then(response => {
+            this.onRegister()
             alert('Вы успешно зарегистрированы')
           })
         } else {
