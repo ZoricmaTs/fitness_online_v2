@@ -1,6 +1,11 @@
 <template>
 <body class>
-  <Modal :showCloseCross="true" :showActionButton="false" :showCloseButton="false" @close="onClose">
+  <ModalInfo
+    :showCloseCross="true"
+    :showActionButton="false"
+    :showCloseButton="false"
+    @close="onClose"
+  >
     <span slot="header" class="form-modal__heading">ПОДТВЕРЖДЕНИЕ РЕГИСТРАЦИИ</span>
     <div class slot="body">
       <div class="form-modal__text-block">
@@ -12,16 +17,16 @@
       </div>
       <button type="submit" class="btn header__btn-large" @click="onClose">ГОТОВО</button>
     </div>
-  </Modal>
+  </ModalInfo>
 </body>
 </template>
 
 <script>
-import Modal from '@/components/Modal.vue'
+import ModalInfo from '@/components/ModalInfo.vue'
 
 export default {
   components: {
-    Modal
+    ModalInfo
   },
   data() {
     return {}

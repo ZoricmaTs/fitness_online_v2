@@ -112,7 +112,11 @@
 
 <script>
 import AuthorizationService from '@/services/AuthorizationService.js'
+import ModalInfo from '@/components/ModalInfo.vue'
 export default {
+  components: {
+    ModalInfo
+  },
   data() {
     return {
       first_name: '',
