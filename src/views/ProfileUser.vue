@@ -1,10 +1,13 @@
 <template>
   <div>
     <NavbarBase />
-    <div>
-      <LeftsidebarUser />
-      <div>dfsdfsdf</div>
-      <div>sdfsdfsdf</div>
+    <div class="row">
+      <div class="col-sm-4 sticky">
+        <LeftsidebarUser class="sticky-top">bar</LeftsidebarUser>
+      </div>
+      <div class="col-sm-8 scroll">
+        <div>content kjhkh hjkhjkh jkh hjkhjkhhkhj hjkjhk</div>
+      </div>
     </div>
     <FooterBase />
   </div>

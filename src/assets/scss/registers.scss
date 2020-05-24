@@ -17,13 +17,12 @@
   background-repeat: no-repeat;
 }
 .singup-bg {
-  // display: flex;
-  // flex-direction: row;
-  // justify-content: space-between;
-
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   padding-right: 164px;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 37px;
+  padding-bottom: 30px;
   background-color: $color-blue;
   background-image: url('../assets/img/signupbg.png');
   background-size: cover;
