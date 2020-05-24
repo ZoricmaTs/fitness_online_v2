@@ -159,19 +159,19 @@ export default {
         this.password_confirmation
       ).then(response => {
         if (response.data.success == true) {
-          alert(
-            'На вашу почту выслано сообщение со ссылкой для подтверждения аккаунта'
-          )
+          localStorage.token = response.data.token
+          localStorage.email = response.data.email
+          let confirmation_code = '123456'
+          AuthorizationService.confirmAccount(
+            this.email,
+            confirmation_code,
+            localStorage.token
+          ).then(response => {
+            alert('Вы успешно зарегистрированы')
+          })
         } else {
           if (response.data.database_error.indexOf('already exists') != -1) {
             this.errArray = { email: ['Такой пользователь уже существует'] }
-          }
-          if (
-            response.data.validation_errors.password_confirmation.indexOf(
-              'passwords must match'
-            ) != -1
-          ) {
-            this.errArray = { password: ['Пароли должны совпадать'] }
           }
         }
       })

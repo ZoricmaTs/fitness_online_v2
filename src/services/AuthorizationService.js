@@ -20,18 +20,15 @@ const apiClientPost = axios.create({
   }
 })
 
-// const userId = `${localStorage.userId}`
-// const credential = `token=${localStorage.token}`
+const userId = `${localStorage.userId}`
+const credential = `token=${localStorage.token}`
 
 export default {
   login(email, password) {
     var bodyFormData = new FormData() //+
     bodyFormData.set('email', email)
     bodyFormData.set('password', password)
-    return apiClientPost.post(
-      `/signin?token=FFPOZGMXGNHWUYOP3TSOEC7HEI`,
-      bodyFormData
-    )
+    return apiClientPost.post(`/signin?${credential}`, bodyFormData)
   },
   register(first_name, email, role, password, password_confirmation) {
     var bodyFormData = new FormData() //+
@@ -40,18 +37,12 @@ export default {
     bodyFormData.set('role', role)
     bodyFormData.set('password', password)
     bodyFormData.set('password_confirmation', password_confirmation)
-    return apiClientPost.post(
-      `/signup?token=FFPOZGMXGNHWUYOP3TSOEC7HEI`,
-      bodyFormData
-    )
+    return apiClientPost.post(`/signup`, bodyFormData)
   },
-  confirmAccount(email, confirmation_code) {
+  confirmAccount(email, confirmation_code, token) {
     var bodyFormData = new FormData() //+
     bodyFormData.set('email', email)
     bodyFormData.set('confirmation_code', confirmation_code)
-    return apiClientPost.post(
-      `/confirm?token=FFPOZGMXGNHWUYOP3TSOEC7HEI`,
-      bodyFormData
-    )
+    return apiClientPost.post(`/confirm?token=${token}`, bodyFormData)
   }
 }
