@@ -1,24 +1,25 @@
 <template>
-<body class>
-  <ModalInfo
-    :showCloseCross="true"
-    :showActionButton="false"
-    :showCloseButton="false"
-    @close="onClose"
-  >
-    <span slot="header" class="form-modal__heading">ПОДТВЕРЖДЕНИЕ РЕГИСТРАЦИИ</span>
-    <div class slot="body">
-      <div class="form-modal__text-block">
-        <p class="form-modal__text">
-          “Поздравляем! Вы успешно зарегистрированы в приложении
-          “Fitness-online”. Вашу учетную запись необходимо активировать, для
-          этого перейдите по ссылке указанной в письме”
-        </p>
+  <body class>
+    <ModalInfo
+      :showCloseCross="true"
+      :showActionButton="false"
+      :showCloseButton="false"
+      @close="onClose"
+      @click="onClose"
+    >
+      <span slot="header" class="form-modal-info__heading text__heading_size_h2"
+        >Поздравляем!</span
+      >
+      <div class slot="body">
+        <div class="form-modal-info__text-block">
+          <p class="form-modal-info__text text__heading_size_h2">
+            Вы успешно зарегистрированы в приложении “Fitness-online”
+          </p>
+        </div>
+        <!--<button type="submit" class="form-modal-info__btn" @click="onClose">ГОТОВО</button>-->
       </div>
-      <button type="submit" class="btn header__btn-large" @click="onClose">ГОТОВО</button>
-    </div>
-  </ModalInfo>
-</body>
+    </ModalInfo>
+  </body>
 </template>
 
 <script>

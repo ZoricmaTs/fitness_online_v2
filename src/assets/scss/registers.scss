@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding-right: 164px;
   padding-top: 40px;
   padding-bottom: 40px;
   background-color: $color-blue;
@@ -16,9 +17,11 @@
   background-repeat: no-repeat;
 }
 .singup-bg {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: space-between;
+
+  padding-right: 164px;
   padding-top: 40px;
   padding-bottom: 40px;
   background-color: $color-blue;
@@ -29,7 +32,6 @@
   background-repeat: no-repeat;
 }
 .singin {
-  margin-right: 189px;
   margin-bottom: 126px; //пересмотреть на мобилке
   &__linkback {
     position: relative;
@@ -140,9 +142,11 @@
   display: flex;
   flex-direction: column;
   max-width: 545px;
-  margin-right: 189px;
   background-color: $color-dark-gray;
   padding: 50px 74px;
+  &__modal {
+    margin-right: 0px;
+  }
   &__linkback {
     position: relative;
     line-height: 23px;
