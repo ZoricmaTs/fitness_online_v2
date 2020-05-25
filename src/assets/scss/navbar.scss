@@ -57,15 +57,24 @@
 
 //navbar----------------------------------------------------------------------
 .navb {
-  width: 560px;
+  width: 706px;
   margin: auto 0;
-  color: $color-dark-gray;
+
   &__list {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 0;
+  }
+}
+.navb__link {
+  color: $color-dark-gray;
+  text-decoration: none;
+  &:focus,
+  &:hover {
+    color: $color-dark-gray;
+    text-decoration: none;
   }
 }
 .navb__item {

@@ -7,8 +7,13 @@
           <li class="navb__item">Регистрация</li>
 
           <li class="navb__item">Вход</li>
-          <li class="navb__item">О сервисе</li>
-          <li class="navb__item">Направления</li>
+
+          <li class="navb__item">
+            <router-link class="navb__link" :to="{ name: 'aboutservice' }">О сервисе</router-link>
+          </li>
+
+          <li class="navb__item">Наши тренеры</li>
+          <li class="navb__item">Виды тренировок</li>
           <li class="navb__item">Вопросы и ответы</li>
           <li class="navb__item">Контакты</li>
         </ul>

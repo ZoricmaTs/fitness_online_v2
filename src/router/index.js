@@ -7,6 +7,7 @@ import EmailConfirmation from '../views/EmailConfirmation.vue'
 import Authorization from '../views/Authorization.vue'
 import Register from '../views/Register.vue'
 import TermsOfService from '../views/TermsOfService.vue'
+import AboutService from '../views/AboutService.vue'
 
 Vue.use(VueRouter)
 
@@ -30,6 +31,11 @@ const routes = [
     path: '/termsofservice',
     name: 'termsofservice',
     component: TermsOfService
+  },
+  {
+    path: '/aboutservice',
+    name: 'aboutservice',
+    component: AboutService
   },
   {
     path: '/profileuser/:id',

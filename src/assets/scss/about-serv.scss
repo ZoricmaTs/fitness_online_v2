@@ -1,0 +1,70 @@
+@import '../../node_modules/bootstrap/scss/bootstrap';
+@import '../assets/scss/variables.scss';
+
+.about-serv__block-title {
+  margin-bottom: 50px;
+}
+.about-serv__block-title > div:nth-of-type(1) {
+  background-image: url('../assets/img/title-about-serv.png');
+  background-size: 293px 195px;
+  background-position: top left;
+  background-repeat: no-repeat;
+  margin-bottom: 35px;
+}
+.about-serv {
+  background-color: $color-blue;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  height: 100%;
+  &__heading {
+    font-style: normal;
+    font-weight: 500;
+    line-height: 23px;
+    color: $color-white;
+    margin-bottom: 90px;
+  }
+  &__blocks-step {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  &__block-step {
+    width: 218px;
+  }
+  &__heading-step {
+    font-style: normal;
+    font-weight: normal;
+    @include font-size(16px);
+    line-height: 19px;
+  }
+  &__img-step {
+    margin-bottom: 15px;
+  }
+}
+.about-serv__text-reg {
+  display: block;
+  position: absolute;
+  top: 30px;
+  right: 0;
+  max-width: 387px;
+  z-index: 2;
+  padding: 18px;
+  background-color: $color-orange;
+  color: $color-white;
+  //
+}
+.about-serv__text-reg-body {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 0;
+}
+.about-serv__bg-img {
+  display: block;
+  position: relative;
+  width: 606px;
+  height: 195px;
+  margin: 0 auto;
+}
