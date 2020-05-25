@@ -4,7 +4,9 @@
     <div class="navb-soc">
       <nav class="navb text__heading_size_m">
         <ul class="navb__list">
-          <li class="navb__item">О сервисе</li>
+          <li class="navb__item">
+            <router-link class="navb__link" :to="{ name: 'aboutserviceauth' }">О сервисе</router-link>
+          </li>
           <li class="navb__item">Наши тренеры</li>
           <li class="navb__item">Виды тренировок</li>
           <li class="navb__item">Вопросы и ответы</li>

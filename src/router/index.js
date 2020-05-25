@@ -8,6 +8,9 @@ import Authorization from '../views/Authorization.vue'
 import Register from '../views/Register.vue'
 import TermsOfService from '../views/TermsOfService.vue'
 import AboutService from '../views/AboutService.vue'
+import ProfileUserStart from '../views/ProfileUserStart.vue'
+import ProfileTrainerStart from '../views/ProfileTrainerStart.vue'
+import AboutServiceAuth from '../views/AboutServiceAuth.vue'
 
 Vue.use(VueRouter)
 
@@ -36,6 +39,24 @@ const routes = [
     path: '/aboutservice',
     name: 'aboutservice',
     component: AboutService
+  },
+  {
+    path: '/profileuserstart/:id/aboutserviceauth',
+    name: 'aboutserviceauth',
+    component: AboutServiceAuth,
+    props: true
+  },
+  {
+    path: '/profileuserstart/:id',
+    name: 'profileuserstart',
+    component: ProfileUserStart,
+    props: true
+  },
+  {
+    path: '/profiletrainerstart/:id',
+    name: 'profiletrainerstart',
+    component: ProfileTrainerStart,
+    props: true
   },
   {
     path: '/profileuser/:id',
