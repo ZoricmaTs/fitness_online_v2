@@ -4,12 +4,22 @@
     <div class="navb-soc">
       <nav class="navb text__heading_size_m">
         <ul class="navb__list">
-          <li class="navb__item">Регистрация</li>
-
-          <li class="navb__item">Вход</li>
+          <li class="navb__item">
+            <router-link class="navb__link" :to="{ name: 'signup' }"
+              >Регистрация</router-link
+            >
+          </li>
 
           <li class="navb__item">
-            <router-link class="navb__link" :to="{ name: 'aboutservice' }">О сервисе</router-link>
+            <router-link class="navb__link" :to="{ name: 'signin' }"
+              >Вход</router-link
+            >
+          </li>
+
+          <li class="navb__item">
+            <router-link class="navb__link" :to="{ name: 'aboutservice' }"
+              >О сервисе</router-link
+            >
           </li>
 
           <li class="navb__item">Наши тренеры</li>
@@ -18,7 +28,7 @@
           <li class="navb__item">Контакты</li>
         </ul>
       </nav>
-      <ul class="social__list social__heading">
+      <ul class="navb__soc social__list social__heading">
         <li class="social__item">
           <a class="social__link" href="#">
             <img

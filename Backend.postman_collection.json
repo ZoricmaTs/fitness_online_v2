@@ -1,0 +1,1424 @@
+{
+	"info": {
+		"_postman_id": "52609471-9175-4821-9f4b-6dfc7c3b1162",
+		"name": "Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "SIGNIN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "admin@fitness.local",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Very_HarD_admin_pa$$w0rda",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://80.89.238.253:5000/api/signin",
+						"description": "class LoginForm(FlaskForm):\n    email = StringField(\"email\",\n                        validators=[\n                            Length(max=256, message=\"email can't be longer then 256\"),\n                            Email(message=\"email is incorrect\")\n                        ])\n    password = PasswordField(\"password\")\n"
+					},
+					"response": []
+				},
+				{
+					"name": "SIGNUP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "111@mail.ru",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "223322",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "223322",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "user",
+									"type": "text"
+								},
+								{
+									"key": "first_name",
+									"value": "Иван",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://80.89.238.253:5000/api/signup",
+						"description": "class RegistrationForm(FlaskForm):\n    email = StringField(\"email\",\n                        validators=[\n                            Length(max=256, message=\"email can't be longer then 256\"),\n                            Email(message=\"email is incorrect\")\n                        ])\n    password = PasswordField(\"password\")\n    password_confirmation = PasswordField(\"password_confirmation\",\n                                          validators=[\n                                              DataRequired(message=\"password confirmation can't be empty\"),\n                                              EqualTo('password', message=\"passwords must match\")\n                                          ])\n    role = StringField(str,\n                       validators=[\n                           DataRequired(),\n\n                       ])"
+					},
+					"response": []
+				},
+				{
+					"name": "CONFIRM_ACCOUNT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "111@mail.ru",
+									"type": "text"
+								},
+								{
+									"key": "confirmation_code",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://80.89.238.253:5000/api/confirm?token=FFPOZGMXGNHWUYOP3TSOEC7HEI",
+							"protocol": "http",
+							"host": [
+								"80",
+								"89",
+								"238",
+								"253"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"confirm"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "FFPOZGMXGNHWUYOP3TSOEC7HEI"
+								}
+							]
+						},
+						"description": "class ConfirmForm(FlaskForm):\n    email = StringField(\"email\",\n                        validators=[\n                            Length(max=256, message=\"email can't be longer then 256\"),\n                            Email(message=\"email is incorrect\")\n                        ])\n    confirmation_code = StringField(\"confirmation_code\",\n                                    validators=[DataRequired(message=\"confirmation code can't be empty\")])\n"
+					},
+					"response": []
+				},
+				{
+					"name": "SEND CONFIRMATION EMAIL AGAIN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "1@mail.ru",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://80.89.238.253:5000/api/confirm_again?token=FFPOZGMXGNHWUYOP3TSOEC7HEI",
+							"protocol": "http",
+							"host": [
+								"80",
+								"89",
+								"238",
+								"253"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"confirm_again"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "FFPOZGMXGNHWUYOP3TSOEC7HEI"
+								}
+							]
+						},
+						"description": "Send confirmation for email again"
+					},
+					"response": []
+				},
+				{
+					"name": "GET CLIETNS LIST",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://80.89.238.253:5000/api/get_users?limit=20&offset=0&token=FFPOZGMXGNHWUYOP3TSOEC7HEI",
+							"protocol": "http",
+							"host": [
+								"80",
+								"89",
+								"238",
+								"253"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"get_users"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "20"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "token",
+									"value": "FFPOZGMXGNHWUYOP3TSOEC7HEI"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET TRAINERS LIST",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://80.89.238.253:5000/api/get_trainers?limit=20&offset=0&token=FFPOZGMXGNHWUYOP3TSOEC7HEI",
+							"protocol": "http",
+							"host": [
+								"80",
+								"89",
+								"238",
+								"253"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"get_trainers"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "20"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "token",
+									"value": "FFPOZGMXGNHWUYOP3TSOEC7HEI"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL USERS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://80.89.238.253:5000/api/get_all?limit=20&offset=0&token=FFPOZGMXGNHWUYOP3TSOEC7HEI",
+							"protocol": "http",
+							"host": [
+								"80",
+								"89",
+								"238",
+								"253"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"get_all"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "20"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "token",
+									"value": "FFPOZGMXGNHWUYOP3TSOEC7HEI"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE USER BY ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://80.89.238.253:5000/api/delete_user?token=FFPOZGMXGNHWUYOP3TSOEC7HEI&user_id=100",
+							"protocol": "http",
+							"host": [
+								"80",
+								"89",
+								"238",
+								"253"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"delete_user"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "FFPOZGMXGNHWUYOP3TSOEC7HEI"
+								},
+								{
+									"key": "user_id",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET USER BY ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://80.89.238.253:5000/api/get_user_by_id?token=FFPOZGMXGNHWUYOP3TSOEC7HEI&user_id=1",
+							"protocol": "http",
+							"host": [
+								"80",
+								"89",
+								"238",
+								"253"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"get_user_by_id"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "FFPOZGMXGNHWUYOP3TSOEC7HEI"
+								},
+								{
+									"key": "user_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT USER BY ID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "user_id",
+									"value": "1\n",
+									"type": "text"
+								},
+								{
+									"key": "new_first_name",
+									"value": "Саня",
+									"type": "text"
+								},
+								{
+									"key": "new_email",
+									"value": "111@mail.ru",
+									"type": "text"
+								},
+								{
+									"key": "current_password",
+									"value": "223322",
+									"description": "Нужен только если поле new_passowrd не пусто, остальную инфу профиля можно менять без пароля",
+									"type": "text"
+								},
+								{
+									"key": "new_password",
+									"value": "223322",
+									"type": "text"
+								},
+								{
+									"key": "new_password_confirmation",
+									"value": "223322",
+									"type": "text"
+								},
+								{
+									"key": "new_role",
+									"value": "user",
+									"type": "text"
+								},
+								{
+									"key": "new_about_me",
+									"value": "Я типа бекенд тут пишу",
+									"type": "text"
+								},
+								{
+									"key": "new_profile_photo_id\n",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://80.89.238.253:5000/api/edit_user_info?token=FFPOZGMXGNHWUYOP3TSOEC7HEI",
+							"protocol": "http",
+							"host": [
+								"80",
+								"89",
+								"238",
+								"253"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"edit_user_info"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "FFPOZGMXGNHWUYOP3TSOEC7HEI"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GRANT ADMIN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://80.89.238.253:5000/api/grant_admin?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA0MDA2NTcsIm5iZiI6MTU5MDQwMDY1NywianRpIjoiNDg5MmZjMzUtNmI4Ni00YzE5LWFiNmYtZDMzODk1NjQ4MWYwIiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.n7gtt4-AnTVQFXpltCeUHSgOBDD8yWQj-Rl1SnTF1bQ",
+							"protocol": "http",
+							"host": [
+								"80",
+								"89",
+								"238",
+								"253"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"grant_admin"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA0MDA2NTcsIm5iZiI6MTU5MDQwMDY1NywianRpIjoiNDg5MmZjMzUtNmI4Ni00YzE5LWFiNmYtZDMzODk1NjQ4MWYwIiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.n7gtt4-AnTVQFXpltCeUHSgOBDD8yWQj-Rl1SnTF1bQ"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "REVOKE ADMIN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://80.89.238.253:5000/api/grant_admin?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA0MDA2NTcsIm5iZiI6MTU5MDQwMDY1NywianRpIjoiNDg5MmZjMzUtNmI4Ni00YzE5LWFiNmYtZDMzODk1NjQ4MWYwIiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.n7gtt4-AnTVQFXpltCeUHSgOBDD8yWQj-Rl1SnTF1bQ",
+							"protocol": "http",
+							"host": [
+								"80",
+								"89",
+								"238",
+								"253"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"grant_admin"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA0MDA2NTcsIm5iZiI6MTU5MDQwMDY1NywianRpIjoiNDg5MmZjMzUtNmI4Ni00YzE5LWFiNmYtZDMzODk1NjQ4MWYwIiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.n7gtt4-AnTVQFXpltCeUHSgOBDD8yWQj-Rl1SnTF1bQ"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "TrainingTypes",
+			"item": [
+				{
+					"name": "CREATE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "школа магии",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "поколдуем",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://80.89.238.253:5000/api/training_type_create?token=FFPOZGMXGNHWUYOP3TSOEC7HEI",
+							"protocol": "http",
+							"host": [
+								"80",
+								"89",
+								"238",
+								"253"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"training_type_create"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "FFPOZGMXGNHWUYOP3TSOEC7HEI"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://80.89.238.253:5000/api/training_type_get?token=FFPOZGMXGNHWUYOP3TSOEC7HEI&limit=20&offset=0",
+							"protocol": "http",
+							"host": [
+								"80",
+								"89",
+								"238",
+								"253"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"training_type_get"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "FFPOZGMXGNHWUYOP3TSOEC7HEI"
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Новое Имя",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Новое описание вида тренировок",
+									"type": "text"
+								},
+								{
+									"key": "training_type_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://80.89.238.253:5000/api/training_type_edit?token=FFPOZGMXGNHWUYOP3TSOEC7HEI",
+							"protocol": "http",
+							"host": [
+								"80",
+								"89",
+								"238",
+								"253"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"training_type_edit"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "FFPOZGMXGNHWUYOP3TSOEC7HEI"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD ATTACHMENT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "training_type_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "file_id",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://80.89.238.253:5000/api/training_type_add_attachment?token=FFPOZGMXGNHWUYOP3TSOEC7HEI",
+							"protocol": "http",
+							"host": [
+								"80",
+								"89",
+								"238",
+								"253"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"training_type_add_attachment"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "FFPOZGMXGNHWUYOP3TSOEC7HEI"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE ATTACHMENT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "training_type_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "file_id",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://80.89.238.253:5000/api/training_type_delete_attachment?token=FFPOZGMXGNHWUYOP3TSOEC7HEI",
+							"protocol": "http",
+							"host": [
+								"80",
+								"89",
+								"238",
+								"253"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"training_type_delete_attachment"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "FFPOZGMXGNHWUYOP3TSOEC7HEI"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://80.89.238.253:5000/api/training_type_delete?token=FFPOZGMXGNHWUYOP3TSOEC7HEI&training_type_id=34",
+							"protocol": "http",
+							"host": [
+								"80",
+								"89",
+								"238",
+								"253"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"training_type_delete"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "FFPOZGMXGNHWUYOP3TSOEC7HEI"
+								},
+								{
+									"key": "training_type_id",
+									"value": "34"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD PREFERENCE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "training_type_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://80.89.238.253:5000/api/match_preference?token=FFPOZGMXGNHWUYOP3TSOEC7HEI",
+							"protocol": "http",
+							"host": [
+								"80",
+								"89",
+								"238",
+								"253"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"match_preference"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "FFPOZGMXGNHWUYOP3TSOEC7HEI"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET TRAINING TYPE BY ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://80.89.238.253:5000/api/get_user_by_id?token=FFPOZGMXGNHWUYOP3TSOEC7HEI&training_type_id=1",
+							"protocol": "http",
+							"host": [
+								"80",
+								"89",
+								"238",
+								"253"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"get_user_by_id"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "FFPOZGMXGNHWUYOP3TSOEC7HEI"
+								},
+								{
+									"key": "training_type_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE PREFERENCE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "training_type_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "token",
+									"value": "FFPOZGMXGNHWUYOP3TSOEC7HEI",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://80.89.238.253:5000/api/unmatch_preference?token=FFPOZGMXGNHWUYOP3TSOEC7HEI",
+							"protocol": "http",
+							"host": [
+								"80",
+								"89",
+								"238",
+								"253"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"unmatch_preference"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "FFPOZGMXGNHWUYOP3TSOEC7HEI"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET USERS BY TRAINING TYPE ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://80.89.238.253:5000/api/get_users_by_training_type_id?token=FFPOZGMXGNHWUYOP3TSOEC7HEI&training_type_id=1",
+							"protocol": "http",
+							"host": [
+								"80",
+								"89",
+								"238",
+								"253"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"get_users_by_training_type_id"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "FFPOZGMXGNHWUYOP3TSOEC7HEI"
+								},
+								{
+									"key": "training_type_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET TRAINERS BY TRAINING TYPE ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://80.89.238.253:5000/api/get_trainers_by_training_type_id?token=FFPOZGMXGNHWUYOP3TSOEC7HEI&training_type_id=1",
+							"protocol": "http",
+							"host": [
+								"80",
+								"89",
+								"238",
+								"253"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"get_trainers_by_training_type_id"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "FFPOZGMXGNHWUYOP3TSOEC7HEI"
+								},
+								{
+									"key": "training_type_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Типы тренировок",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Achievements",
+			"item": [
+				{
+					"name": "CREATE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "школа магии",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "поколдуем",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://80.89.238.253:5000/api/achievement_create?token=FFPOZGMXGNHWUYOP3TSOEC7HEI",
+							"protocol": "http",
+							"host": [
+								"80",
+								"89",
+								"238",
+								"253"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"achievement_create"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "FFPOZGMXGNHWUYOP3TSOEC7HEI"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://80.89.238.253:5000/api/training_type_get?token=FFPOZGMXGNHWUYOP3TSOEC7HEI&limit=20&offset=0",
+							"protocol": "http",
+							"host": [
+								"80",
+								"89",
+								"238",
+								"253"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"training_type_get"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "FFPOZGMXGNHWUYOP3TSOEC7HEI"
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Новое Имя",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Новое описание ваших крутых достижений",
+									"type": "text"
+								},
+								{
+									"key": "training_type_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://80.89.238.253:5000/api/achievement_edit?token=FFPOZGMXGNHWUYOP3TSOEC7HEI",
+							"protocol": "http",
+							"host": [
+								"80",
+								"89",
+								"238",
+								"253"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"achievement_edit"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "FFPOZGMXGNHWUYOP3TSOEC7HEI"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD ATTACHMENT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "training_type_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "file_id",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://80.89.238.253:5000/api/achievement_add_attachment?token=FFPOZGMXGNHWUYOP3TSOEC7HEI",
+							"protocol": "http",
+							"host": [
+								"80",
+								"89",
+								"238",
+								"253"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"achievement_add_attachment"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "FFPOZGMXGNHWUYOP3TSOEC7HEI"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE ATTACHMENT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "training_type_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "file_id",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://80.89.238.253:5000/api/training_type_add_attachment?token=FFPOZGMXGNHWUYOP3TSOEC7HEI",
+							"protocol": "http",
+							"host": [
+								"80",
+								"89",
+								"238",
+								"253"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"training_type_add_attachment"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "FFPOZGMXGNHWUYOP3TSOEC7HEI"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://80.89.238.253:5000/api/achievement_delete?token=FFPOZGMXGNHWUYOP3TSOEC7HEI&training_type_id=34",
+							"protocol": "http",
+							"host": [
+								"80",
+								"89",
+								"238",
+								"253"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"achievement_delete"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "FFPOZGMXGNHWUYOP3TSOEC7HEI"
+								},
+								{
+									"key": "training_type_id",
+									"value": "34"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ACHIEVEMENT BY ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://80.89.238.253:5000/api/get_user_by_id?token=FFPOZGMXGNHWUYOP3TSOEC7HEI&achievement_id=1",
+							"protocol": "http",
+							"host": [
+								"80",
+								"89",
+								"238",
+								"253"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"get_user_by_id"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "FFPOZGMXGNHWUYOP3TSOEC7HEI"
+								},
+								{
+									"key": "achievement_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD ACHIEVEMENT TO USER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "training_type_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://80.89.238.253:5000/api/match_achievement?token=FFPOZGMXGNHWUYOP3TSOEC7HEI",
+							"protocol": "http",
+							"host": [
+								"80",
+								"89",
+								"238",
+								"253"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"match_achievement"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "FFPOZGMXGNHWUYOP3TSOEC7HEI"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE ACHIEVEMENT FROM USER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "training_type_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "token",
+									"value": "FFPOZGMXGNHWUYOP3TSOEC7HEI",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://80.89.238.253:5000/api/unmatch_achievement?token=FFPOZGMXGNHWUYOP3TSOEC7HEI",
+							"protocol": "http",
+							"host": [
+								"80",
+								"89",
+								"238",
+								"253"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"unmatch_achievement"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "FFPOZGMXGNHWUYOP3TSOEC7HEI"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Типы тренировок",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Media",
+			"item": [
+				{
+					"name": "UPLOAD FILE",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"contentType": "image/jpeg",
+									"type": "file",
+									"src": "/home/alexander/Pictures/Photos/IMG_20191016_172632.jpg"
+								},
+								{
+									"key": "comment",
+									"value": "Вид с моего рабочего места",
+									"contentType": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://80.89.238.253:5000/media/upload_file?token=FFPOZGMXGNHWUYOP3TSOEC7HEI",
+							"protocol": "http",
+							"host": [
+								"80",
+								"89",
+								"238",
+								"253"
+							],
+							"port": "5000",
+							"path": [
+								"media",
+								"upload_file"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "FFPOZGMXGNHWUYOP3TSOEC7HEI"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET FILE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://80.89.238.253:5000/media/files/2131105c2012d780e4b6aff295b3258bb16fd218?token=FFPOZGMXGNHWUYOP3TSOEC7HEI",
+							"protocol": "http",
+							"host": [
+								"80",
+								"89",
+								"238",
+								"253"
+							],
+							"port": "5000",
+							"path": [
+								"media",
+								"files",
+								"2131105c2012d780e4b6aff295b3258bb16fd218"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "FFPOZGMXGNHWUYOP3TSOEC7HEI"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

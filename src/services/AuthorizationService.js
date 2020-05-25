@@ -28,7 +28,7 @@ export default {
     var bodyFormData = new FormData() //+
     bodyFormData.set('email', email)
     bodyFormData.set('password', password)
-    return apiClientPost.post(`/signin?${credential}`, bodyFormData)
+    return apiClientPost.post(`/signin`, bodyFormData)
   },
   register(first_name, email, role, password, password_confirmation) {
     var bodyFormData = new FormData() //+
