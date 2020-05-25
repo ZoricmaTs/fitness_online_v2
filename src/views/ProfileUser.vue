@@ -1,27 +1,26 @@
 <template>
   <div>
     <NavbarBase />
-    <div class="row">
-      <div class="col-sm-4 sticky">
-        <LeftsidebarUser class="sticky-top">bar</LeftsidebarUser>
-      </div>
-      <div class="col-sm-8 scroll">
-        <div>content kjhkh hjkhjkh jkh hjkhjkhhkhj hjkjhk</div>
-      </div>
+    <div class="body-block">
+      <LeftsidebarUser />
+      <RightsidebarUser />
     </div>
-    <FooterBase />
+    <div>content kjhkh hjkhjkh jkh hjkhjkhhkhj hjkjhk</div>
+    <!--<FooterBase />-->
   </div>
 </template>
 
 <script>
 import NavbarBase from '@/components/NavbarBase.vue'
-import FooterBase from '@/components/FooterBase.vue'
+//import FooterBase from '@/components/FooterBase.vue'
 import LeftsidebarUser from '@/components/LeftsidebarUser.vue'
+import RightsidebarUser from '@/components/RightsidebarUser.vue'
 export default {
   components: {
     NavbarBase,
-    FooterBase,
-    LeftsidebarUser
+    // FooterBase,
+    LeftsidebarUser,
+    RightsidebarUser
   }
 }
 </script>

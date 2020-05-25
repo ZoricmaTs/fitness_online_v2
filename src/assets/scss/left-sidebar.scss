@@ -1,10 +1,46 @@
 @import '../../node_modules/bootstrap/scss/bootstrap';
 @import '../assets/scss/variables.scss';
-
+@import '/assets/scss/fonts.css';
+.body-block {
+  position: relative;
+}
 .left-sidebar {
   //overflow: hidden;
+  padding-top: 60px;
+  padding-right: 60px;
   height: 100%;
   width: 213px;
   position: fixed;
+  left: 0;
   background-color: $color-dark-gray;
+  color: $color-white;
+  font-style: normal;
+  font-weight: normal;
+  &__time-hour {
+    padding-left: 25px;
+  }
+
+  &__time-day {
+    width: 213px;
+    padding-left: 25px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid $color-orange;
+  }
+  &__menu-item {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    cursor: pointer;
+    width: 213px;
+    padding-left: 25px;
+    list-style-type: none;
+    height: 118px;
+    border-bottom: 1px solid $color-orange;
+    &:hover,
+    &:focus {
+      background-color: $color-blue;
+      -webkit-transition: all 0.2s ease;
+      transition: all 0.2s ease;
+    }
+  }
 }
