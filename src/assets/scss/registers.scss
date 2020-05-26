@@ -85,6 +85,7 @@
     font-style: normal;
     font-weight: normal;
     line-height: 28px;
+    width: 320px;
     color: rgb(219, 76, 26 /0.4);
     background: $color-white;
     letter-spacing: 0.05em;
@@ -98,10 +99,12 @@
     &:hover {
       border: 2px solid #db3d1a;
       box-sizing: border-box;
+      width: 373px;
     }
     &:focus {
       border: 2px solid #db3d1a;
       box-sizing: border-box;
+      width: 373px;
     }
   }
   &__showpass {
