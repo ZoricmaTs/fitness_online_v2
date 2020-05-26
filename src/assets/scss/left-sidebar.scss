@@ -4,16 +4,10 @@
 }
 .left-sidebar {
   //overflow: hidden;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  left: 0;
+  height: 100%;
   padding-top: 60px;
   padding-right: 60px;
-  height: 100%;
   width: 178px;
-
-  z-index: 5;
   background-color: $color-dark-gray;
   color: $color-white;
   font-style: normal;

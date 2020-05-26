@@ -1,5 +1,5 @@
 <template>
-  <section class="about-serv block-grid-min">
+  <section class="about-serv">
     <h2 class="about-serv__heading text__heading_size_l">
       Что предлагает наш сервис?
     </h2>

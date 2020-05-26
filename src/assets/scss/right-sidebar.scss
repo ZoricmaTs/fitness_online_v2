@@ -1,21 +1,16 @@
 @import '@/assets/scss/variables.scss';
 
 .body-block {
-  position: relative;
+  // position: relative;
 }
 .right-sidebar {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-end;
-  z-index: 5;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  right: 0;
+  height: 100%;
   padding-top: 50px;
   padding-right: 25px;
-  height: 100%;
   width: 213px;
   background-color: $color-dark-gray;
   color: $color-white;
