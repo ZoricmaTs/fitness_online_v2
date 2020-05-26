@@ -1,13 +1,13 @@
 <template>
-<div>
-    <NavbarBase/>
-  <div class="layout">
-    <LeftsidebarUser /> 
-    <slot>
+  <div>
+    <NavbarBase />
+    <div class="layout">
+      <LeftsidebarUser />
+      <slot>
         default text
-    </slot>
-    <RightsidebarUser />
-  </div>
+      </slot>
+      <RightsidebarUser />
+    </div>
   </div>
 </template>
 
@@ -16,19 +16,18 @@ import NavbarBase from '@/components/NavbarBase.vue'
 import LeftsidebarUser from '@/components/LeftsidebarUser.vue'
 import RightsidebarUser from '@/components/RightsidebarUser.vue'
 
-
 export default {
   components: {
     NavbarBase,
     LeftsidebarUser,
-    RightsidebarUser,
+    RightsidebarUser
   }
 }
 </script>
 
 <style>
-.layout{
-    display: flex;
-    flex-direction: row;
+.layout {
+  display: flex;
+  flex-direction: row;
 }
 </style>

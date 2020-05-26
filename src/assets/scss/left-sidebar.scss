@@ -1,16 +1,18 @@
 @import '@/assets/scss/variables.scss';
 .body-block {
-  position: relative;
+  //position: relative;
 }
 .left-sidebar {
   //overflow: hidden;
-
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
   padding-top: 60px;
   padding-right: 60px;
   height: 100%;
   width: 178px;
-  position: fixed;
-  left: 0;
+
   z-index: 5;
   background-color: $color-dark-gray;
   color: $color-white;
