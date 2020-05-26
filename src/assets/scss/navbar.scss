@@ -9,8 +9,8 @@
     font-weight: normal;
     @include font-size(40px);
     color: $color-blue;
-    max-width: 133px;
-    max-height: 56px;
+    width: 133px;
+    height: 56px;
     &::after {
       position: absolute;
       bottom: 0px;
