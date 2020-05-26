@@ -32,6 +32,7 @@
 }
 .singin {
   margin-bottom: 126px; //пересмотреть на мобилке
+  width: 521px;
   &__linkback {
     position: relative;
     line-height: 23px;
@@ -57,7 +58,6 @@
     font-weight: normal;
     line-height: 28px;
     box-sizing: border-box;
-    width: 343px;
     color: rgb(219, 76, 26 /0.4);
     background: $color-white;
     letter-spacing: 0.05em;
@@ -71,12 +71,10 @@
     &:hover {
       border: 2px solid #db3d1a;
       box-sizing: border-box;
-      width: 343px;
     }
     &:focus {
       border: 2px solid #db3d1a;
       box-sizing: border-box;
-      width: 343px;
     }
   }
   &__input-pass-block {
@@ -87,7 +85,6 @@
     font-style: normal;
     font-weight: normal;
     line-height: 28px;
-    width: 343px;
     color: rgb(219, 76, 26 /0.4);
     background: $color-white;
     letter-spacing: 0.05em;
@@ -101,12 +98,10 @@
     &:hover {
       border: 2px solid #db3d1a;
       box-sizing: border-box;
-      width: 343px;
     }
     &:focus {
       border: 2px solid #db3d1a;
       box-sizing: border-box;
-      width: 343px;
     }
   }
   &__showpass {
@@ -164,7 +159,7 @@
 .singup {
   display: flex;
   flex-direction: column;
-  max-width: 545px;
+  width: 397px;
   background-color: $color-dark-gray;
   padding: 50px 74px;
   &__modal {
