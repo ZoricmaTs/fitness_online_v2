@@ -1,6 +1,6 @@
-@import '../../node_modules/bootstrap/scss/bootstrap';
-@import '../assets/scss/variables.scss';
-@import '../assets/scss/btn.scss';
+// @import '../../node_modules/bootstrap/scss/bootstrap';
+@import '@/assets/scss/variables.scss';
+@import '@/assets/scss/btn.scss';
 
 .singin-bg {
   display: flex;
@@ -56,7 +56,8 @@
     font-style: normal;
     font-weight: normal;
     line-height: 28px;
-    max-width: 373px;
+    box-sizing: border-box;
+    width: 343px;
     color: rgb(219, 76, 26 /0.4);
     background: $color-white;
     letter-spacing: 0.05em;
@@ -70,20 +71,43 @@
     &:hover {
       border: 2px solid #db3d1a;
       box-sizing: border-box;
+      width: 343px;
     }
     &:focus {
       border: 2px solid #db3d1a;
       box-sizing: border-box;
+      width: 343px;
     }
   }
   &__input-pass-block {
     position: relative;
-    width: 373px;
   }
 
   &__input-pass {
-    padding-right: 33px;
-    width: 373px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 28px;
+    width: 343px;
+    color: rgb(219, 76, 26 /0.4);
+    background: $color-white;
+    letter-spacing: 0.05em;
+    padding: 20px 25px;
+    margin-bottom: 35px;
+    border: 2px solid $color-white;
+    outline: none;
+    &::placeholder {
+      color: rgba(219, 76, 26, 0.4);
+    }
+    &:hover {
+      border: 2px solid #db3d1a;
+      box-sizing: border-box;
+      width: 343px;
+    }
+    &:focus {
+      border: 2px solid #db3d1a;
+      box-sizing: border-box;
+      width: 343px;
+    }
   }
   &__showpass {
     position: absolute;

@@ -28,7 +28,9 @@
           width="20"
           height="20"
         />
-        <span class="right-sidebar__numb exercises__numb text__heading_size_m">5</span>
+        <span class="right-sidebar__numb exercises__numb text__heading_size_m"
+          >5</span
+        >
       </li>
       <li class="right-sidebar__menu-item text__heading_size_m">
         <img
@@ -38,7 +40,9 @@
           width="20"
           height="20"
         />
-        <span class="right-sidebar__numb message__numb text__heading_size_m"></span>
+        <span
+          class="right-sidebar__numb message__numb text__heading_size_m"
+        ></span>
       </li>
     </ul>
     <div class="right-sidebar__about">
@@ -63,6 +67,6 @@
 export default {}
 </script>
 
-<style lang="scss" scoped>
-@import '../assets/scss/right-sidebar.scss';
+<style lang="scss">
+@import '@/assets/scss/right-sidebar.scss';
 </style>

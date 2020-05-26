@@ -1,5 +1,5 @@
-@import '../../node_modules/bootstrap/scss/bootstrap';
-@import '../assets/scss/variables.scss';
+// // @import '../../node_modules/bootstrap/scss/bootstrap';
+@import '@/assets/scss/variables.scss';
 
 .footer-block {
   display: flex;
@@ -123,6 +123,7 @@
   border-top: 1px solid $color-white;
   padding-top: 15px;
   padding-bottom: 40px;
+  color: $color-white;
 }
 .footer-blockcopy__text {
   line-height: 14px;

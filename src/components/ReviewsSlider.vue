@@ -1,21 +1,15 @@
 <template>
   <div class="reviews">
-    <VueSlickCarousel
-      v-bind="settings"
-      class="mt-5 mb-5"
-      v-if="allReviews.length"
-    >
+    <VueSlickCarousel v-bind="settings" class="mt-5 mb-5" v-if="allReviews.length">
       <div class="main__review" v-for="item in allReviews" :key="item.id">
         <img
-          src="@/assets/img/stub.png"
+          src="../assets/img/stub.png"
           alt="photo"
           class="card-img-top img-fluid mt-3 mx-auto d-block"
         />
         <div class="card-body">
           <p class="card-title">Имя, возраст, участница</p>
-          <p class="card-text">
-            {{ item.comment }}
-          </p>
+          <p class="card-text">{{ item.comment }}</p>
         </div>
       </div>
     </VueSlickCarousel>

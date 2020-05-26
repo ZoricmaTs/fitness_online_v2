@@ -1,6 +1,5 @@
-@import '../../node_modules/bootstrap/scss/bootstrap';
-@import '../assets/scss/variables.scss';
-@import '/assets/scss/fonts.css';
+@import '@/assets/scss/variables.scss';
+
 .body-block {
   position: relative;
 }
@@ -9,7 +8,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-end;
-  z-index: 999;
+  z-index: 5;
   padding-top: 50px;
   padding-right: 25px;
   height: 100%;

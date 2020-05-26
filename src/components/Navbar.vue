@@ -5,21 +5,15 @@
       <nav class="navb text__heading_size_m">
         <ul class="navb__list">
           <li class="navb__item">
-            <router-link class="navb__link" :to="{ name: 'signup' }"
-              >Регистрация</router-link
-            >
+            <router-link class="navb__link" :to="{ name: 'signup' }">Регистрация</router-link>
           </li>
 
           <li class="navb__item">
-            <router-link class="navb__link" :to="{ name: 'signin' }"
-              >Вход</router-link
-            >
+            <router-link class="navb__link" :to="{ name: 'signin' }">Вход</router-link>
           </li>
 
           <li class="navb__item">
-            <router-link class="navb__link" :to="{ name: 'aboutservice' }"
-              >О сервисе</router-link
-            >
+            <router-link class="navb__link" :to="{ name: 'aboutservice' }">О сервисе</router-link>
           </li>
 
           <li class="navb__item">Наши тренеры</li>
@@ -79,5 +73,5 @@ export default {}
 </script>
 
 <style lang="scss">
-@import '../assets/scss/navbar.scss';
+@import '@/assets/scss/navbar.scss';
 </style>

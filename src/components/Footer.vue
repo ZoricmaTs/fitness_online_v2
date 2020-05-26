@@ -168,6 +168,5 @@ export default {}
 </script>
 
 <style lang="scss">
-@import '../assets/scss/footer.scss';
-@import '../assets/scss/navbar.scss';
+@import '@/assets/scss/footer.scss';
 </style>

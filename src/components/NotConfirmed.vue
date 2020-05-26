@@ -33,5 +33,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../assets/scss/registers.scss';
+@import '@/assets/scss/registers.scss';
 </style>

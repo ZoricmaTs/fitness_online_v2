@@ -1,5 +1,5 @@
-@import '../../node_modules/bootstrap/scss/bootstrap';
-@import '../assets/scss/variables.scss';
+// // @import '../../node_modules/bootstrap/scss/bootstrap';
+@import '@/assets/scss/variables.scss';
 
 .btn {
   &__big {
@@ -7,7 +7,7 @@
     border-radius: 0 !important;
     font-style: normal;
     font-weight: normal;
-    padding: 10px 50px;
+    padding: 20px 50px;
     margin: 0 auto;
     letter-spacing: 0.05em;
     box-sizing: border-box;
@@ -18,7 +18,7 @@
     font-weight: normal;
     letter-spacing: 0.05em;
     min-width: 188px;
-    padding: 10px 0;
+    padding: 20px 0;
     box-sizing: border-box;
   }
 

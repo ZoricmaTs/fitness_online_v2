@@ -45,5 +45,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../assets/scss/modal-info.scss';
+@import '@/assets/scss/modal-info.scss';
 </style>

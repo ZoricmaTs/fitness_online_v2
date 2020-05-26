@@ -1,20 +1,9 @@
-@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
-@import '../../../node_modules/bootstrap/scss/functions.scss';
-@import '../../../node_modules/bootstrap/scss/variables';
+// @import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+// @import '../../../node_modules/bootstrap/scss/functions.scss';
+// @import '../../../node_modules/bootstrap/scss/variables';
 
-* {
-  margin: 0;
-  padding: 0;
-  //line-height: 0;
-}
-.block-grid {
-  padding-left: 25px;
-  padding-right: 25px;
-}
-.block-grid-min {
-  padding-left: 238px;
-  padding-right: 238px;
-}
+@import 'node_modules/rfs/scss';
+
 $enable-responsive-font-sizes: true;
 
 $font-size-40: 2.5rem; // 40

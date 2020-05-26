@@ -84,14 +84,14 @@ export default {
 }
 </script>
 <style lang="scss">
-@import '../../node_modules/bootstrap/scss/bootstrap';
-@import '../assets/scss/variables.scss';
+//// @import '../../node_modules/bootstrap/scss/bootstrap';
+@import '@/assets/scss/variables.scss';
 
-@import '../assets/scss/btn.scss';
-@import '../assets/scss/home-offers.scss';
-@import '../assets/scss/home-aboutserv.scss';
-@import '../assets/scss/home-attainment.scss';
-@import '../assets/scss/footer.scss';
+@import '@/assets/scss/btn.scss';
+@import '@/assets/scss/home-offers.scss';
+@import '@/assets/scss/home-aboutserv.scss';
+@import '@/assets/scss/home-attainment.scss';
+@import '@/assets/scss/footer.scss';
 .title-img {
   padding: 0 25px;
   background-image: url('../assets/img/image8.png');

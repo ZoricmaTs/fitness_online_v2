@@ -1,15 +1,18 @@
 <template>
   <section class="singup-bg block-grid">
-    <router-link :to="{ name: 'Home' }" class="singin__linkback text__heading_size_l">
+    <router-link
+      :to="{ name: 'Home' }"
+      class="singin__linkback text__heading_size_l"
+    >
       <img src="../assets/img/Arrow.svg" alt="backlink" />
       Назад
     </router-link>
     <form class="singup" @submit.prevent="getRoleRegister">
       <h1 class="singup__heading text__heading_size_h1">Регистрация</h1>
       <div class="form-block">
-        <div
-          class="singup__err text__heading_size_h3"
-        >{{ errArray['first_name'] ? errArray['first_name'].toString() : '' }}</div>
+        <div class="singup__err text__heading_size_h3">
+          {{ errArray['first_name'] ? errArray['first_name'].toString() : '' }}
+        </div>
         <input
           type="text"
           name="first_name"
@@ -20,9 +23,9 @@
         />
       </div>
       <div class="form-block">
-        <div
-          class="singup__err text__heading_size_h3"
-        >{{ errArray['email'] ? errArray['email'].toString() : '' }}</div>
+        <div class="singup__err text__heading_size_h3">
+          {{ errArray['email'] ? errArray['email'].toString() : '' }}
+        </div>
         <input
           type="email"
           name="email"
@@ -32,9 +35,9 @@
         />
       </div>
       <div class="form-block">
-        <div
-          class="singup__err text__heading_size_h3"
-        >{{ errArray['password'] ? errArray['password'].toString() : '' }}</div>
+        <div class="singup__err text__heading_size_h3">
+          {{ errArray['password'] ? errArray['password'].toString() : '' }}
+        </div>
         <input
           type="password"
           name="password"
@@ -66,7 +69,8 @@
           <label
             for="trainer"
             class="radio-buttons-role__label text__heading_size_h3"
-          >Хочу быть тренером</label>
+            >Хочу быть тренером</label
+          >
         </div>
         <div class="radio-buttons-role">
           <input
@@ -80,7 +84,8 @@
           <label
             for="user"
             class="radio-buttons-role__label text__heading_size_h3"
-          >Хочу тренироваться</label>
+            >Хочу тренироваться</label
+          >
         </div>
       </div>
       <label class="check option-check">
@@ -92,20 +97,22 @@
             <router-link
               :to="{ name: 'termsofservice' }"
               class="check__text-body-link"
-            >пользовательское соглашение</router-link>и соглашаюсь с правилами использования и обработки персональных
+              >пользовательское соглашение</router-link
+            >и соглашаюсь с правилами использования и обработки персональных
             данных
           </span>
         </div>
       </label>
-      <div
-        class="check__policy signin__err"
-        v-show="checked_policy == false"
-      >“Необходимо указать, что вы согласны с политикой конфиденциальности”.</div>
+      <div class="check__policy signin__err" v-show="checked_policy == false">
+        “Необходимо указать, что вы согласны с политикой конфиденциальности”.
+      </div>
       <button
         type="submit"
         :disabled="!checked_policy"
         class="btn__big btn__title_color_orangeb text__heading_size_h2 signup__btn"
-      >Зарегистрироваться</button>
+      >
+        Зарегистрироваться
+      </button>
     </form>
     <MailCheck
       v-if="showModalMailCheck"
@@ -202,6 +209,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-@import '../assets/scss/registers.scss';
+<style lang="scss">
+@import '@/assets/scss/registers.scss';
+@import '@/assets/scss/variables.scss';
 </style>

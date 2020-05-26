@@ -20,6 +20,6 @@
 export default {}
 </script>
 
-<style lang="scss" scoped>
-@import '../assets/scss/left-sidebar.scss';
+<style lang="scss">
+@import '@/assets/scss/left-sidebar.scss';
 </style>
