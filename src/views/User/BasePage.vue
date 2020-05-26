@@ -7,18 +7,16 @@
       </div>
 
       <div class="content">
-        <slot>
-          default text
-        </slot>
+        <slot>default text</slot>
+        <footer class="foo">
+          <FooterBase />
+        </footer>
       </div>
 
       <div class="column">
         <RightsidebarUser />
       </div>
     </div>
-    <footer class="foo">
-      <FooterBase />
-    </footer>
   </div>
 </template>
 
@@ -42,6 +40,7 @@ export default {
 .layout {
   display: flex;
   flex-direction: row;
+  position: relative;
 }
 
 .content {
@@ -56,7 +55,12 @@ export default {
   height: 100vh;
 }
 .foo {
-  height: 50px;
-  background-color: blueviolet;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  position: absolute;
+  z-index: 6;
+  background-color: chartreuse;
+  border-bottom: 1px solid #eff2f1;
 }
 </style>
