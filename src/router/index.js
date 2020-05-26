@@ -1,16 +1,16 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import ProfileUser from '../views/ProfileUser.vue'
-import ProfileTrainer from '../views/ProfileTrainer.vue'
 import EmailConfirmation from '../views/EmailConfirmation.vue'
 import Authorization from '../views/Authorization.vue'
 import Register from '../views/Register.vue'
 import TermsOfService from '../views/TermsOfService.vue'
 import AboutService from '../views/AboutService.vue'
-import ProfileUserStart from '../views/ProfileUserStart.vue'
-import ProfileTrainerStart from '../views/ProfileTrainerStart.vue'
-import AboutServiceAuth from '../views/AboutServiceAuth.vue'
+import ProfileUserStart from '../views/User/ProfileUserStart.vue'
+import OurTrainers from '../views/User/OurTrainers.vue'
+import ProfileTrainerStart from '../views/Trainer/ProfileTrainerStart.vue'
+
+import AboutServiceAuth from '../views/User/AboutServiceAuth.vue'
 
 Vue.use(VueRouter)
 
@@ -39,37 +39,26 @@ const routes = [
     path: '/aboutservice',
     name: 'aboutservice',
     component: AboutService
-  },
+  }, 
   {
-    path: '/profileuserstart/:id/aboutserviceauth',
-    name: 'aboutserviceauth',
+    path: '/profiletrainerstart/:id/aboutservice',
+    name: 'aboutserviceTrainer',
+    component: AboutServiceAuth,
+    props: true
+  },  
+  {
+    path: '/profileuserstart/:id/aboutservice',
+    name: 'aboutserviceUser',
     component: AboutServiceAuth,
     props: true
   },
   {
-    path: '/profileuserstart/:id',
-    name: 'profileuserstart',
-    component: ProfileUserStart,
+    path: '/profileuserstart/:id/ourtrainers',
+    name: 'ourTrainersUser',
+    component: OurTrainers,
     props: true
   },
-  {
-    path: '/profiletrainerstart/:id',
-    name: 'profiletrainerstart',
-    component: ProfileTrainerStart,
-    props: true
-  },
-  {
-    path: '/profileuser/:id',
-    name: 'profileuser', //для роутеров
-    component: ProfileUser,
-    props: true
-  },
-  {
-    path: '/profiletrainer/:id',
-    name: 'profiletrainer',
-    component: ProfileTrainer,
-    props: true
-  },
+  
   {
     path: '/email_confirmation',
     name: 'email_confirmation', //для роутеров

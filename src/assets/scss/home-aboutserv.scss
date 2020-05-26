@@ -55,7 +55,7 @@
   margin: 0 auto;
 }
 .about-service__block-title > div:nth-of-type(1) {
-  background-image: url('../assets/img/nout.png');
+  background-image: url('/assets/img/nout.png');
   background-size: 293px 195px;
   background-position: top right;
   background-repeat: no-repeat;
@@ -63,14 +63,14 @@
 }
 .about-service__block-title > div:nth-of-type(2) {
   text-align: right;
-  background-image: url('../assets/img/coatch.png');
+  background-image: url('/assets/img/coatch.png');
   background-size: 293px 195px;
   background-position: top left;
   background-repeat: no-repeat;
   margin-bottom: 35px;
 }
 .about-service__block-title > div:nth-of-type(3) {
-  background-image: url('../assets/img/type.png');
+  background-image: url('/assets/img/type.png');
   background-size: 293px 195px;
   background-position: top right;
   background-repeat: no-repeat;
@@ -78,7 +78,7 @@
 }
 .about-service__block-title > div:nth-of-type(4) {
   text-align: right;
-  background-image: url('../assets/img/training.png');
+  background-image: url('/assets/img/training.png');
   background-size: 293px 195px;
   background-position: top left;
   background-repeat: no-repeat;

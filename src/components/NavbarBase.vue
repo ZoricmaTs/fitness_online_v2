@@ -5,11 +5,15 @@
       <nav class="navb__auth text__heading_size_m">
         <ul class="navb__list-auth">
           <li class="navb__item">
-            <router-link class="navb__link" :to="{ name: 'aboutserviceauth' }"
+            <router-link class="navb__link" :to="{ name: 'aboutserviceUser' }"
               >О сервисе</router-link
             >
           </li>
-          <li class="navb__item">Наши тренеры</li>
+          <li class="navb__item">
+             <router-link class="navb__link" :to="{ name: 'ourTrainersUser' }"
+              >Наши тренеры
+              </router-link>
+          <li>
           <li class="navb__item">Виды тренировок</li>
           <li class="navb__item">Вопросы и ответы</li>
           <li class="navb__item">Контакты</li>

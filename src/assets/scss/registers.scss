@@ -8,13 +8,13 @@
   justify-content: space-between;
   padding-right: 164px;
   padding-top: 40px;
-  padding-bottom: 40px;
   background-color: $color-blue;
   background-image: url('../assets/img/signinbg.png');
   background-size: cover;
   background-size: 100% auto;
-  background-position: top center;
+  background-position: bottom center;
   background-repeat: no-repeat;
+  // height: 100vh;
 }
 .singup-bg {
   display: flex;
@@ -22,13 +22,13 @@
   justify-content: space-between;
   padding-right: 164px;
   padding-top: 37px;
-  padding-bottom: 30px;
   background-color: $color-blue;
   background-image: url('../assets/img/signupbg.png');
   background-size: cover;
   background-size: 100% auto;
-  background-position: top center;
+  background-position: bottom center;
   background-repeat: no-repeat;
+  // height: 100vh;
 }
 .singin {
   margin-bottom: 126px; //пересмотреть на мобилке

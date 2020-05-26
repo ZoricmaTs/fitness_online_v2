@@ -89,12 +89,12 @@ export default {
           localStorage.email = response.data.email
           if (userI.role == 'trainer') {
             this.$router.push({
-              name: 'profiletrainerstart',
+              name: 'aboutserviceTrainer',
               params: { id: userI.user_id }
             })
           } else {
             this.$router.push({
-              name: 'profileuserstart',
+              name: 'aboutserviceUser',
               params: { id: userI.user_id }
             })
           }
