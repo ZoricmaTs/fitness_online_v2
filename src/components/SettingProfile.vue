@@ -2,51 +2,58 @@
   <div>
     <h2 class="page__heading text__heading_size_l">Настройки профиля</h2>
     <div>
-      <!-- <form enctype="multipart/form-data">
-        <input
-          type="file"
-          id="file"
+      <form @submit.prevent="sendFile" enctype="multipart/form-data">
+        <input type="file" ref="file" width="146" height="146" @change="selectFile" />
+        <!-- id="file"
           accept=".jpg, .jpeg, .png"
           width="146"
           height="146"
           @change="handleFileUpload()"
-          ref="file"
-        />
-
-        <img v-bind::src="image" />
-        <button @click="submitFile()">Изменить</button>
-      </form>-->
+        ref="file"-->
+        <!-- <img v-bind::src="image" /> -->
+        <button>Send</button>
+        <!-- @click="submitFile()" -->
+      </form>
     </div>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   data() {
     return {
-      file: ''
+      file: '',
+      comment: 'asss',
+      imageLink: ''
     }
   },
   methods: {
-    // submitFile() {
-    //   let formData = new FormData()
-    //   formData.append('file', this.file)
-    //   axios
-    //     .post('/single-file', formData, {
-    //       headers: {
-    //         'Content-Type': 'multipart/form-data'
-    //       }
-    //     })
-    //     .then(function() {
-    //       console.log('SUCCESS!!')
-    //     })
-    //     .catch(function() {
-    //       console.log('FAILURE!!')
-    //     })
-    // },
-    // handleFileUpload() {
-    //   this.file = this.$refs.file.files[0]
-    // }
+    selectFile() {
+      this.file = this.$refs.file.files[0]
+    },
+    async sendFile() {
+      const apiClientPut = axios.create({
+        baseURL: 'http://80.89.238.253:5000',
+        withCredentials: false,
+        headers: {
+          'Content-Type': 'multipart/form-data' //,
+          //Authorization: `Bearer ${localStorage.token}`
+        }
+      })
+      const formData = new FormData()
+      formData.set('file', this.file)
+      formData.set('comment', this.comment)
+      const token = localStorage.token
+
+      apiClientPut
+        .put(`/media/upload_file?token=${token}`, formData)
+        .then(response => {
+          if (response.data.success == true) {
+          }
+        })
+        .catch(err => {})
+    }
   }
 }
 </script>
