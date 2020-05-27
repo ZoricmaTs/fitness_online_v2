@@ -1,8 +1,8 @@
 <template>
   <div>
-    <NavbarBase />
+    <NavbarBaseTrainer />
     <div class="body-block">
-      <LeftsidebarUser />
+      <LeftsidebarTrainer />
       <RightsidebarUser />
     </div>
     <!--<AboutServcomp />-->
@@ -11,17 +11,17 @@
 </template>
 
 <script>
-import NavbarBase from '@/components/NavbarBase.vue'
+import NavbarBaseTrainer from '@/components/NavbarBaseTrainer.vue'
 //import FooterBase from '@/components/FooterBase.vue'
-import LeftsidebarUser from '@/components/LeftsidebarUser.vue'
+import LeftsidebarTrainer from '@/components/LeftsidebarTrainer.vue'
 import RightsidebarUser from '@/components/RightsidebarUser.vue'
 //import AboutServcomp from '@/components/AboutServcomp.vue'
 export default {
   components: {
-    NavbarBase,
+    NavbarBaseTrainer,
     // FooterBase,
     //AboutServcomp,
-    LeftsidebarUser,
+    LeftsidebarTrainer,
     RightsidebarUser
   }
 }

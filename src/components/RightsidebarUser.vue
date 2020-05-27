@@ -2,13 +2,15 @@
   <div class="right-sidebar">
     <ul class="right-sidebar__menu">
       <li class="right-sidebar__menu-item text__heading_size_m">
-        <img
-          class="right-sidebar__img"
-          src="../assets/img/gear.svg"
-          alt="settings"
-          width="20"
-          height="20"
-        />
+        <router-link class="navb__link" :to="{ name: 'settingUser' }">
+          <img
+            class="right-sidebar__img"
+            src="../assets/img/gear.svg"
+            alt="settings"
+            width="20"
+            height="20"
+          />
+        </router-link>
         <span class="right-sidebar__numb text__heading_size_m"></span>
       </li>
       <li class="right-sidebar__menu-item text__heading_size_m">
@@ -28,9 +30,7 @@
           width="20"
           height="20"
         />
-        <span class="right-sidebar__numb exercises__numb text__heading_size_m"
-          >5</span
-        >
+        <span class="right-sidebar__numb exercises__numb text__heading_size_m">5</span>
       </li>
       <li class="right-sidebar__menu-item text__heading_size_m">
         <img
@@ -40,9 +40,7 @@
           width="20"
           height="20"
         />
-        <span
-          class="right-sidebar__numb message__numb text__heading_size_m"
-        ></span>
+        <span class="right-sidebar__numb message__numb text__heading_size_m"></span>
       </li>
     </ul>
     <div class="right-sidebar__about">

@@ -6,11 +6,12 @@ import Authorization from '../views/Authorization.vue'
 import Register from '../views/Register.vue'
 import TermsOfService from '../views/TermsOfService.vue'
 import AboutService from '../views/AboutService.vue'
-import ProfileUserStart from '../views/User/ProfileUserStart.vue'
+//import ProfileUserStart from '../views/User/ProfileUserStart.vue'
 import OurTrainers from '../views/User/OurTrainers.vue'
-import ProfileTrainerStart from '../views/Trainer/ProfileTrainerStart.vue'
+//import ProfileTrainerStart from '../views/Trainer/ProfileTrainerStart.vue'
 
 import AboutServiceAuth from '../views/User/AboutServiceAuth.vue'
+import SettingUser from '../views/User/SettingUser.vue'
 
 Vue.use(VueRouter)
 
@@ -39,17 +40,23 @@ const routes = [
     path: '/aboutservice',
     name: 'aboutservice',
     component: AboutService
-  }, 
+  },
   {
     path: '/profiletrainerstart/:id/aboutservice',
     name: 'aboutserviceTrainer',
     component: AboutServiceAuth,
     props: true
-  },  
+  },
   {
     path: '/profileuserstart/:id/aboutservice',
     name: 'aboutserviceUser',
     component: AboutServiceAuth,
+    props: true
+  },
+  {
+    path: '/profileuserstart/:id/SettingUser',
+    name: 'settingUser',
+    component: SettingUser,
     props: true
   },
   {
@@ -58,7 +65,7 @@ const routes = [
     component: OurTrainers,
     props: true
   },
-  
+
   {
     path: '/email_confirmation',
     name: 'email_confirmation', //для роутеров

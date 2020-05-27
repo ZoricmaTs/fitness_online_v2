@@ -1,19 +1,17 @@
 <template>
   <div>
-    <BasePage>   
+    <BasePageUser>
       <AboutServcomp />
-     </BasePage>
+    </BasePageUser>
   </div>
 </template>
 <script>
-
-
 import AboutServcomp from '@/components/AboutServcomp.vue'
-import BasePage from "@/views/User/BasePage.vue";
+import BasePageUser from '@/views/User/BasePageUser.vue'
 export default {
-  components: {  
+  components: {
     AboutServcomp,
-    BasePage
+    BasePageUser
   }
 }
 </script>

@@ -1,10 +1,7 @@
 <template>
   <div>
     <BasePageUser>
-      <div>
-        Наши тренерыeurioeuwriouewoiruewoi eriowuoiewuroiew ieuriouewoiruqweo
-        ioewuroieuwori
-      </div>
+      <div>Настройки</div>
     </BasePageUser>
   </div>
 </template>

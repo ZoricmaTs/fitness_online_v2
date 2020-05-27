@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-color">
     <Navbar />
     <router-link
       :to="{ name: 'Home' }"
@@ -8,7 +8,9 @@
       <img src="../assets/img/Arrow.svg" alt="backlink" />
       Назад
     </router-link>
-    <AboutServcomp />
+    <div class="block-grid-min">
+      <AboutServcomp />
+    </div>
     <Footer />
   </div>
 </template>

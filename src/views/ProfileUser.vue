@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NavbarBase />
+    <NavbarBaseUser />
     <div class="body-block">
       <LeftsidebarUser />
       <RightsidebarUser />
@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import NavbarBase from '@/components/NavbarBase.vue'
+import NavbarBaseUser from '@/components/NavbarBaseUser.vue'
 //import FooterBase from '@/components/FooterBase.vue'
 import LeftsidebarUser from '@/components/LeftsidebarUser.vue'
 import RightsidebarUser from '@/components/RightsidebarUser.vue'

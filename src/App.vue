@@ -31,4 +31,7 @@ body {
   padding-left: 238px;
   padding-right: 238px;
 }
+.bg-color {
+  background-color: $color-blue;
+}
 </style>

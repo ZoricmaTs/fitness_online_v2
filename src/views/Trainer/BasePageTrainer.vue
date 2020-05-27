@@ -1,9 +1,9 @@
 <template>
   <div>
-    <NavbarBase />
+    <NavbarBaseTrainer />
     <div class="layout">
       <div class="column">
-        <LeftsidebarUser />
+        <LeftsidebarTrainer />
       </div>
 
       <div class="content">
@@ -21,15 +21,15 @@
 </template>
 
 <script>
-import NavbarBase from '@/components/NavbarBase.vue'
-import LeftsidebarUser from '@/components/LeftsidebarUser.vue'
+import NavbarBaseTrainer from '@/components/NavbarBaseTrainer.vue'
+import LeftsidebarTrainer from '@/components/LeftsidebarTrainer.vue'
 import RightsidebarUser from '@/components/RightsidebarUser.vue'
 import FooterBase from '@/components/FooterBase.vue'
 
 export default {
   components: {
-    NavbarBase,
-    LeftsidebarUser,
+    NavbarBaseTrainer,
+    LeftsidebarTrainer,
     RightsidebarUser,
     FooterBase
   }
