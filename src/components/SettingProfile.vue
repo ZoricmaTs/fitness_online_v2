@@ -11,8 +11,10 @@
 </template>
 
 <script>
+import AuthorizationService from '@/services/AuthorizationService.js'
 import axios from 'axios'
 export default {
+  props: ['id'],
   data() {
     return {
       file: '',
@@ -45,6 +47,25 @@ export default {
         })
         .catch(err => {})
     }
+  },
+  created() {
+    AuthorizationService.userInfo(this.id).then(response => {
+      let serverInfoUser = response.data['0']
+      this.infoUser = {
+        about_me: serverInfoUser.about_me,
+        achievements_ids: serverInfoUser.achievements_ids, //[], достижения массив
+        confirmation_time: serverInfoUser.confirmation_time,
+        email: serverInfoUser.email,
+        first_name: serverInfoUser.first_name,
+        is_confirmed: serverInfoUser.is_confirmed, //true, подтвержден или нет
+        is_deleted: serverInfoUser.is_deleted, //false, удален ли аккаунт
+        profile_photo_file_id: serverInfoUser.profile_photo_file_id, //null, аватарка
+        registration_time: serverInfoUser.registration_time, //' время регистрации
+        role: serverInfoUser.role, //'user', прописать юзера??
+        training_types_ids: serverInfoUser.training_types_ids, ///[], тренировки
+        user_id: serverInfoUser.user_id
+      }
+    })
   }
 }
 </script>
