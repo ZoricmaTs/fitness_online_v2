@@ -11,6 +11,8 @@ import OurTrainers from '../views/User/OurTrainers.vue'
 //import ProfileTrainerStart from '../views/Trainer/ProfileTrainerStart.vue'
 
 import AboutServiceAuth from '../views/User/AboutServiceAuth.vue'
+import AboutServiceTrainer from '../views/Trainer/AboutServiceTrainer.vue'
+
 import SettingUser from '../views/User/SettingUser.vue'
 
 Vue.use(VueRouter)
@@ -44,7 +46,7 @@ const routes = [
   {
     path: '/profiletrainerstart/:id/aboutservice',
     name: 'aboutserviceTrainer',
-    component: AboutServiceAuth,
+    component: AboutServiceTrainer,
     props: true
   },
   {

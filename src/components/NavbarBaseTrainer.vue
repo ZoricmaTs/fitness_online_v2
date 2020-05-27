@@ -8,7 +8,8 @@
             <router-link class="navb__link" :to="{ name: 'aboutserviceTrainer' }">О сервисе</router-link>
           </li>
           <li class="navb__item">
-            <router-link class="navb__link" :to="{ name: 'ourTrainers' }">Наши тренеры</router-link>
+            Наши тренеры
+            <!-- <router-link class="navb__link" :to="{ name: 'ourTrainers' }"></router-link> -->
           </li>
 
           <li></li>

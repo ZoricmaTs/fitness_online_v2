@@ -1,9 +1,6 @@
 <template>
   <section class="singin-bg block-grid">
-    <router-link
-      :to="{ name: 'Home' }"
-      class="singin__linkback text__heading_size_l"
-    >
+    <router-link :to="{ name: 'Home' }" class="singin__linkback text__heading_size_l">
       <img src="../assets/img/Arrow.svg" alt="backlink" />
       Назад
     </router-link>
@@ -29,13 +26,12 @@
               class="singin__input-pass text__heading_size_h2"
               v-model="password"
             />
-            <button
-              class="singin__input-passbtn"
-              @click="showPassword = !showPassword"
-            >
-              <i class="material-icons singin__icon">{{
+            <button class="singin__input-passbtn" @click="showPassword = !showPassword">
+              <i class="material-icons singin__icon">
+                {{
                 showPassword ? 'visibility' : 'visibility_off'
-              }}</i>
+                }}
+              </i>
             </button>
           </div>
           <div class="singin__block-btn">
@@ -43,24 +39,20 @@
               <router-link
                 :to="{ name: 'signup' }"
                 class="singin__link singin__link_color-white text__heading_size_m"
-                >Регистрация/</router-link
-              >
+              >Регистрация/</router-link>
               <a
                 href="#"
                 class="singin__link singin__link_color-orange text__heading_size_m"
-                >Забыли пароль?</a
-              >
+              >Забыли пароль?</a>
             </div>
             <button
               type="submit"
               class="btn__title btn__title_color_orangeb text__heading_size_h3"
-            >
-              ВОЙТИ
-            </button>
+            >ВОЙТИ</button>
           </div>
-          <div class="singin__err text__heading_size_h3">
-            {{ errArray['email'] ? errArray['email'].toString() : '' }}
-          </div>
+          <div
+            class="singin__err text__heading_size_h3"
+          >{{ errArray['email'] ? errArray['email'].toString() : '' }}</div>
         </div>
       </div>
     </form>
@@ -82,6 +74,11 @@ export default {
 
   methods: {
     getRole() {
+      this.$router.push({
+        name: 'aboutserviceTrainer',
+        params: { id: 37 }
+      })
+      return
       AuthorizationService.login(this.email, this.password).then(response => {
         if (response.data.success == true) {
           const userI = response.data
