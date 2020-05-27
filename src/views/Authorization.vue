@@ -82,6 +82,7 @@ export default {
           const userI = response.data
           localStorage.token = response.data.token
           localStorage.email = this.email
+          localStorage.user_id = response.data.user_id
           if (userI.role == 'trainer') {
             this.$router.push({
               name: 'aboutserviceTrainer',

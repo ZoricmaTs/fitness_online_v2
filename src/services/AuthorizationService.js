@@ -1,14 +1,14 @@
 import axios from 'axios'
 
-// const apiClient = axios.create({
-//   baseURL: 'http://80.89.238.253:5000/api',
-//   withCredentials: false,
-//   headers: {
-//     Accept: 'application/json',
-//     'Content-Type': 'application/json'
-//     // Authorization: `Bearer ${localStorage.token}`
-//   }
-// })
+const apiClientGet = axios.create({
+  baseURL: 'http://80.89.238.253:5000/api',
+  withCredentials: false,
+  headers: {
+    Accept: 'application/json',
+    'Content-Type': 'application/json'
+    // Authorization: `Bearer ${localStorage.token}`
+  }
+})
 
 const apiClientPost = axios.create({
   baseURL: 'http://80.89.238.253:5000/api',
@@ -44,5 +44,9 @@ export default {
     bodyFormData.set('email', email)
     bodyFormData.set('confirmation_code', confirmation_code)
     return apiClientPost.post(`/confirm?token=${token}`, bodyFormData)
+  },
+  userInfo(user_id, token) {
+    //http://80.89.238.253:5000/api/get_user_by_id?token=&user_id=37
+    return apiClientGet.get(`/get_user_by_id?token=${token}&user_id=${user_id}`)
   }
 }

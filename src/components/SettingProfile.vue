@@ -4,15 +4,7 @@
     <div>
       <form @submit.prevent="sendFile" enctype="multipart/form-data">
         <input type="file" ref="file" width="146" height="146" @change="selectFile" />
-        <!-- id="file"
-          accept=".jpg, .jpeg, .png"
-          width="146"
-          height="146"
-          @change="handleFileUpload()"
-        ref="file"-->
-        <!-- <img v-bind::src="image" /> -->
         <button>Send</button>
-        <!-- @click="submitFile()" -->
       </form>
     </div>
   </div>
@@ -24,7 +16,7 @@ export default {
   data() {
     return {
       file: '',
-      comment: 'asss',
+      comment: '',
       imageLink: ''
     }
   },
@@ -38,7 +30,6 @@ export default {
         withCredentials: false,
         headers: {
           'Content-Type': 'multipart/form-data' //,
-          //Authorization: `Bearer ${localStorage.token}`
         }
       })
       const formData = new FormData()
