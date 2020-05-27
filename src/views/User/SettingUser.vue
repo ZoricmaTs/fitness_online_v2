@@ -1,15 +1,19 @@
 <template>
-  <div>
+  <div class="bg-color">
     <BasePageUser>
-      <div>Настройки</div>
+      <div>
+        <SettingProfile />
+      </div>
     </BasePageUser>
   </div>
 </template>
 <script>
 import BasePageUser from '@/views/User/BasePageUser.vue'
+import SettingProfile from '@/components/SettingProfile.vue'
 export default {
   components: {
-    BasePageUser
+    BasePageUser,
+    SettingProfile
   }
 }
 </script>

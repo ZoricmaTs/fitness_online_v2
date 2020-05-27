@@ -5,8 +5,8 @@ import axios from 'axios'
 //   withCredentials: false,
 //   headers: {
 //     Accept: 'application/json',
-//     'Content-Type': 'application/json',
-//     Authorization: `Bearer ${localStorage.token}`
+//     'Content-Type': 'application/json'
+//     // Authorization: `Bearer ${localStorage.token}`
 //   }
 // })
 

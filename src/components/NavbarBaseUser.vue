@@ -18,7 +18,7 @@
         </ul>
       </nav>
       <div class="exit-block">
-        <div class="exit-block__text">mark@mark.com</div>
+        <div class="exit-block__text">{{ email }}</div>
         <img class="exit-block__btn" src="../assets/img/exit.svg" @click="logout" />
       </div>
     </div>
@@ -29,16 +29,15 @@
 import AuthorizationService from '@/services/AuthorizationService.js'
 export default {
   data() {
-    return {}
+    return {
+      email: localStorage.email
+    }
   },
   methods: {
     logout() {
       AuthorizationService.login(this.email, this.password).then(response => {
         localStorage.token = ''
         localStorage.email = ''
-        this.email = undefined
-        this.password = undefined
-        alert(localStorage.token)
         this.$router.push({ name: 'Home' })
       })
     }

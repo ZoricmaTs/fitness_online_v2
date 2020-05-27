@@ -72,16 +72,16 @@ export default {
 
   methods: {
     getRole() {
-      this.$router.push({
-        name: 'aboutserviceUser',
-        params: { id: 37 }
-      })
-      return
+      // this.$router.push({
+      //   name: 'aboutserviceUser',
+      //   params: { id: 37 }
+      // })
+      // return
       AuthorizationService.login(this.email, this.password).then(response => {
         if (response.data.success == true) {
           const userI = response.data
           localStorage.token = response.data.token
-          localStorage.email = response.data.email
+          localStorage.email = this.email
           if (userI.role == 'trainer') {
             this.$router.push({
               name: 'aboutserviceTrainer',

@@ -32,6 +32,11 @@ export default {
     LeftsidebarUser,
     RightsidebarUser,
     FooterBase
+  },
+  created() {
+    if (localStorage.token == '') {
+      this.$router.push({ name: 'Home' })
+    }
   }
 }
 </script>

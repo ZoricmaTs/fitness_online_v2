@@ -10,7 +10,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Jura:wght@400;500&display=swap'); //онлайн
 @import '@/assets/scss/main.scss';
 @import '@/assets/scss/variables.scss';
-
+@import '@/assets/scss/page-style.scss';
 body {
   font-family: 'Raleway', sans-serif;
   font-style: normal;
