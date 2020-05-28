@@ -48,5 +48,28 @@ export default {
   userInfo(user_id, token) {
     //http://80.89.238.253:5000/api/get_user_by_id?token=&user_id=37
     return apiClientGet.get(`/get_user_by_id?token=${token}&user_id=${user_id}`)
+  },
+  userInfoNew(
+    new_first_name,
+    new_email,
+    current_password,
+    new_password,
+    new_password_confirmation,
+    new_role,
+    new_about_me,
+    new_profile_photo_id,
+    token
+  ) {
+    var bodyFormData = new FormData() //+
+    bodyFormData.set('new_first_name', new_first_name)
+    bodyFormData.set('new_email', new_email)
+    bodyFormData.set('current_password', current_password)
+    bodyFormData.set('current_password', current_password)
+    bodyFormData.set('new_password', new_password)
+    bodyFormData.set('new_password_confirmation', new_password_confirmation)
+    bodyFormData.set('new_role', new_role)
+    bodyFormData.set('new_about_me', new_about_me)
+    bodyFormData.set('new_profile_photo_id', new_profile_photo_id)
+    return apiClientPost.post(`/edit_user_info?token=${token}`, bodyFormData)
   }
 }

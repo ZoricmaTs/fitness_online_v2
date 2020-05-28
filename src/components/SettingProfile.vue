@@ -1,11 +1,32 @@
 <template>
   <div>
     <h2 class="page__heading text__heading_size_l">Настройки профиля</h2>
-    <div>
-      <form @submit.prevent="sendFile" enctype="multipart/form-data">
-        <input type="file" ref="file" width="146" height="146" @change="selectFile" />
-        <button>Send</button>
-      </form>
+    <form @submit.prevent="sendFile" enctype="multipart/form-data">
+      <input type="file" ref="file" width="146" height="146" @change="selectFile" />
+      <button>Send</button>
+    </form>
+    <h3 class="page__heading-min text__heading_size_h3">Основное</h3>
+    <div class="page__wrapper">
+      <span class="page__body text__heading_size_m">Имя</span>
+      <span class="page__body text__heading_size_m">
+        {{
+        infoUser.first_name
+        }}
+      </span>
+      <span class="page__link">Изменить</span>
+      <span class="page__body text__heading_size_m">E-mail</span>
+      <span class="page__body text__heading_size_m">{{ infoUser.email }}</span>
+      <span class="page__body">Изменить</span>
+      <span class="page__body text__heading_size_m">Пароль</span>
+      <span class="page__body text__heading_size_m">{{ infoUser.email }}</span>
+      <span class="page__body">Изменить</span>
+      <span class="page__body text__heading_size_m">О себе</span>
+      <span class="page__body text__heading_size_m">
+        {{
+        infoUser.about_me
+        }}
+      </span>
+      <span class="page__body">Изменить</span>
     </div>
   </div>
 </template>
@@ -19,10 +40,20 @@ export default {
     return {
       file: '',
       comment: '',
-      imageLink: ''
+      imageLink: '',
+      infoUser: {}
+      // new_first_name,
+      // new_email,
+      // current_password,
+      // new_password,
+      // new_password_confirmation,
+      // new_role,
+      // new_about_me,
+      // new_profile_photo_id
     }
   },
   methods: {
+    //загрузка файла на сервер--------
     selectFile() {
       this.file = this.$refs.file.files[0]
     },
@@ -47,10 +78,29 @@ export default {
         })
         .catch(err => {})
     }
+
+    //------------------------------------------
+    // userInfoСhange() {
+    //   AuthorizationService.userInfoNew(
+    //     this.new_first_name,
+    //     this.new_email,
+    //     this.current_password,
+    //     this.new_password,
+    //     this.new_password_confirmation,
+    //     this.new_role,
+    //     this.new_about_me,
+    //     this.new_profile_photo_id
+    //   ).then(response => {
+
+    //   })
+    // }
   },
   created() {
-    AuthorizationService.userInfo(this.id).then(response => {
-      let serverInfoUser = response.data['0']
+    AuthorizationService.userInfo(
+      localStorage.user_id,
+      localStorage.token
+    ).then(response => {
+      let serverInfoUser = response.data
       this.infoUser = {
         about_me: serverInfoUser.about_me,
         achievements_ids: serverInfoUser.achievements_ids, //[], достижения массив

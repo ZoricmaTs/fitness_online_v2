@@ -5,4 +5,23 @@
     line-height: 28px;
     color: $color-white;
   }
+  &__heading-min {
+    font-style: normal;
+    font-weight: 500;
+    color: $color-white;
+  }
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    border: 1px solid red;
+  }
+  &__link {
+    font-style: normal;
+    font-weight: normal;
+    @include font-size(16px);
+    line-height: 19px;
+    text-decoration: underline;
+  }
 }
