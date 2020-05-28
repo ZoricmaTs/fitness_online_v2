@@ -64,7 +64,6 @@ export default {
     bodyFormData.set('new_first_name', new_first_name)
     bodyFormData.set('new_email', new_email)
     bodyFormData.set('current_password', current_password)
-    bodyFormData.set('current_password', current_password)
     bodyFormData.set('new_password', new_password)
     bodyFormData.set('new_password_confirmation', new_password_confirmation)
     bodyFormData.set('new_role', new_role)
