@@ -6,19 +6,28 @@
       <button>Send</button>
     </form>
     <h3 class="page__heading-min text__heading_size_h3">Основное</h3>
-    <div class="page__setting-field">
-      <span class="page__body page__col-1 text__heading_size_m">Имя</span>
+    <section class="page__wrapper">
+      <span class="page__body text__heading_size_m">Имя</span>
       <span class="page__body text__heading_size_m">{{ infoUser.first_name }}</span>
       <span
         class="page__link"
         @click="showEditFirstName = !showEditFirstName"
       >{{ showEditFirstName ? 'Отмена' : 'Изменить' }}</span>
-    </div>
-    <div v-show="showEditFirstName">
-      <span class="page__body text__heading_size_m">Новое имя</span>
-      <input type="text" name="new_first_name" placeholder class="text__heading_size_m" required />
-    </div>
-    <div class="page__setting-field">
+
+      <span v-show="showEditFirstName" class="page__body text__heading_size_m">Новое имя</span>
+      <input
+        v-show="showEditFirstName"
+        type="text"
+        name="new_first_name"
+        placeholder
+        class="text__heading_size_m"
+        required
+      />
+      <button
+        v-show="showEditFirstName"
+        class="btn__min btn__title_color_orangew text__heading_size_m"
+      >Сохранить</button>
+
       <span class="page__body text__heading_size_m">E-mail</span>
       <span class="page__body text__heading_size_m">{{ infoUser.email }}</span>
       <span class="page__link" @click="showEditEmail = !showEditEmail">
@@ -26,33 +35,61 @@
         showEditEmail ? 'Отмена' : 'Изменить'
         }}
       </span>
-    </div>
-    <div v-show="showEditEmail">
-      <span class="page__body text__heading_size_m">Новый email</span>
-      <input type="email" name="new_email" placeholder class="text__heading_size_m" required />
-    </div>
-    <div class="page__setting-field">
+
+      <span v-show="showEditEmail" class="page__body text__heading_size_m">Новый email</span>
+      <input
+        v-show="showEditEmail"
+        type="email"
+        name="new_email"
+        placeholder
+        class="text__heading_size_m"
+        required
+      />
+      <button
+        v-show="showEditEmail"
+        class="btn__min btn__title_color_orangew text__heading_size_m"
+      >Сохранить</button>
+
       <span class="page__body text__heading_size_m">Пароль</span>
       <span class="page__body text__heading_size_m">{{ infoUser.email }}</span>
       <span
         class="page__link"
         @click="showEditPassword = !showEditPassword"
       >{{ showEditPassword ? 'Отмена' : 'Изменить' }}</span>
-    </div>
-    <div v-show="showEditPassword">
-      <span class="page__body text__heading_size_m">Старый пароль</span>
-      <input type="password" name="current_password" placeholder class="text__heading_size_m" />
-      <span class="page__body text__heading_size_m">Новый пароль</span>
-      <input type="password" name="new_password" placeholder class="text__heading_size_m" />
-      <span class="page__body text__heading_size_m">Повторите пароль</span>
+
+      <span v-show="showEditPassword" class="page__body text__heading_size_m">Старый пароль</span>
       <input
+        v-show="showEditPassword"
+        type="password"
+        name="current_password"
+        placeholder
+        class="text__heading_size_m"
+      />
+      <span v-show="showEditPassword"></span>
+
+      <span v-show="showEditPassword" class="page__body text__heading_size_m">Новый пароль</span>
+      <input
+        v-show="showEditPassword"
+        type="password"
+        name="new_password"
+        placeholder
+        class="text__heading_size_m"
+      />
+      <span v-show="showEditPassword"></span>
+
+      <span v-show="showEditPassword" class="page__body text__heading_size_m">Повторите пароль</span>
+      <input
+        v-show="showEditPassword"
         type="password"
         name="new_password_confirmation"
         placeholder
         class="text__heading_size_m"
       />
-    </div>
-    <div class="page__setting-field">
+      <button
+        v-show="showEditPassword"
+        class="btn__min btn__title_color_orangew text__heading_size_m"
+      >Сохранить</button>
+
       <span class="page__body text__heading_size_m">О себе</span>
       <span class="page__body text__heading_size_m">
         {{
@@ -63,10 +100,13 @@
         class="page__link"
         @click="showEditAboutMe = !showEditAboutMe"
       >{{ showEditAboutMe ? 'Отмена' : 'Изменить' }}</span>
-    </div>
-    <div v-show="showEditAboutMe">
-      <textarea name="new_about_me" class="text__heading_size_m"></textarea>
-    </div>
+      <span v-show="showEditAboutMe"></span>
+      <textarea v-show="showEditAboutMe" name="new_about_me" class="text__heading_size_m" rows="7"></textarea>
+      <button
+        v-show="showEditAboutMe"
+        class="btn__min btn__title_color_orangew text__heading_size_m"
+      >Сохранить</button>
+    </section>
   </div>
 </template>
 

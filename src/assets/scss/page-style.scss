@@ -1,3 +1,4 @@
+@import '@/assets/scss/btn.scss';
 .page {
   &__heading {
     font-style: normal;
@@ -11,11 +12,17 @@
     color: $color-white;
   }
   &__wrapper {
+    width: 560px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-    grid-auto-rows: minmax(100px, auto);
-    border: 1px solid red;
+    grid-template-columns: 125px 188px 104px;
+    grid-template-rows: 20px 20px 20px 20px 20px 20px 20px 20px auto auto;
+    row-gap: 25px;
+    column-gap: 50px;
+    justify-items: start;
+    align-items: center;
+    padding: 0 124px;
+
+    //   border: 1px solid red;
   }
   &__link {
     font-style: normal;
@@ -24,4 +31,24 @@
     line-height: 19px;
     text-decoration: underline;
   }
+
+  // &__setting-field {
+  //   display: flex;
+  //   flex-direction: row;
+  //   justify-content: space-around;
+  //   max-width: 560px;
+  //   border: 1px solid red;
+  // }
+  // &__col-1 {
+  //   display: block;
+  //   width: 104px;
+  // }
+  // &__col-2 {
+  //   display: block;
+  //   width: 188px;
+  // }
+}
+textarea {
+  overflow: auto;
+  resize: none;
 }

@@ -8,9 +8,9 @@
 
       <div class="content">
         <slot>default text</slot>
-        <footer class="foo">
+        <!-- <footer class="foo">
           <FooterBase />
-        </footer>
+        </footer>-->
       </div>
 
       <div class="column">
@@ -24,14 +24,14 @@
 import NavbarBaseUser from '@/components/NavbarBaseUser.vue'
 import LeftsidebarUser from '@/components/LeftsidebarUser.vue'
 import RightsidebarUser from '@/components/RightsidebarUser.vue'
-import FooterBase from '@/components/FooterBase.vue'
+// import FooterBase from '@/components/FooterBase.vue'
 
 export default {
   components: {
     NavbarBaseUser,
     LeftsidebarUser,
-    RightsidebarUser,
-    FooterBase
+    RightsidebarUser
+    // FooterBase
   },
   created() {
     if (localStorage.token == '') {
@@ -59,7 +59,7 @@ export default {
   left: 0;
   height: 100vh;
 }
-.foo {
+/* .foo {
   left: 0;
   bottom: -1px;
   width: 100%;
@@ -67,5 +67,5 @@ export default {
   z-index: 6;
   background-color: chartreuse;
   border-bottom: 1px solid #eff2f1;
-}
+} */
 </style>
