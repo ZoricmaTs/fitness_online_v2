@@ -36,6 +36,24 @@
     line-height: 19px;
     text-decoration: underline;
   }
+  &__input {
+    font-style: normal;
+    font-weight: normal;
+    color: rgb(219, 76, 26 /0.4);
+    background: $color-white;
+    letter-spacing: 0.05em;
+    padding: 5px;
+    border: 2px solid $color-white;
+    outline: none;
+    &::placeholder {
+      color: rgba(219, 76, 26, 0.4);
+    }
+    &:hover,
+    &:focus {
+      border: 2px solid #db3d1a;
+      box-sizing: border-box;
+    }
+  }
 }
 textarea {
   overflow: auto;

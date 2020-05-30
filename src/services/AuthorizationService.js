@@ -19,6 +19,13 @@ const apiClientPost = axios.create({
     //Authorization: `Bearer ${localStorage.token}`
   }
 })
+const apiClientMedia = axios.create({
+  baseURL: 'http://80.89.238.253:5000',
+  withCredentials: false,
+  headers: {
+    'Content-Type': 'multipart/form-data' //,
+  }
+})
 
 const userId = `${localStorage.userId}`
 const credential = `token=${localStorage.token}`
@@ -45,8 +52,14 @@ export default {
     bodyFormData.set('confirmation_code', confirmation_code)
     return apiClientPost.post(`/confirm?token=${token}`, bodyFormData)
   },
+  sendFileMedia(file, comment) {
+    const formData = new FormData()
+    formData.set('file', file)
+    formData.set('comment', comment)
+    const token = localStorage.token
+    return apiClientMedia.put(`/media/upload_file?token=${token}`, formData)
+  },
   userInfo(user_id, token) {
-    //http://80.89.238.253:5000/api/get_user_by_id?token=&user_id=37
     return apiClientGet.get(`/get_user_by_id?token=${token}&user_id=${user_id}`)
   },
   userInfoNew(

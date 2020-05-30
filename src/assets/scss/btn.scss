@@ -1,8 +1,8 @@
-// // @import '../../node_modules/bootstrap/scss/bootstrap';
 @import '@/assets/scss/variables.scss';
 
 .btn {
   &__big {
+    outline: none;
     max-width: 338px;
     border-radius: 0 !important;
     font-style: normal;
@@ -13,6 +13,7 @@
     box-sizing: border-box;
   }
   &__title {
+    outline: none;
     border-radius: 0 !important;
     font-style: normal;
     font-weight: normal;
@@ -31,29 +32,29 @@
     padding: 5px;
     @include font-size(16px);
     box-sizing: border-box;
+    outline: none;
   }
   &__title_color_orangew {
+    outline: none;
     border: 2px solid $color-orange;
     color: $color-white;
     background-color: $color-orange;
-    &:focus {
-      background: $color-dark-orange;
-      border: $color-dark-orange solid 2px;
-    }
+    &:focus,
     &:hover {
+      border-radius: 0 !important;
       background: $color-dark-orange;
       border: $color-dark-orange solid 2px;
     }
   }
   &__title_color_orangeb {
+    outline: none;
     border: 2px solid $color-orange;
     color: $color-dark-gray;
     background-color: $color-orange;
-    &:focus {
-      background: $color-dark-orange;
-      border: $color-dark-orange solid 2px;
-    }
+    &:focus,
     &:hover {
+      outline: none;
+      border-radius: 0 !important;
       background: $color-dark-orange;
       border: $color-dark-orange solid 2px;
     }
@@ -62,10 +63,9 @@
     border: 2px solid $color-orange;
     color: $color-black;
     background-color: transparent;
-    &:focus {
-      border: $color-dark-orange solid 2px;
-    }
+    &:focus,
     &:hover {
+      border-radius: 0 !important;
       border: $color-dark-orange solid 2px;
     }
   }
@@ -74,11 +74,9 @@
     border: 2px solid $color-blue;
     color: $color-white;
     background-color: $color-blue;
-    &:focus {
-      background-color: $color-dark-blue;
-      border: $color-dark-blue solid 2px;
-    }
+    &:focus,
     &:hover {
+      border-radius: 0 !important;
       background-color: $color-dark-blue;
       border: $color-dark-blue solid 2px;
     }
@@ -87,10 +85,9 @@
     border: 2px solid $color-blue;
     color: $color-black;
     background-color: transparent;
-    &:focus {
-      border: $color-dark-blue solid 2px;
-    }
+    &:focus,
     &:hover {
+      border-radius: 0 !important;
       border: $color-dark-blue solid 2px;
     }
   }

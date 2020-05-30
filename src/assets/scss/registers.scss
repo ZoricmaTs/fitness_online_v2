@@ -68,10 +68,7 @@
     &::placeholder {
       color: rgba(219, 76, 26, 0.4);
     }
-    &:hover {
-      border: 2px solid #db3d1a;
-      box-sizing: border-box;
-    }
+    &:hover,
     &:focus {
       border: 2px solid #db3d1a;
       box-sizing: border-box;
@@ -96,11 +93,7 @@
     &::placeholder {
       color: rgba(219, 76, 26, 0.4);
     }
-    &:hover {
-      border: 2px solid #db3d1a;
-      box-sizing: border-box;
-      width: 373px;
-    }
+    &:hover,
     &:focus {
       border: 2px solid #db3d1a;
       box-sizing: border-box;
@@ -200,10 +193,7 @@
     &::placeholder {
       color: rgba(219, 76, 26, 0.4);
     }
-    &:hover {
-      border: 2px solid #db3d1a;
-      box-sizing: border-box;
-    }
+    &:hover,
     &:focus {
       border: 2px solid #db3d1a;
       box-sizing: border-box;
