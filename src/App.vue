@@ -33,5 +33,6 @@ body {
 }
 .bg-color {
   background-color: $color-blue;
+  height: 100vh;
 }
 </style>

@@ -8,9 +8,6 @@
 
       <div class="content">
         <slot>default text</slot>
-        <footer class="foo">
-          <FooterBase />
-        </footer>
       </div>
 
       <div class="column">
@@ -24,14 +21,12 @@
 import NavbarBaseTrainer from '@/components/NavbarBaseTrainer.vue'
 import LeftsidebarTrainer from '@/components/LeftsidebarTrainer.vue'
 import RightsidebarUser from '@/components/RightsidebarUser.vue'
-import FooterBase from '@/components/FooterBase.vue'
 
 export default {
   components: {
     NavbarBaseTrainer,
     LeftsidebarTrainer,
-    RightsidebarUser,
-    FooterBase
+    RightsidebarUser
   }
 }
 </script>
@@ -44,7 +39,7 @@ export default {
 }
 
 .content {
-  flex-grow: 1;
+  /* flex-grow: 1; */
 }
 
 .column {
@@ -54,7 +49,7 @@ export default {
   left: 0;
   height: 100vh;
 }
-.foo {
+/* .foo {
   left: 0;
   bottom: -1px;
   width: 100%;
@@ -62,5 +57,5 @@ export default {
   z-index: 6;
   background-color: chartreuse;
   border-bottom: 1px solid #eff2f1;
-}
+} */
 </style>

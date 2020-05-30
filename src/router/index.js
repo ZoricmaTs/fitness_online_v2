@@ -7,7 +7,8 @@ import Register from '../views/Register.vue'
 import TermsOfService from '../views/TermsOfService.vue'
 import AboutService from '../views/AboutService.vue'
 import ContactDetail from '../views/ContactDetail.vue'
-
+import ContactDetailTrainer from '../views/Trainer/ContactDetailTrainer.vue'
+import ContactDetailUser from '../views/User/ContactDetailUser.vue'
 import OurTrainers from '../views/User/OurTrainers.vue'
 import AboutServiceAuth from '../views/User/AboutServiceAuth.vue'
 import AboutServiceTrainer from '../views/Trainer/AboutServiceTrainer.vue'
@@ -41,6 +42,18 @@ const routes = [
     path: '/contactdetail',
     name: 'contactdetail',
     component: ContactDetail
+  },
+  {
+    path: '/profiletrainerstart/:id/contactdetail',
+    name: 'contactDetailTrainer',
+    component: ContactDetailTrainer,
+    props: true
+  },
+  {
+    path: '/profileuserstart/:id/contactdetail',
+    name: 'contactDetailUser',
+    component: ContactDetailUser,
+    props: true
   },
   {
     path: '/aboutservice',

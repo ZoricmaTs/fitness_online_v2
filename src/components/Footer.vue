@@ -46,7 +46,10 @@
             >Вопросы и ответы</a>
           </li>
           <li class="footer-block__menu-item">
-            <a class="footer-block__menu-link_team_gray text__heading_size_m" href="#">Контакты</a>
+            <router-link
+              class="footer-block__menu-link_team_gray text__heading_size_m"
+              :to="{ name: 'contactdetail' }"
+            >Контакты</router-link>
           </li>
         </ul>
       </div>

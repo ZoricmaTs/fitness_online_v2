@@ -15,7 +15,9 @@
           <li></li>
           <li class="navb__item">Виды тренировок</li>
           <li class="navb__item">Вопросы и ответы</li>
-          <li class="navb__item">Контакты</li>
+          <li class="navb__item">
+            <router-link class="navb__link" :to="{ name: 'contactDetailTrainer' }">Контакты</router-link>
+          </li>
         </ul>
       </nav>
       <div class="exit-block">
