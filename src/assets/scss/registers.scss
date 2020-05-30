@@ -301,8 +301,10 @@
 }
 
 //--------------------------------------
+
 .check {
   padding-left: 40px;
+
   &__input {
     position: absolute;
     width: 1px; /*firefox*/
@@ -322,15 +324,35 @@
     border: 1px solid $color-white;
     box-sizing: border-box;
   }
-
+  &__box-training {
+    position: absolute;
+    margin-top: 15px;
+    margin-left: -65px;
+    width: 20px;
+    height: 20px;
+    background-color: $color-white;
+    //fill: $color-white;
+    border: 1px solid $color-white;
+    box-sizing: border-box;
+  }
   &__text {
     display: flex;
     flex-direction: column;
     margin-left: 2px;
     margin-bottom: 30px;
   }
+
   &__text-body {
     color: $color-white;
+  }
+  &__text-body_color_gray {
+    font-style: normal;
+    font-weight: 500;
+    @include font-size(16px);
+    line-height: 19px;
+    color: $color-dark-gray;
+    width: 188px;
+    margin-right: 104px;
   }
   &__text-body-link {
     color: $color-blue;
@@ -340,6 +362,13 @@
     &:focus {
       color: $color-dark-blue;
     }
+  }
+  &__input:checked + &__box-training {
+    fill: $color-white;
+    background: url('../assets/img/checked.svg') center no-repeat;
+    background-color: $color-white;
+    //fill: $color-white;
+    border: 1px solid $color-white;
   }
   &__input:checked + &__box {
     fill: $color-white;

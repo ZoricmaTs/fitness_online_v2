@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-color">
+  <div>
     <BasePageTrainer>
       <div>
         <SettingProfile />
