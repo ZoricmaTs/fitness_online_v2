@@ -14,6 +14,7 @@ import AboutServiceAuth from '../views/User/AboutServiceAuth.vue'
 import AboutServiceTrainer from '../views/Trainer/AboutServiceTrainer.vue'
 
 import SettingUser from '../views/User/SettingUser.vue'
+import SettingTrainer from '../views/Trainer/SettingTrainer.vue'
 
 Vue.use(VueRouter)
 
@@ -70,6 +71,12 @@ const routes = [
     path: '/profileuserstart/:id/aboutservice',
     name: 'aboutserviceUser',
     component: AboutServiceAuth,
+    props: true
+  },
+  {
+    path: '/profileuserstart/:id/SettingTrainer',
+    name: 'settingTrainer',
+    component: SettingTrainer,
     props: true
   },
   {
