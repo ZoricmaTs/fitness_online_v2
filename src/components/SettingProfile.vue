@@ -44,6 +44,7 @@
       <span v-show="showEditEmail" class="page__body text__heading_size_m">Новый email</span>
       <input
         v-show="showEditEmail"
+        v-model="new_email"
         type="email"
         name="new_email"
         placeholder
@@ -111,7 +112,8 @@
         showEditAboutMe ? 'Отмена' : 'Изменить'
         }}
       </span>
-      <span v-show="showEditAboutMe"></span>
+
+      <span v-show="showEditAboutMe">&nbsp;</span>
       <textarea v-show="showEditAboutMe" name="new_about_me" class="text__heading_size_m" rows="7"></textarea>
       <button
         v-show="showEditAboutMe"

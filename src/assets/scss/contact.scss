@@ -1,0 +1,13 @@
+@import '@/assets/scss/variables.scss';
+
+.contact {
+  &__body {
+    font-style: normal;
+    font-weight: 500;
+    @include font-size(16px);
+    line-height: 19px;
+    margin-bottom: 30px;
+  }
+  &__link {
+  }
+}

@@ -19,7 +19,9 @@
           <li class="navb__item">Наши тренеры</li>
           <li class="navb__item">Виды тренировок</li>
           <li class="navb__item">Вопросы и ответы</li>
-          <li class="navb__item">Контакты</li>
+          <li class="navb__item">
+            <router-link class="navb__link" :to="{ name: 'contactdetail' }">Контакты</router-link>
+          </li>
         </ul>
       </nav>
       <ul class="navb__soc social__list social__heading">
