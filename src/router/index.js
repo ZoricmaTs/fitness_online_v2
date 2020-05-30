@@ -74,7 +74,7 @@ const routes = [
     props: true
   },
   {
-    path: '/profileuserstart/:id/SettingTrainer',
+    path: '/profiletrainerstart/:id/SettingTrainer',
     name: 'settingTrainer',
     component: SettingTrainer,
     props: true

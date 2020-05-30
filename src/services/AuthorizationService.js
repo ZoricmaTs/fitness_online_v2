@@ -83,5 +83,10 @@ export default {
     bodyFormData.set('new_about_me', new_about_me)
     bodyFormData.set('new_profile_photo_id', new_profile_photo_id)
     return apiClientPost.post(`/edit_user_info?token=${token}`, bodyFormData)
+  },
+  getTrainingTypes() {
+    return apiClientGet.get(
+      `/training_type_get?token=${localStorage.token}&limit=20&offset=0`
+    )
   }
 }

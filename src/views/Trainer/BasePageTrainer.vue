@@ -11,7 +11,7 @@
       </div>
 
       <div class="column">
-        <RightsidebarUser />
+        <RightsidebarTrainer />
       </div>
     </div>
   </div>
@@ -20,13 +20,13 @@
 <script>
 import NavbarBaseTrainer from '@/components/NavbarBaseTrainer.vue'
 import LeftsidebarTrainer from '@/components/LeftsidebarTrainer.vue'
-import RightsidebarUser from '@/components/RightsidebarUser.vue'
+import RightsidebarTrainer from '@/components/RightsidebarTrainer.vue'
 
 export default {
   components: {
     NavbarBaseTrainer,
     LeftsidebarTrainer,
-    RightsidebarUser
+    RightsidebarTrainer
   }
 }
 </script>
