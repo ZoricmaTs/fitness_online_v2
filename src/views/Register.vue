@@ -10,51 +10,112 @@
     <form class="singup" @submit.prevent="getRoleRegister">
       <h1 class="singup__heading text__heading_size_h1">Регистрация</h1>
       <div class="form-block">
-        <div class="singup__err text__heading_size_h3">
-          {{ errArray['first_name'] ? errArray['first_name'].toString() : '' }}
-        </div>
+        <span
+          v-if="$v.first_name.$error"
+          class="singup__err text__heading_size_h3"
+        >
+          <template v-if="!$v.first_name.minLength">
+            Длина имени не должна быть менее
+            {{ $v.first_name.$params.minLength.min }} символов
+          </template>
+          <template v-if="!$v.first_name.maxLength">
+            Длина имени не должна превышать
+            {{ $v.first_name.$params.maxLength.max }} символов
+          </template>
+          <template v-else-if="!$v.first_name.alpha">
+            Имя должно содержать только буквы
+          </template>
+          <template v-if="!$v.first_name.required">
+            Имя обязательно для заполнения
+          </template>
+        </span>
         <input
           type="text"
           name="first_name"
           placeholder="Ваше имя"
           class="singup__input text__heading_size_h2"
           v-model="first_name"
-          required
+          @blur="$v.first_name.$touch()"
         />
       </div>
       <div class="form-block">
-        <div class="singup__err text__heading_size_h3">
-          {{ errArray['email'] ? errArray['email'].toString() : '' }}
-        </div>
+        <span v-if="$v.email.$error" class="singup__err text__heading_size_h3">
+          <template v-if="!$v.email.minLength">
+            Длина email не должна быть менее
+            {{ $v.email.$params.minLength.min }} символов
+          </template>
+          <template v-if="!$v.email.maxLength">
+            Длина email не должна превышать
+            {{ $v.email.$params.maxLength.max }} символов
+          </template>
+          <template v-else-if="!$v.email.email">
+            Некорректный email
+          </template>
+          <template v-if="!$v.email.required">
+            email обязательно для заполнения
+          </template>
+        </span>
         <input
           type="email"
           name="email"
           placeholder="Ваш e-mail"
           class="singup__input text__heading_size_h2"
           v-model="email"
+          @blur="$v.email.$touch()"
         />
       </div>
       <div class="form-block">
-        <div class="singup__err text__heading_size_h3">
-          {{ errArray['password'] ? errArray['password'].toString() : '' }}
-        </div>
+        <span
+          v-if="$v.password.$error"
+          class="singup__err text__heading_size_h3"
+        >
+          <template v-if="!$v.password.minLength">
+            Длина пароля не должна быть менее
+            {{ $v.password.$params.minLength.min }} символов
+          </template>
+          <template v-if="!$v.password.maxLength">
+            Длина пароля не должна превышать
+            {{ $v.password.$params.maxLength.max }} символов
+          </template>
+          <template v-if="!$v.password.required">
+            пароль обязателен для заполнения
+          </template>
+        </span>
         <input
           type="password"
           name="password"
           placeholder="Пароль"
           class="singup__input text__heading_size_h2"
           v-model="password"
+          @blur="$v.password.$touch()"
         />
       </div>
       <div class="form-block">
+        <span
+          v-if="$v.password_confirmation.$error"
+          class="singup__err text__heading_size_h3"
+        >
+          <template v-if="!$v.password_confirmation.required">
+            Пароль обязателен для заполнения
+          </template>
+          <template v-if="!$v.password_confirmation.sameAsPassword">
+            Пароли должны совпадать
+          </template>
+        </span>
         <input
           type="password"
           name="password_confirmation"
           placeholder="Повторите пароль"
           class="singup__input text__heading_size_h2"
           v-model="password_confirmation"
+          @blur="$v.password_confirmation.$touch()"
         />
       </div>
+      <span v-if="$v.role.$error" class="singup__err text__heading_size_h3">
+        <template v-if="!$v.role.required">
+          Выберите вид деятельности
+        </template>
+      </span>
       <div class="radio-buttons">
         <div class="radio-buttons-role">
           <input
@@ -88,6 +149,17 @@
           >
         </div>
       </div>
+
+      <span
+        v-if="$v.checked_policy.$error"
+        class="singup__err text__heading_size_h3"
+        @click="$v.checked_policy.$touch()"
+      >
+        <template v-if="!$v.checked_policy.mustBeChecked">
+          Необходимо указать, что вы согласны с политикой конфиденциальности
+        </template>
+      </span>
+
       <label class="check option-check">
         <input class="check__input" type="checkbox" v-model="checked_policy" />
         <span class="check__box"></span>
@@ -97,18 +169,16 @@
             <router-link
               :to="{ name: 'termsofservice' }"
               class="check__text-body-link"
-              >пользовательское соглашение</router-link
-            >и соглашаюсь с правилами использования и обработки персональных
+              >пользовательское соглашение
+            </router-link>
+            и соглашаюсь с правилами использования и обработки персональных
             данных
           </span>
         </div>
       </label>
-      <div class="check__policy signin__err" v-show="checked_policy == false">
-        “Необходимо указать, что вы согласны с политикой конфиденциальности”.
-      </div>
+
       <button
         type="submit"
-        :disabled="!checked_policy"
         class="btn__big btn__title_color_orangeb text__heading_size_h2 signup__btn"
       >
         Зарегистрироваться
@@ -125,6 +195,15 @@
 <script>
 import AuthorizationService from '@/services/AuthorizationService.js'
 import MailCheck from '@/components/MailCheck.vue'
+import {
+  required,
+  maxLength,
+  minLength,
+  sameAs,
+  email
+} from 'vuelidate/lib/validators'
+import moment from 'moment'
+const mustBeChecked = value => value == true
 export default {
   components: {
     MailCheck
@@ -141,28 +220,36 @@ export default {
       showModalMailCheck: false
     }
   },
-
-  methods: {
-    validate() {
-      let isValid = true
-      if (this.password.length < 8) {
-        this.errArray = { password: ['Слишком короткий пароль'] }
-        isValid = false
-      }
-      if (this.first_name.length < 2) {
-        this.errArray = { first_name: ['Слишком короткое имя'] }
-        isValid = false
-      }
-      if (this.email.length < 6) {
-        this.errArray = { email: ['Слишком короткий email'] }
-        isValid = false
-      }
-      if (this.password != this.password_confirmation) {
-        this.errArray = { password: ['Пароли должны совпадать'] }
-        isValid = false
-      }
-      return isValid
+  validations: {
+    first_name: {
+      required,
+      minLength: minLength(2),
+      maxLength: maxLength(60),
+      alpha: val => /^[a-zа-яё'\s\-]*$/i.test(val)
     },
+    email: {
+      required,
+      email,
+      minLength: minLength(6),
+      maxLength: maxLength(255)
+    },
+    password: {
+      required,
+      minLength: minLength(8),
+      maxLength: maxLength(32)
+    },
+    password_confirmation: {
+      required,
+      sameAsPassword: sameAs('password')
+    },
+    role: {
+      required
+    },
+    checked_policy: {
+      mustBeChecked
+    }
+  },
+  methods: {
     onRegister() {
       console.log('Test')
       //модальное окно подтверждения регистрации и отправки письма
@@ -172,38 +259,36 @@ export default {
       // this.classList.add('singup__modal')
     },
     getRoleRegister() {
-      // this.onRegister() для проверки модалки
-      // return
-
-      var valid = this.validate()
-      if (valid == false) {
-        return
-      }
-      AuthorizationService.register(
-        this.first_name,
-        this.email,
-        this.role,
-        this.password,
-        this.password_confirmation
-      ).then(response => {
-        if (response.data.success == true) {
-          localStorage.token = response.data.token
-          localStorage.email = response.data.email
-          let confirmation_code = '123456'
-          AuthorizationService.confirmAccount(
-            this.email,
-            confirmation_code,
-            response.data.token
-          ).then(response => {
-            this.onRegister()
-            alert('Вы успешно зарегистрированы')
-          })
-        } else {
-          if (response.data.database_error.indexOf('already exists') != -1) {
-            this.errArray = { email: ['Такой пользователь уже существует'] }
+      this.$v.$touch()
+      if (this.$v.$invalid) {
+        this.submitStatus = 'ERROR'
+      } else {
+        AuthorizationService.register(
+          this.first_name,
+          this.email,
+          this.role,
+          this.password,
+          this.password_confirmation
+        ).then(response => {
+          if (response.data.success == true) {
+            localStorage.token = response.data.token
+            localStorage.email = response.data.email
+            let confirmation_code = '123456'
+            AuthorizationService.confirmAccount(
+              this.email,
+              confirmation_code,
+              response.data.token
+            ).then(response => {
+              this.onRegister()
+              alert('Вы успешно зарегистрированы')
+            })
+          } else {
+            if (response.data.database_error.indexOf('already exists') != -1) {
+              this.errArray = { email: ['Такой пользователь уже существует'] }
+            }
           }
-        }
-      })
+        })
+      }
     }
   }
 }
