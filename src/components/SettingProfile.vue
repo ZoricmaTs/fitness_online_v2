@@ -2,7 +2,9 @@
   <div class="page__block">
     <h2 class="page__heading text__heading_size_l">Настройки профиля</h2>
     <form @submit.prevent="sendFile" enctype="multipart/form-data">
-      <input type="file" ref="file" width="146" height="146" @change="selectFile" />
+      <label for="file-upload" class="custom-file-upload">Изменить</label>
+      <input id="file-upload" type="file" ref="file" @change="selectFile" />
+
       <div id="preview">
         <img v-if="imageUrl" :src="imageUrl" height="146" />
       </div>
@@ -11,11 +13,7 @@
     <h3 class="page__heading-min text__heading_size_h3">Основное</h3>
     <section class="page__wrapper">
       <span class="page__body text__heading_size_m">Имя</span>
-      <span class="page__body text__heading_size_m">
-        {{
-        infoUser.first_name
-        }}
-      </span>
+      <span class="page__body text__heading_size_m">{{ infoUser.first_name }}</span>
       <span
         class="page__link"
         @click="showEditFirstName = !showEditFirstName"
@@ -51,10 +49,11 @@
 
       <span class="page__body text__heading_size_m">E-mail</span>
       <span class="page__body text__heading_size_m">{{ infoUser.email }}</span>
-      <span
-        class="page__link"
-        @click="showEditEmail = !showEditEmail"
-      >{{ showEditEmail ? 'Отмена' : 'Изменить' }}</span>
+      <span class="page__link" @click="showEditEmail = !showEditEmail">
+        {{
+        showEditEmail ? 'Отмена' : 'Изменить'
+        }}
+      </span>
 
       <span v-show="showEditEmail" class="page__body text__heading_size_m">Новый email</span>
       <span v-show="showEditEmail">
@@ -84,11 +83,10 @@
       <!--                           ////////////////////////////////////////password-->
       <span class="page__body text__heading_size_m">Пароль</span>
       <span class="page__body text__heading_size_m">******</span>
-      <span class="page__link" @click="showEditPassword = !showEditPassword">
-        {{
-        showEditPassword ? 'Отмена' : 'Изменить'
-        }}
-      </span>
+      <span
+        class="page__link"
+        @click="showEditPassword = !showEditPassword"
+      >{{ showEditPassword ? 'Отмена' : 'Изменить' }}</span>
 
       <span v-show="showEditPassword" class="page__body text__heading_size_m">Старый пароль</span>
       <span v-show="showEditPassword">
@@ -140,12 +138,15 @@
       >Сохранить</button>
 
       <span class="page__body text__heading_size_m">О себе</span>
-      <span class="page__body text__heading_size_m">{{ infoUser.about_me }}</span>
-      <span class="page__link" @click="showEditAboutMe = !showEditAboutMe">
+      <span class="page__body text__heading_size_m">
         {{
-        showEditAboutMe ? 'Отмена' : 'Изменить'
+        infoUser.about_me
         }}
       </span>
+      <span
+        class="page__link"
+        @click="showEditAboutMe = !showEditAboutMe"
+      >{{ showEditAboutMe ? 'Отмена' : 'Изменить' }}</span>
 
       <span v-show="showEditAboutMe">&nbsp;</span>
       <textarea
@@ -344,4 +345,14 @@ export default {
 }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss" scoped>
+input[type='file'] {
+  display: none;
+}
+.custom-file-upload {
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+</style>
