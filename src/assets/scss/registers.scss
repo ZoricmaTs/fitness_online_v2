@@ -28,7 +28,7 @@
   background-size: 100% auto;
   background-position: bottom center;
   background-repeat: no-repeat;
-  // height: 100vh;
+  height: 100vh;
 }
 .singin {
   margin-bottom: 126px; //пересмотреть на мобилке
@@ -237,6 +237,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .radio-buttons-role__input:checked,

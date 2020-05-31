@@ -1,33 +1,22 @@
 <template>
   <section class="singup-bg block-grid">
-    <router-link
-      :to="{ name: 'Home' }"
-      class="singin__linkback text__heading_size_l"
-    >
+    <router-link :to="{ name: 'Home' }" class="singin__linkback text__heading_size_l">
       <img src="../assets/img/Arrow.svg" alt="backlink" />
       Назад
     </router-link>
     <form class="singup" @submit.prevent="getRoleRegister">
       <h1 class="singup__heading text__heading_size_h1">Регистрация</h1>
       <div class="form-block">
-        <span
-          v-if="$v.first_name.$error"
-          class="singup__err text__heading_size_h3"
-        >
+        <span v-if="$v.first_name.$error" class="singup__err text__heading_size_h3">
           <template v-if="!$v.first_name.minLength">
             Длина имени не должна быть менее
             {{ $v.first_name.$params.minLength.min }} символов
           </template>
-          <template v-if="!$v.first_name.maxLength">
-            Длина имени не должна превышать
-            {{ $v.first_name.$params.maxLength.max }} символов
-          </template>
-          <template v-else-if="!$v.first_name.alpha">
-            Имя должно содержать только буквы
-          </template>
-          <template v-if="!$v.first_name.required">
-            Имя обязательно для заполнения
-          </template>
+          <template v-if="!$v.first_name.maxLength">Слишком длинное имя</template>
+          <template
+            v-else-if="!$v.first_name.alpha"
+          >Имя должно содержать латинские или русские буквы.</template>
+          <template v-if="!$v.first_name.required">Это поле обязательно для заполнения.</template>
         </span>
         <input
           type="text"
@@ -44,16 +33,9 @@
             Длина email не должна быть менее
             {{ $v.email.$params.minLength.min }} символов
           </template>
-          <template v-if="!$v.email.maxLength">
-            Длина email не должна превышать
-            {{ $v.email.$params.maxLength.max }} символов
-          </template>
-          <template v-else-if="!$v.email.email">
-            Некорректный email
-          </template>
-          <template v-if="!$v.email.required">
-            email обязательно для заполнения
-          </template>
+          <template v-if="!$v.email.maxLength">Слишком длинный E-mail</template>
+          <template v-else-if="!$v.email.email">Некорректный email</template>
+          <template v-if="!$v.email.required">Это поле обязательно для заполнения.</template>
         </span>
         <input
           type="email"
@@ -65,21 +47,13 @@
         />
       </div>
       <div class="form-block">
-        <span
-          v-if="$v.password.$error"
-          class="singup__err text__heading_size_h3"
-        >
+        <span v-if="$v.password.$error" class="singup__err text__heading_size_h3">
           <template v-if="!$v.password.minLength">
             Длина пароля не должна быть менее
             {{ $v.password.$params.minLength.min }} символов
           </template>
-          <template v-if="!$v.password.maxLength">
-            Длина пароля не должна превышать
-            {{ $v.password.$params.maxLength.max }} символов
-          </template>
-          <template v-if="!$v.password.required">
-            пароль обязателен для заполнения
-          </template>
+          <template v-if="!$v.password.maxLength">Слишком длинный пароль</template>
+          <template v-if="!$v.password.required">Это поле обязательно для заполнения.</template>
         </span>
         <input
           type="password"
@@ -91,16 +65,9 @@
         />
       </div>
       <div class="form-block">
-        <span
-          v-if="$v.password_confirmation.$error"
-          class="singup__err text__heading_size_h3"
-        >
-          <template v-if="!$v.password_confirmation.required">
-            Пароль обязателен для заполнения
-          </template>
-          <template v-if="!$v.password_confirmation.sameAsPassword">
-            Пароли должны совпадать
-          </template>
+        <span v-if="$v.password_confirmation.$error" class="singup__err text__heading_size_h3">
+          <template v-if="!$v.password_confirmation.required">Это поле обязательно для заполнения.</template>
+          <template v-if="!$v.password_confirmation.sameAsPassword">Пароли должны совпадать</template>
         </span>
         <input
           type="password"
@@ -112,9 +79,7 @@
         />
       </div>
       <span v-if="$v.role.$error" class="singup__err text__heading_size_h3">
-        <template v-if="!$v.role.required">
-          Выберите вид деятельности
-        </template>
+        <template v-if="!$v.role.required">Выберите вид деятельности</template>
       </span>
       <div class="radio-buttons">
         <div class="radio-buttons-role">
@@ -130,8 +95,7 @@
           <label
             for="trainer"
             class="radio-buttons-role__label text__heading_size_h3"
-            >Хочу быть тренером</label
-          >
+          >Хочу быть тренером</label>
         </div>
         <div class="radio-buttons-role">
           <input
@@ -145,8 +109,7 @@
           <label
             for="user"
             class="radio-buttons-role__label text__heading_size_h3"
-            >Хочу тренироваться</label
-          >
+          >Хочу тренироваться</label>
         </div>
       </div>
 
@@ -155,9 +118,9 @@
         class="singup__err text__heading_size_h3"
         @click="$v.checked_policy.$touch()"
       >
-        <template v-if="!$v.checked_policy.mustBeChecked">
-          Необходимо указать, что вы согласны с политикой конфиденциальности
-        </template>
+        <template
+          v-if="!$v.checked_policy.mustBeChecked"
+        >Необходимо указать, что вы согласны с политикой конфиденциальности</template>
       </span>
 
       <label class="check option-check">
@@ -169,9 +132,7 @@
             <router-link
               :to="{ name: 'termsofservice' }"
               class="check__text-body-link"
-              >пользовательское соглашение
-            </router-link>
-            и соглашаюсь с правилами использования и обработки персональных
+            >пользовательское соглашение</router-link>и соглашаюсь с правилами использования и обработки персональных
             данных
           </span>
         </div>
@@ -180,9 +141,7 @@
       <button
         type="submit"
         class="btn__big btn__title_color_orangeb text__heading_size_h2 signup__btn"
-      >
-        Зарегистрироваться
-      </button>
+      >Зарегистрироваться</button>
     </form>
     <MailCheck
       v-if="showModalMailCheck"

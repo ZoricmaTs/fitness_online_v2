@@ -27,11 +27,9 @@
               v-model="password"
             />
             <button class="singin__input-passbtn" @click="showPassword = !showPassword">
-              <i class="material-icons singin__icon">
-                {{
-                showPassword ? 'visibility' : 'visibility_off'
-                }}
-              </i>
+              <i
+                class="material-icons singin__icon"
+              >{{ showPassword ? 'visibility' : 'visibility_off' }}</i>
             </button>
           </div>
           <div class="singin__block-btn">
@@ -61,6 +59,15 @@
 
 <script>
 import AuthorizationService from '@/services/AuthorizationService.js'
+import {
+  required,
+  maxLength,
+  minLength,
+  sameAs,
+  email
+} from 'vuelidate/lib/validators'
+import moment from 'moment'
+const mustBeChecked = value => value == true
 export default {
   name: 'authorization',
   data() {
@@ -69,6 +76,19 @@ export default {
       password: '',
       errArray: {},
       showPassword: false
+    }
+  },
+  validations: {
+    email: {
+      required,
+      email,
+      minLength: minLength(6),
+      maxLength: maxLength(255)
+    },
+    password: {
+      required,
+      minLength: minLength(8),
+      maxLength: maxLength(32)
     }
   },
 
