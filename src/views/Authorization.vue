@@ -27,9 +27,11 @@
               v-model="password"
             />
             <button class="singin__input-passbtn" @click="showPassword = !showPassword">
-              <i
-                class="material-icons singin__icon"
-              >{{ showPassword ? 'visibility' : 'visibility_off' }}</i>
+              <i class="material-icons singin__icon">
+                {{
+                showPassword ? 'visibility' : 'visibility_off'
+                }}
+              </i>
             </button>
           </div>
           <div class="singin__block-btn">
@@ -140,6 +142,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import '@/assets/scss/registers.scss';
+@import '@/assets/scss/authorization.scss';
 @import '@/assets/scss/variables.scss';
 </style>

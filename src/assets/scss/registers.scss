@@ -1,155 +1,22 @@
 // @import '../../node_modules/bootstrap/scss/bootstrap';
 @import '@/assets/scss/variables.scss';
 @import '@/assets/scss/btn.scss';
-
-.singin-bg {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding-right: 164px;
-  padding-top: 40px;
+body {
   background-color: $color-blue;
-  background-image: url('../assets/img/signinbg.png');
+  background-image: url('../assets/img/signupbg.png');
   background-size: cover;
   background-size: 100% auto;
-  background-position: bottom center;
+  background-position: bottom;
   background-repeat: no-repeat;
   // height: 100vh;
 }
+
 .singup-bg {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding-right: 164px;
   padding-top: 37px;
-  background-color: $color-blue;
-  background-image: url('../assets/img/signupbg.png');
-  background-size: cover;
-  background-size: 100% auto;
-  background-position: bottom center;
-  background-repeat: no-repeat;
-  height: 100vh;
-}
-.singin {
-  margin-bottom: 126px; //пересмотреть на мобилке
-  width: 521px;
-  &__linkback {
-    position: relative;
-    line-height: 23px;
-    cursor: pointer;
-    text-decoration: underline;
-    color: $color-dark-gray;
-    &:hover,
-    &:focus {
-      color: $color-dark-gray;
-      opacity: 0.5;
-    }
-  }
-  &__logo {
-    margin-bottom: 25px;
-  }
-  &__heading {
-    line-height: 47px;
-    color: $color-orange;
-    margin-bottom: 40px;
-  }
-  &__input {
-    font-style: normal;
-    font-weight: normal;
-    line-height: 28px;
-    box-sizing: border-box;
-    color: rgb(219, 76, 26 /0.4);
-    background: $color-white;
-    letter-spacing: 0.05em;
-    padding: 20px 25px;
-    margin-bottom: 35px;
-    border: 2px solid $color-white;
-    outline: none;
-    &::placeholder {
-      color: rgba(219, 76, 26, 0.4);
-    }
-    &:hover,
-    &:focus {
-      border: 2px solid #db3d1a;
-      box-sizing: border-box;
-    }
-  }
-  &__input-pass-block {
-    position: relative;
-  }
-
-  &__input-pass {
-    font-style: normal;
-    font-weight: normal;
-    line-height: 28px;
-    width: 320px;
-    color: rgb(219, 76, 26 /0.4);
-    background: $color-white;
-    letter-spacing: 0.05em;
-    padding: 20px 25px;
-    margin-bottom: 35px;
-    border: 2px solid $color-white;
-    outline: none;
-    &::placeholder {
-      color: rgba(219, 76, 26, 0.4);
-    }
-    &:hover,
-    &:focus {
-      border: 2px solid #db3d1a;
-      box-sizing: border-box;
-      width: 373px;
-    }
-  }
-  &__showpass {
-    position: absolute;
-    right: 0;
-    top: 0;
-    cursor: pointer;
-  }
-  &__input-passbtn {
-    position: absolute;
-    right: 20px;
-    top: 25px;
-    cursor: pointer;
-    border: none;
-    outline: none;
-  }
-  &__icon {
-    color: $color-light-gray;
-  }
-  &__err {
-    font-size: 18px;
-    line-height: 22px;
-    color: $color-orange;
-  }
-  &__block-btn {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  &__link {
-    display: block;
-    cursor: pointer;
-    text-decoration: underline;
-    font-style: normal;
-    font-weight: normal;
-    margin-bottom: 5px;
-    line-height: 16px;
-  }
-  &__link_color-white {
-    color: $color-white;
-    &:hover,
-    &:focus {
-      color: $color-light-gray;
-    }
-  }
-  &__link_color-orange {
-    color: $color-orange;
-    &:hover,
-    &:focus {
-      color: $color-dark-orange;
-    }
-  }
 }
 
 .singup {
@@ -380,20 +247,3 @@
   }
 }
 
-.form-blocks {
-  max-width: 521px;
-  background-color: $color-dark-gray;
-  padding: 50px 74px;
-}
-.form-block {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.form-modal {
-  &__text-block {
-    font-style: normal;
-    font-size: 14px;
-    line-height: 150%;
-  }
-}

@@ -42,3 +42,21 @@ $color-dark-blue: #039792;
 .text__heading_size_s {
   @include font-size($font-size-body12);
 }
+
+.form-blocks {
+  max-width: 521px;
+  background-color: $color-dark-gray;
+  padding: 50px 74px;
+}
+.form-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.form-modal {
+  &__text-block {
+    font-style: normal;
+    font-size: 14px;
+    line-height: 150%;
+  }
+}
