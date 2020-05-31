@@ -1,14 +1,14 @@
 <template>
   <div class="page__block">
     <h2 class="page__heading text__heading_size_l">Настройки профиля</h2>
-    <form @submit.prevent="sendFile" enctype="multipart/form-data">
-      <label for="file-upload" class="custom-file-upload">Изменить</label>
-      <input id="file-upload" type="file" ref="file" @change="selectFile" />
-
+    <form @submit.prevent="sendFile" enctype="multipart/form-data" class="photo-edit">
       <div id="preview">
         <img v-if="imageUrl" :src="imageUrl" height="146" />
       </div>
-      <button>Send</button>
+      <div>
+        <label for="file-upload" class="custom-file-upload">Изменить</label>
+        <input id="file-upload" type="file" ref="file" @change="selectFile" />
+      </div>
     </form>
     <h3 class="page__heading-min text__heading_size_h3">Основное</h3>
     <section class="page__wrapper">
@@ -262,7 +262,7 @@ export default {
         })
         .catch(err => {})
     },
-    saveProfile() {
+    saveProfileField() {
       if (this.new_password == '') {
         AuthorizationService.saveProfileShort(
           localStorage.user_id,
@@ -293,6 +293,23 @@ export default {
           alert('данные изменены')
           location.reload()
         })
+      }
+    },
+
+    saveProfile() {
+      if (this.$refs.file.files.length > 0) {
+        AuthorizationService.sendFileMedia(this.file, this.comment)
+          .then(response => {
+            if (response.data.success == true) {
+              console.log(response.data)
+              this.infoUser.profile_photo_file_id = response.data.id
+              this.imageUrl = `http://80.89.238.253:5000/media/files/${infoUser.profile_photo_file_id}?token=${localStorage.token}`
+            }
+            this.saveProfileField()
+          })
+          .catch(err => {})
+      } else {
+        this.saveProfileField()
       }
     },
     //------------------------------------------
@@ -346,6 +363,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.photo-edit {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
 input[type='file'] {
   display: none;
 }
