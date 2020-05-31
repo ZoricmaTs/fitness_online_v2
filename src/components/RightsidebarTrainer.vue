@@ -44,9 +44,6 @@
       </li>
     </ul>
     <div class="right-sidebar__about">
-      <!-- <div id="preview">
-        <img v-if="imageUrl" :src="imageUrl" height="146" />
-      </div>-->
       <img
         class="right-sidebar__avatar"
         src="../assets/img/avatar.png"
@@ -54,21 +51,18 @@
         width="146"
         height="146"
       />
-      <h2 class="right-sidebar__first-name text__heading_size_h2">{{ infoUser.first_name }}</h2>
+      <h2 class="right-sidebar__first-name text__heading_size_h2">Марк</h2>
       <p class="right-sidebar__heading">О себе</p>
-      <p class="right-sidebar__body text__heading_size_s">{{ infoUser.about_me }}</p>
+      <p class="right-sidebar__body text__heading_size_s">
+        Тест интегрирует коллективный объект. Инсайт, в представлении Морено,
+        неизменяем. Сознание конфронтально притягивает социальный эгоцентризм.
+      </p>
     </div>
   </div>
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      email: localStorage.email
-    }
-  }
-}
+export default {}
 </script>
 
 <style lang="scss">
