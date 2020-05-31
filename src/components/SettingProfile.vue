@@ -2,30 +2,26 @@
   <div class="page__block">
     <h2 class="page__heading text__heading_size_l">Настройки профиля</h2>
     <form @submit.prevent="sendFile" enctype="multipart/form-data">
-      <input
-        type="file"
-        ref="file"
-        width="146"
-        height="146"
-        @change="selectFile"
-      />
+      <input type="file" ref="file" width="146" height="146" @change="selectFile" />
+      <div id="preview">
+        <img v-if="imageUrl" :src="imageUrl" height="146" />
+      </div>
       <button>Send</button>
     </form>
     <h3 class="page__heading-min text__heading_size_h3">Основное</h3>
     <section class="page__wrapper">
       <span class="page__body text__heading_size_m">Имя</span>
-      <span class="page__body text__heading_size_m">{{
+      <span class="page__body text__heading_size_m">
+        {{
         infoUser.first_name
-      }}</span>
+        }}
+      </span>
       <span
         class="page__link"
         @click="showEditFirstName = !showEditFirstName"
-        >{{ showEditFirstName ? 'Отмена' : 'Изменить' }}</span
-      >
+      >{{ showEditFirstName ? 'Отмена' : 'Изменить' }}</span>
 
-      <span v-show="showEditFirstName" class="page__body text__heading_size_m"
-        >Новое имя</span
-      >
+      <span v-show="showEditFirstName" class="page__body text__heading_size_m">Новое имя</span>
       <input
         v-show="showEditFirstName"
         v-model="new_first_name"
@@ -39,19 +35,16 @@
         v-show="showEditFirstName"
         class="btn__min btn__title_color_orangew text__heading_size_m"
         @click="saveFirstName"
-      >
-        Сохранить
-      </button>
+      >Сохранить</button>
 
       <span class="page__body text__heading_size_m">E-mail</span>
       <span class="page__body text__heading_size_m">{{ infoUser.email }}</span>
-      <span class="page__link" @click="showEditEmail = !showEditEmail">
-        {{ showEditEmail ? 'Отмена' : 'Изменить' }}
-      </span>
+      <span
+        class="page__link"
+        @click="showEditEmail = !showEditEmail"
+      >{{ showEditEmail ? 'Отмена' : 'Изменить' }}</span>
 
-      <span v-show="showEditEmail" class="page__body text__heading_size_m"
-        >Новый email</span
-      >
+      <span v-show="showEditEmail" class="page__body text__heading_size_m">Новый email</span>
       <input
         v-show="showEditEmail"
         v-model="new_email"
@@ -65,25 +58,22 @@
         v-show="showEditEmail"
         class="btn__min btn__title_color_orangew text__heading_size_m"
         @click="saveEmail"
-      >
-        Сохранить
-      </button>
+      >Сохранить</button>
 
       <span class="page__body text__heading_size_m">Пароль</span>
       <span class="page__body text__heading_size_m">******</span>
-      <span class="page__link" @click="showEditPassword = !showEditPassword">{{
+      <span class="page__link" @click="showEditPassword = !showEditPassword">
+        {{
         showEditPassword ? 'Отмена' : 'Изменить'
-      }}</span>
+        }}
+      </span>
 
-      <span v-show="showEditPassword" class="page__body text__heading_size_m"
-        >Старый пароль</span
-      >
+      <span v-show="showEditPassword" class="page__body text__heading_size_m">Старый пароль</span>
       <span>
         <span
           class="singup__err text__heading_size_m"
           v-show="showEditPassword"
-          >{{ errArray['current_password'] }}</span
-        >
+        >{{ errArray['current_password'] }}</span>
         <input
           v-show="showEditPassword"
           type="password"
@@ -94,9 +84,7 @@
       </span>
       <span v-show="showEditPassword">&nbsp;</span>
 
-      <span v-show="showEditPassword" class="page__body text__heading_size_m"
-        >Новый пароль</span
-      >
+      <span v-show="showEditPassword" class="page__body text__heading_size_m">Новый пароль</span>
       <input
         v-show="showEditPassword"
         type="password"
@@ -106,9 +94,7 @@
       />
       <span v-show="showEditPassword">&nbsp;</span>
 
-      <span v-show="showEditPassword" class="page__body text__heading_size_m"
-        >Повторите пароль</span
-      >
+      <span v-show="showEditPassword" class="page__body text__heading_size_m">Повторите пароль</span>
       <input
         v-show="showEditPassword"
         type="password"
@@ -120,32 +106,23 @@
         v-show="showEditPassword"
         class="btn__min btn__title_color_orangew text__heading_size_m"
         @click="savePassword"
-      >
-        Сохранить
-      </button>
+      >Сохранить</button>
 
       <span class="page__body text__heading_size_m">О себе</span>
-      <span class="page__body text__heading_size_m">
-        {{ infoUser.about_me }}
-      </span>
-      <span class="page__link" @click="showEditAboutMe = !showEditAboutMe">{{
+      <span class="page__body text__heading_size_m">{{ infoUser.about_me }}</span>
+      <span class="page__link" @click="showEditAboutMe = !showEditAboutMe">
+        {{
         showEditAboutMe ? 'Отмена' : 'Изменить'
-      }}</span>
+        }}
+      </span>
 
       <span v-show="showEditAboutMe">&nbsp;</span>
-      <textarea
-        v-show="showEditAboutMe"
-        name="new_about_me"
-        class="text__heading_size_m"
-        rows="7"
-      ></textarea>
+      <textarea v-show="showEditAboutMe" name="new_about_me" class="text__heading_size_m" rows="7"></textarea>
       <button
         v-show="showEditAboutMe"
         class="btn__min btn__title_color_orangew text__heading_size_m"
         @click="saveAboutMe"
-      >
-        Сохранить
-      </button>
+      >Сохранить</button>
     </section>
   </div>
 </template>
@@ -158,6 +135,7 @@ export default {
   data() {
     return {
       file: '',
+      imageUrl: '',
       comment: '',
       imageLink: '',
       infoUser: {},
@@ -217,15 +195,30 @@ export default {
     },
     //загрузка файла на сервер--------
     selectFile() {
-      this.file = this.$refs.file.files[0]
+      if (this.$refs.file.files.length > 0) {
+        this.file = this.$refs.file.files[0]
+        this.imageUrl = URL.createObjectURL(this.file)
+      }
     },
     sendFile() {
       AuthorizationService.sendFileMedia(this.file, this.comment)
         .then(response => {
           if (response.data.success == true) {
+            console.log(response.data)
+            this.infoUser.profile_photo_file_id = response.data.id
+            this.imageUrl = `http://80.89.238.253:5000/media/files/${infoUser.profile_photo_file_id}?token=${localStorage.token}`
           }
         })
         .catch(err => {})
+
+      if (this.infoUser.profile_photo_file_id != '') {
+        AuthorizationService.saveProfilePhoto(
+          localStorage.user_id,
+          this.infoUser.profile_photo_file_id
+        ).then(resp => {
+          alert('фотка загружена')
+        })
+      }
     },
     //------------------------------------------
     userInfoСhange() {
@@ -265,6 +258,12 @@ export default {
         role: serverInfoUser.role, //'user', прописать юзера??
         training_types_ids: serverInfoUser.training_types_ids, ///[], тренировки
         user_id: serverInfoUser.user_id
+      }
+      // alert(serverInfoUser.profile_photo_file_id)
+      this.infoUser.profile_photo_file_id =
+        '4e6f3a40b1d64aecde30d46c781f1bebb865bfec'
+      if (this.infoUser.profile_photo_file_id != '') {
+        this.imageUrl = `http://80.89.238.253:5000/media/files/${this.infoUser.profile_photo_file_id}?token=${localStorage.token}`
       }
     })
   }
