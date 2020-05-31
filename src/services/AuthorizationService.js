@@ -61,14 +61,14 @@ export default {
   },
   saveProfileShort(
     user_id,
-    profile_photo_file_id,
+    new_profile_photo_file_id,
     new_first_name,
     new_about_me,
     new_role
   ) {
     var bodyFormData = new FormData()
     bodyFormData.set('user_id', user_id)
-    bodyFormData.set('profile_photo_file_id', profile_photo_file_id)
+    bodyFormData.set('new_profile_photo_file_id', new_profile_photo_file_id)
     bodyFormData.set('new_first_name', new_first_name)
     bodyFormData.set('new_about_me', new_about_me)
     bodyFormData.set('new_role', new_role)
@@ -82,7 +82,7 @@ export default {
   },
   saveProfileFull(
     user_id,
-    profile_photo_file_id,
+    new_profile_photo_file_id,
     new_first_name,
     new_about_me,
     new_role,
@@ -93,7 +93,7 @@ export default {
   ) {
     var bodyFormData = new FormData() //+
     bodyFormData.set('user_id', user_id)
-    bodyFormData.set('profile_photo_file_id', profile_photo_file_id)
+    bodyFormData.set('new_profile_photo_file_id', new_profile_photo_file_id)
     bodyFormData.set('new_first_name', new_first_name)
     bodyFormData.set('new_about_me', new_about_me)
     bodyFormData.set('new_role', new_role)

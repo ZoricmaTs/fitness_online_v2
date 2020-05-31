@@ -44,25 +44,49 @@
       </li>
     </ul>
     <div class="right-sidebar__about">
-      <img
-        class="right-sidebar__avatar"
-        src="../assets/img/avatar.png"
-        alt="message"
-        width="146"
-        height="146"
-      />
-      <h2 class="right-sidebar__first-name text__heading_size_h2">Марк</h2>
+      <img class="right-sidebar__avatar" :src="imageUrl" alt="message" width="146" />
+      <h2 class="right-sidebar__first-name text__heading_size_h2">{{ infoUser.first_name }}</h2>
       <p class="right-sidebar__heading">О себе</p>
-      <p class="right-sidebar__body text__heading_size_s">
-        Тест интегрирует коллективный объект. Инсайт, в представлении Морено,
-        неизменяем. Сознание конфронтально притягивает социальный эгоцентризм.
-      </p>
+      <p class="right-sidebar__body text__heading_size_s">{{ infoUser.about_me }}</p>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+import AuthorizationService from '@/services/AuthorizationService.js'
+export default {
+  data() {
+    return { infoUser: {}, imageUrl: '' }
+  },
+  created() {
+    AuthorizationService.userInfo(
+      localStorage.user_id,
+      localStorage.token
+    ).then(response => {
+      let serverInfoUser = response.data
+      this.infoUser = {
+        about_me: serverInfoUser.about_me,
+        achievements_ids: serverInfoUser.achievements_ids, //[], достижения массив
+        confirmation_time: serverInfoUser.confirmation_time,
+        email: serverInfoUser.email,
+        first_name: serverInfoUser.first_name,
+        is_confirmed: serverInfoUser.is_confirmed, //true, подтвержден или нет
+        is_deleted: serverInfoUser.is_deleted, //false, удален ли аккаунт
+        profile_photo_file_id: serverInfoUser.profile_photo_file_id, //null, аватарка
+        registration_time: serverInfoUser.registration_time, //' время регистрации
+        role: serverInfoUser.role, //'user', прописать юзера??
+        training_types_ids: serverInfoUser.training_types_ids, ///[], тренировки
+        user_id: serverInfoUser.user_id
+      }
+      // alert(serverInfoUser.profile_photo_file_id)
+      // this.infoUser.profile_photo_file_id =
+      //   'b268398ba9ab4a8bbeb7ebb54def38491edbc753'
+      if (this.infoUser.profile_photo_file_id != '') {
+        this.imageUrl = `http://80.89.238.253:5000/media/files/${this.infoUser.profile_photo_file_id}?token=${localStorage.token}`
+      }
+    })
+  }
+}
 </script>
 
 <style lang="scss">

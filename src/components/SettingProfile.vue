@@ -264,7 +264,7 @@ export default {
       if (this.new_password == '') {
         AuthorizationService.saveProfileShort(
           localStorage.user_id,
-          this.profile_photo_file_id, //заплатка
+          this.infoUser.profile_photo_file_id, //заплатка
           this.new_first_name == ''
             ? this.infoUser.first_name
             : this.new_first_name,
@@ -276,7 +276,7 @@ export default {
       } else {
         AuthorizationService.saveProfileFull(
           localStorage.user_id,
-          this.profile_photo_file_id, //заплатка
+          this.infoUser.profile_photo_file_id, //заплатка
           this.new_first_name == ''
             ? this.infoUser.first_name
             : this.new_first_name,
@@ -331,8 +331,8 @@ export default {
         user_id: serverInfoUser.user_id
       }
       // alert(serverInfoUser.profile_photo_file_id)
-      this.infoUser.profile_photo_file_id =
-        '4e6f3a40b1d64aecde30d46c781f1bebb865bfec'
+      // this.infoUser.profile_photo_file_id =
+      // 'b268398ba9ab4a8bbeb7ebb54def38491edbc753'
       if (this.infoUser.profile_photo_file_id != '') {
         this.imageUrl = `http://80.89.238.253:5000/media/files/${this.infoUser.profile_photo_file_id}?token=${localStorage.token}`
       }
