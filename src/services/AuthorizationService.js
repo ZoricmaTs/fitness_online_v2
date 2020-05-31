@@ -59,13 +59,14 @@ export default {
     const token = localStorage.token
     return apiClientMedia.put(`/media/upload_file?token=${token}`, formData)
   },
-  saveProfilePhoto(
+  saveProfileShort(
     user_id,
     profile_photo_file_id,
     new_first_name,
     new_about_me,
     new_role
   ) {
+    var bodyFormData = new FormData()
     bodyFormData.set('user_id', user_id)
     bodyFormData.set('profile_photo_file_id', profile_photo_file_id)
     bodyFormData.set('new_first_name', new_first_name)
@@ -79,27 +80,31 @@ export default {
   userInfo(user_id, token) {
     return apiClientGet.get(`/get_user_by_id?token=${token}&user_id=${user_id}`)
   },
-  userInfoNew(
+  saveProfileFull(
+    user_id,
+    profile_photo_file_id,
     new_first_name,
+    new_about_me,
+    new_role,
     new_email,
     current_password,
     new_password,
-    new_password_confirmation,
-    new_role,
-    new_about_me,
-    new_profile_photo_id,
-    token
+    new_password_confirmation
   ) {
     var bodyFormData = new FormData() //+
+    bodyFormData.set('user_id', user_id)
+    bodyFormData.set('profile_photo_file_id', profile_photo_file_id)
     bodyFormData.set('new_first_name', new_first_name)
+    bodyFormData.set('new_about_me', new_about_me)
+    bodyFormData.set('new_role', new_role)
     bodyFormData.set('new_email', new_email)
     bodyFormData.set('current_password', current_password)
     bodyFormData.set('new_password', new_password)
     bodyFormData.set('new_password_confirmation', new_password_confirmation)
-    bodyFormData.set('new_role', new_role)
-    bodyFormData.set('new_about_me', new_about_me)
-    bodyFormData.set('new_profile_photo_id', new_profile_photo_id)
-    return apiClientPost.post(`/edit_user_info?token=${token}`, bodyFormData)
+    return apiClientPost.post(
+      `/edit_user_info?token=${localStorage.token}`,
+      bodyFormData
+    )
   },
   getTrainingTypes() {
     return apiClientGet.get(

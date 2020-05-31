@@ -41,7 +41,7 @@
       </span>
       <button
         v-show="showEditFirstName"
-        class="btn__min btn__title_color_orangew text__heading_size_m"
+        class="btn__min btn__title_color_orangeb text__heading_size_s"
         @click="saveFirstName"
       >Сохранить</button>
 
@@ -75,7 +75,7 @@
       </span>
       <button
         v-show="showEditEmail"
-        class="btn__min btn__title_color_orangew text__heading_size_m"
+        class="btn__min btn__title_color_orangeb text__heading_size_s"
         @click="saveEmail"
       >Сохранить</button>
       <!--                           ////////////////////////////////////////password-->
@@ -131,7 +131,7 @@
       </span>
       <button
         v-show="showEditPassword"
-        class="btn__min btn__title_color_orangew text__heading_size_m"
+        class="btn__min btn__title_color_orangeb text__heading_size_s"
         @click="savePassword"
       >Сохранить</button>
 
@@ -147,13 +147,26 @@
       >{{ showEditAboutMe ? 'Отмена' : 'Изменить' }}</span>
 
       <span v-show="showEditAboutMe">&nbsp;</span>
-      <textarea v-show="showEditAboutMe" name="new_about_me" class="text__heading_size_m" rows="7"></textarea>
+      <textarea
+        v-show="showEditAboutMe"
+        name="new_about_me"
+        v-model="new_about_me"
+        class="text__heading_size_m"
+        rows="7"
+      ></textarea>
       <button
         v-show="showEditAboutMe"
-        class="btn__min btn__title_color_orangew text__heading_size_m"
+        class="btn__min btn__title_color_orangeb text__heading_size_s"
         @click="saveAboutMe"
       >Сохранить</button>
     </section>
+    <div class="btn-block">
+      <button
+        class="btn__min btn__title_color_orangeb text__heading_size_s"
+        @click="saveProfile"
+      >Сохранить</button>
+      <button class="btn__min btn__title_color_transp-orange text__heading_size_s marg20">Отмена</button>
+    </div>
   </div>
 </template>
 
@@ -246,16 +259,35 @@ export default {
           }
         })
         .catch(err => {})
-
-      if (this.infoUser.profile_photo_file_id != '') {
-        AuthorizationService.saveProfilePhoto(
+    },
+    saveProfile() {
+      if (this.new_password == '') {
+        AuthorizationService.saveProfileShort(
           localStorage.user_id,
-          this.infoUser.profile_photo_file_id, //заплатка
-          this.infoUser.first_name,
-          this.infoUser.about_me,
+          this.profile_photo_file_id, //заплатка
+          this.new_first_name == ''
+            ? this.infoUser.first_name
+            : this.new_first_name,
+          this.new_about_me == '' ? this.infoUser.about_me : this.new_about_me,
           this.infoUser.role
         ).then(resp => {
-          alert('фотка загружена')
+          alert('данные изменены')
+        })
+      } else {
+        AuthorizationService.saveProfileFull(
+          localStorage.user_id,
+          this.profile_photo_file_id, //заплатка
+          this.new_first_name == ''
+            ? this.infoUser.first_name
+            : this.new_first_name,
+          this.new_about_me == '' ? this.infoUser.about_me : this.new_about_me,
+          this.infoUser.role,
+          this.new_email == '' ? this.infoUser.email : this.new_email,
+          this.current_password,
+          this.new_password,
+          this.new_password_confirmation
+        ).then(resp => {
+          alert('данные изменены')
         })
       }
     },
