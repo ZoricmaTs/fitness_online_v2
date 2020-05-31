@@ -30,9 +30,7 @@
           width="20"
           height="20"
         />
-        <span class="right-sidebar__numb exercises__numb text__heading_size_m"
-          >5</span
-        >
+        <span class="right-sidebar__numb exercises__numb text__heading_size_m">5</span>
       </li>
       <li class="right-sidebar__menu-item text__heading_size_m">
         <img
@@ -42,12 +40,13 @@
           width="20"
           height="20"
         />
-        <span
-          class="right-sidebar__numb message__numb text__heading_size_m"
-        ></span>
+        <span class="right-sidebar__numb message__numb text__heading_size_m"></span>
       </li>
     </ul>
     <div class="right-sidebar__about">
+      <!-- <div id="preview">
+        <img v-if="imageUrl" :src="imageUrl" height="146" />
+      </div>-->
       <img
         class="right-sidebar__avatar"
         src="../assets/img/avatar.png"
@@ -55,18 +54,21 @@
         width="146"
         height="146"
       />
-      <h2 class="right-sidebar__first-name text__heading_size_h2">Марк</h2>
+      <h2 class="right-sidebar__first-name text__heading_size_h2">{{ infoUser.first_name }}</h2>
       <p class="right-sidebar__heading">О себе</p>
-      <p class="right-sidebar__body text__heading_size_s">
-        Тест интегрирует коллективный объект. Инсайт, в представлении Морено,
-        неизменяем. Сознание конфронтально притягивает социальный эгоцентризм.
-      </p>
+      <p class="right-sidebar__body text__heading_size_s">{{ infoUser.about_me }}</p>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      email: localStorage.email
+    }
+  }
+}
 </script>
 
 <style lang="scss">

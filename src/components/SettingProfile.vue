@@ -11,11 +11,7 @@
     <h3 class="page__heading-min text__heading_size_h3">Основное</h3>
     <section class="page__wrapper">
       <span class="page__body text__heading_size_m">Имя</span>
-      <span class="page__body text__heading_size_m">
-        {{
-        infoUser.first_name
-        }}
-      </span>
+      <span class="page__body text__heading_size_m">{{ infoUser.first_name }}</span>
       <span
         class="page__link"
         @click="showEditFirstName = !showEditFirstName"
@@ -51,10 +47,11 @@
 
       <span class="page__body text__heading_size_m">E-mail</span>
       <span class="page__body text__heading_size_m">{{ infoUser.email }}</span>
-      <span
-        class="page__link"
-        @click="showEditEmail = !showEditEmail"
-      >{{ showEditEmail ? 'Отмена' : 'Изменить' }}</span>
+      <span class="page__link" @click="showEditEmail = !showEditEmail">
+        {{
+        showEditEmail ? 'Отмена' : 'Изменить'
+        }}
+      </span>
 
       <span v-show="showEditEmail" class="page__body text__heading_size_m">Новый email</span>
       <span v-show="showEditEmail">
@@ -84,11 +81,10 @@
       <!--                           ////////////////////////////////////////password-->
       <span class="page__body text__heading_size_m">Пароль</span>
       <span class="page__body text__heading_size_m">******</span>
-      <span class="page__link" @click="showEditPassword = !showEditPassword">
-        {{
-        showEditPassword ? 'Отмена' : 'Изменить'
-        }}
-      </span>
+      <span
+        class="page__link"
+        @click="showEditPassword = !showEditPassword"
+      >{{ showEditPassword ? 'Отмена' : 'Изменить' }}</span>
 
       <span v-show="showEditPassword" class="page__body text__heading_size_m">Старый пароль</span>
       <span v-show="showEditPassword">
@@ -123,9 +119,6 @@
       <span v-show="showEditPassword" class="page__body text__heading_size_m">Повторите пароль</span>
       <span v-show="showEditPassword">
         <span v-if="$v.new_password_confirmation.$error" class="setting__err text__heading_size_s">
-          <template
-            v-if="!$v.new_password_confirmation.required"
-          >Это поле обязательно для заполнения.</template>
           <template v-if="!$v.new_password_confirmation.sameAsPassword">Пароли должны совпадать</template>
         </span>
         <input
@@ -143,12 +136,15 @@
       >Сохранить</button>
 
       <span class="page__body text__heading_size_m">О себе</span>
-      <span class="page__body text__heading_size_m">{{ infoUser.about_me }}</span>
-      <span class="page__link" @click="showEditAboutMe = !showEditAboutMe">
+      <span class="page__body text__heading_size_m">
         {{
-        showEditAboutMe ? 'Отмена' : 'Изменить'
+        infoUser.about_me
         }}
       </span>
+      <span
+        class="page__link"
+        @click="showEditAboutMe = !showEditAboutMe"
+      >{{ showEditAboutMe ? 'Отмена' : 'Изменить' }}</span>
 
       <span v-show="showEditAboutMe">&nbsp;</span>
       <textarea v-show="showEditAboutMe" name="new_about_me" class="text__heading_size_m" rows="7"></textarea>
