@@ -210,12 +210,7 @@ export default {
   },
   methods: {
     onRegister() {
-      console.log('Test')
-      //модальное окно подтверждения регистрации и отправки письма
       this.showModalMailCheck = true
-      // this.querySelector('.singup')
-      // this.classList.remove('singup')
-      // this.classList.add('singup__modal')
     },
     getRoleRegister() {
       this.$v.$touch()
@@ -239,7 +234,7 @@ export default {
               response.data.token
             ).then(response => {
               this.onRegister()
-              alert('Вы успешно зарегистрированы')
+              // alert('Вы успешно зарегистрированы')
             })
           } else {
             if (response.data.database_error.indexOf('already exists') != -1) {

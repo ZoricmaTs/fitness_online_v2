@@ -1,13 +1,8 @@
 // @import '../../node_modules/bootstrap/scss/bootstrap';
 @import '@/assets/scss/variables.scss';
 @import '@/assets/scss/btn.scss';
+
 body {
-  background-color: $color-blue;
-  background-image: url('../assets/img/signupbg.png');
-  background-size: cover;
-  background-size: 100% auto;
-  background-position: bottom;
-  background-repeat: no-repeat;
   // height: 100vh;
 }
 
@@ -17,6 +12,12 @@ body {
   justify-content: space-between;
   padding-right: 164px;
   padding-top: 37px;
+  background-color: $color-blue;
+  background-image: url('../assets/img/signupbg.png');
+  background-size: cover;
+  background-size: 100% auto;
+  background-position: bottom;
+  background-repeat: no-repeat;
 }
 
 .singup {
@@ -246,4 +247,3 @@ body {
     border: 1px solid $color-white;
   }
 }
-

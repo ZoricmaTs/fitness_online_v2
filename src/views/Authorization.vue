@@ -9,6 +9,15 @@
       <div class="form-blocks">
         <h1 class="singin__heading text__heading_size_h1">Вход в систему</h1>
         <div class="form-block">
+          <span v-if="$v.email.$error" class="singup__err text__heading_size_h3">
+            <template v-if="!$v.email.minLength">
+              Длина email не должна быть менее
+              {{ $v.email.$params.minLength.min }} символов
+            </template>
+            <template v-if="!$v.email.maxLength">Слишком длинный E-mail</template>
+            <template v-else-if="!$v.email.email">Некорректный email</template>
+            <template v-if="!$v.email.required">Это поле обязательно для заполнения.</template>
+          </span>
           <input
             type="email"
             name="email"
@@ -18,6 +27,14 @@
           />
         </div>
         <div class="form-block">
+          <span v-if="$v.password.$error" class="singup__err text__heading_size_h3">
+            <template v-if="!$v.password.minLength">
+              Длина пароля не должна быть менее
+              {{ $v.password.$params.minLength.min }} символов
+            </template>
+            <template v-if="!$v.password.maxLength">Слишком длинный пароль</template>
+            <template v-if="!$v.password.required">Это поле обязательно для заполнения.</template>
+          </span>
           <div class="singin__input-pass-block">
             <input
               :type="showPassword ? 'text' : 'password'"
@@ -141,7 +158,9 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '@/assets/scss/authorization.scss';
 @import '@/assets/scss/variables.scss';
+body {
+}
 </style>

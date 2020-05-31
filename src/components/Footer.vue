@@ -107,7 +107,7 @@
       >Copyright © 2020</p>
       <ul class="social__list social__heading">
         <li class="social__item">
-          <a class="social__link" href="#">
+          <a class="social__link" href="https://www.facebook.com">
             <img
               src="../assets/img/facebookw.svg"
               width="15"
@@ -117,17 +117,17 @@
           </a>
         </li>
         <li class="social__item">
-          <a class="social__link" href="#">
+          <a class="social__link" href="https://vk.com">
             <img src="../assets/img/vkw.svg" width="15" height="15" alt="social media vkontakte" />
           </a>
         </li>
         <li class="social__item">
-          <a class="social__link" href="#">
+          <a class="social__link" href="https://www.instagram.com/?hl=ru">
             <img src="../assets/img/instw.svg" width="15" height="15" alt="social media instagram" />
           </a>
         </li>
         <li class="social__item">
-          <a class="social__link" href="#">
+          <a class="social__link" href="https://twitter.com/explore">
             <img src="../assets/img/twitterw.svg" width="15" height="13" alt="social media twitter" />
           </a>
         </li>

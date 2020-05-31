@@ -7,11 +7,9 @@
           <li class="navb__item">
             <router-link class="navb__link" :to="{ name: 'signup' }">Регистрация</router-link>
           </li>
-
           <li class="navb__item">
             <router-link class="navb__link" :to="{ name: 'signin' }">Вход</router-link>
           </li>
-
           <li class="navb__item">
             <router-link class="navb__link" :to="{ name: 'aboutservice' }">О сервисе</router-link>
           </li>
@@ -26,7 +24,7 @@
       </nav>
       <ul class="navb__soc social__list social__heading">
         <li class="social__item">
-          <a class="social__link" href="#">
+          <a class="social__link" href="https://www.facebook.com">
             <img
               src="../assets/img/facebook 1.svg"
               width="15"
@@ -36,7 +34,7 @@
           </a>
         </li>
         <li class="social__item">
-          <a class="social__link" href="#">
+          <a class="social__link" href="https://vk.com">
             <img
               src="../assets/img/social-media 1.svg"
               width="15"
@@ -46,7 +44,7 @@
           </a>
         </li>
         <li class="social__item">
-          <a class="social__link" href="#">
+          <a class="social__link" href="https://www.instagram.com/?hl=ru">
             <img
               src="../assets/img/social-network 1.svg"
               width="15"
@@ -56,7 +54,7 @@
           </a>
         </li>
         <li class="social__item">
-          <a class="social__link" href="#">
+          <a class="social__link" href="https://twitter.com/explore">
             <img
               src="../assets/img/twitter 1.svg"
               width="15"

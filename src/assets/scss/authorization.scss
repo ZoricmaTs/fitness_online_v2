@@ -1,13 +1,5 @@
 @import '@/assets/scss/variables.scss';
 @import '@/assets/scss/btn.scss';
-body {
-  background-color: $color-blue;
-  background-image: url('../assets/img/signinbg.png');
-  background-size: cover;
-  background-size: 100% auto;
-  background-position: bottom;
-  background-repeat: no-repeat;
-}
 
 .singin-bg {
   display: flex;
@@ -15,7 +7,12 @@ body {
   justify-content: space-between;
   padding-right: 164px;
   padding-top: 40px;
-
+  background-color: $color-blue;
+  background-image: url('../assets/img/signinbg.png');
+  background-size: cover;
+  background-size: 100% auto;
+  background-position: bottom;
+  background-repeat: no-repeat;
   // height: 100vh;
 }
 .singin {
