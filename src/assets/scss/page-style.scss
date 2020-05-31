@@ -28,9 +28,9 @@
   &__wrapper {
     width: 560px;
     display: grid;
-    grid-template-columns: 125px 188px 104px;
+    grid-template-columns: 125px 188px 110px;
     grid-template-rows: 20px 20px 20px 20px 20px 20px 20px 20px auto auto;
-    row-gap: 25px;
+    row-gap: 45px;
     column-gap: 50px;
     justify-items: start;
     align-items: center;
@@ -71,4 +71,10 @@
 textarea {
   overflow: auto;
   resize: none;
+}
+
+.setting {
+  &__err {
+    color: $color-orange;
+  }
 }

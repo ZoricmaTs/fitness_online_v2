@@ -5,9 +5,13 @@
       <div class="left-sidebar__time-day text__heading_size_h2">12.05.2020</div>
     </div>
     <ul class="left-sidebar__menu">
-      <li class="left-sidebar__menu-item text__heading_size_h3">Сертификаты</li>
-      <li class="left-sidebar__menu-item text__heading_size_h3">Календарь тренировок</li>
-      <li class="left-sidebar__menu-item text__heading_size_h3">Записи тренировок</li>
+      <li class="left-sidebar__menu-item text__heading_size_h3">Достижения</li>
+      <li class="left-sidebar__menu-item text__heading_size_h3">
+        Календарь тренировок
+      </li>
+      <li class="left-sidebar__menu-item text__heading_size_h3">
+        Записи тренировок
+      </li>
     </ul>
   </div>
 </template>

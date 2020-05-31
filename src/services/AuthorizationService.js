@@ -59,9 +59,18 @@ export default {
     const token = localStorage.token
     return apiClientMedia.put(`/media/upload_file?token=${token}`, formData)
   },
-  saveProfilePhoto(user_id, new_profile_photo_id) {
+  saveProfilePhoto(
+    user_id,
+    profile_photo_file_id,
+    new_first_name,
+    new_about_me,
+    new_role
+  ) {
     bodyFormData.set('user_id', user_id)
-    bodyFormData.set('new_profile_photo_id', new_profile_photo_id)
+    bodyFormData.set('profile_photo_file_id', profile_photo_file_id)
+    bodyFormData.set('new_first_name', new_first_name)
+    bodyFormData.set('new_about_me', new_about_me)
+    bodyFormData.set('new_role', new_role)
     return apiClientPost.post(
       `/edit_user_info?token=${localStorage.token}`,
       bodyFormData

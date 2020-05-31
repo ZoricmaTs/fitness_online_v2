@@ -22,15 +22,27 @@
       >{{ showEditFirstName ? 'Отмена' : 'Изменить' }}</span>
 
       <span v-show="showEditFirstName" class="page__body text__heading_size_m">Новое имя</span>
-      <input
-        v-show="showEditFirstName"
-        v-model="new_first_name"
-        type="text"
-        name="new_first_name"
-        placeholder
-        class="text__heading_size_m page__input"
-        required
-      />
+      <span v-show="showEditFirstName">
+        <span v-if="$v.new_first_name.$error" class="setting__err text__heading_size_s">
+          <template v-if="!$v.new_first_name.minLength">
+            Длина имени не должна быть менее
+            {{ $v.new_first_name.$params.minLength.min }} символов
+          </template>
+          <template v-if="!$v.new_first_name.maxLength">Слишком длинное имя</template>
+          <template
+            v-else-if="!$v.new_first_name.alpha"
+          >Имя должно содержать латинские или русские буквы.</template>
+        </span>
+        <input
+          v-show="showEditFirstName"
+          v-model="new_first_name"
+          type="text"
+          name="new_first_name"
+          placeholder
+          class="text__heading_size_m page__input"
+          @blur="$v.new_first_name.$touch()"
+        />
+      </span>
       <button
         v-show="showEditFirstName"
         class="btn__min btn__title_color_orangew text__heading_size_m"
@@ -45,21 +57,31 @@
       >{{ showEditEmail ? 'Отмена' : 'Изменить' }}</span>
 
       <span v-show="showEditEmail" class="page__body text__heading_size_m">Новый email</span>
-      <input
-        v-show="showEditEmail"
-        v-model="new_email"
-        type="email"
-        name="new_email"
-        placeholder
-        class="text__heading_size_m page__input"
-        required
-      />
+      <span v-show="showEditEmail">
+        <span v-if="$v.new_email.$error" class="setting__err text__heading_size_s">
+          <template v-if="!$v.new_email.minLength">
+            Длина email не должна быть менее
+            {{ $v.new_email.$params.minLength.min }} символов
+          </template>
+          <template v-if="!$v.new_email.maxLength">Слишком длинный E-mail</template>
+          <template v-else-if="!$v.new_email.email">Некорректный email</template>
+        </span>
+        <input
+          v-show="showEditEmail"
+          v-model="new_email"
+          type="email"
+          name="new_email"
+          placeholder
+          class="text__heading_size_m page__input"
+          @blur="$v.new_email.$touch()"
+        />
+      </span>
       <button
         v-show="showEditEmail"
         class="btn__min btn__title_color_orangew text__heading_size_m"
         @click="saveEmail"
       >Сохранить</button>
-
+      <!--                           ////////////////////////////////////////password-->
       <span class="page__body text__heading_size_m">Пароль</span>
       <span class="page__body text__heading_size_m">******</span>
       <span class="page__link" @click="showEditPassword = !showEditPassword">
@@ -69,39 +91,51 @@
       </span>
 
       <span v-show="showEditPassword" class="page__body text__heading_size_m">Старый пароль</span>
-      <span>
-        <span
-          class="singup__err text__heading_size_m"
-          v-show="showEditPassword"
-        >{{ errArray['current_password'] }}</span>
+      <span v-show="showEditPassword">
         <input
           v-show="showEditPassword"
           type="password"
           name="current_password"
-          placeholder
           class="text__heading_size_m page__input"
         />
       </span>
       <span v-show="showEditPassword">&nbsp;</span>
-
+      <!--                           ////////////////////////////////////////password-->
       <span v-show="showEditPassword" class="page__body text__heading_size_m">Новый пароль</span>
-      <input
-        v-show="showEditPassword"
-        type="password"
-        name="new_password"
-        placeholder
-        class="text__heading_size_m page__input"
-      />
+      <span v-show="showEditPassword">
+        <span v-if="$v.new_password.$error" class="setting__err text__heading_size_s">
+          <template v-if="!$v.password.minLength">
+            Длина пароля не должна быть менее
+            {{ $v.new_password.$params.minLength.min }} символов
+          </template>
+          <template v-if="!$v.new_password.maxLength">Слишком длинный пароль</template>
+        </span>
+        <input
+          v-show="showEditPassword"
+          type="password"
+          name="new_password"
+          class="text__heading_size_m page__input"
+          @blur="$v.new_password.$touch()"
+        />
+      </span>
       <span v-show="showEditPassword">&nbsp;</span>
 
       <span v-show="showEditPassword" class="page__body text__heading_size_m">Повторите пароль</span>
-      <input
-        v-show="showEditPassword"
-        type="password"
-        name="new_password_confirmation"
-        placeholder
-        class="text__heading_size_m page__input"
-      />
+      <span v-show="showEditPassword">
+        <span v-if="$v.new_password_confirmation.$error" class="setting__err text__heading_size_s">
+          <template
+            v-if="!$v.new_password_confirmation.required"
+          >Это поле обязательно для заполнения.</template>
+          <template v-if="!$v.new_password_confirmation.sameAsPassword">Пароли должны совпадать</template>
+        </span>
+        <input
+          v-show="showEditPassword"
+          type="password"
+          name="new_password_confirmation"
+          class="text__heading_size_m page__input"
+          @blur="$v.new_password_confirmation.$touch()"
+        />
+      </span>
       <button
         v-show="showEditPassword"
         class="btn__min btn__title_color_orangew text__heading_size_m"
@@ -129,7 +163,14 @@
 
 <script>
 import AuthorizationService from '@/services/AuthorizationService.js'
-
+import {
+  required,
+  maxLength,
+  minLength,
+  sameAs,
+  email
+} from 'vuelidate/lib/validators'
+import moment from 'moment'
 export default {
   props: ['id'],
   data() {
@@ -154,6 +195,25 @@ export default {
       errArray: {}
     }
   },
+  validations: {
+    new_first_name: {
+      minLength: minLength(2),
+      maxLength: maxLength(60),
+      alpha: val => /^[a-zа-яё'\s\-]*$/i.test(val)
+    },
+    new_email: {
+      email,
+      minLength: minLength(6),
+      maxLength: maxLength(255)
+    },
+    new_password: {
+      minLength: minLength(8),
+      maxLength: maxLength(32)
+    },
+    new_password_confirmation: {
+      sameAsPassword: sameAs('password')
+    }
+  },
   methods: {
     saveFirstName() {
       this.infoUser.first_name = this.new_first_name
@@ -164,27 +224,7 @@ export default {
       this.showEditEmail = false
     },
     savePassword() {
-      let hasErr = false
-      if (this.current_password == '') {
-        this.errArray['current_password'] = 'введите старый пароль'
-        hasErr = true
-      }
-      if (this.new_password == '') {
-        this.errArray['new_password'] = 'введите  пароль'
-        hasErr = true
-      }
-      if (this.new_password_confirmation == '') {
-        this.errArray['new_password_confirmation'] = 'введите  повторите пароль'
-        hasErr = true
-      }
-      if (this.new_password_confirmation != this.new_password) {
-        this.errArray['new_password_confirmation'] = 'Пароли не совпадают'
-        hasErr = true
-      }
-
-      if (hasErr == false) {
-        this.showEditPassword = false
-      }
+      this.showEditPassword = false
     },
     saveAboutMe() {
       this.infoUser.about_me = this.new_about_me
@@ -214,7 +254,10 @@ export default {
       if (this.infoUser.profile_photo_file_id != '') {
         AuthorizationService.saveProfilePhoto(
           localStorage.user_id,
-          this.infoUser.profile_photo_file_id
+          this.infoUser.profile_photo_file_id, //заплатка
+          this.infoUser.first_name,
+          this.infoUser.about_me,
+          this.infoUser.role
         ).then(resp => {
           alert('фотка загружена')
         })
