@@ -41,6 +41,7 @@
     @include font-size(13px);
     color: $color-white;
     width: 188px;
+    margin-bottom: 30px;
   }
   &__link-email {
     @include font-size(13px);

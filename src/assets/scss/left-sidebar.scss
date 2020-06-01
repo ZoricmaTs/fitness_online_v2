@@ -7,7 +7,7 @@
   height: 100%;
   padding-top: 60px;
   padding-right: 60px;
-  width: 178px;
+  max-width: 153px;
   background-color: $color-dark-gray;
   color: $color-white;
   font-style: normal;
@@ -17,7 +17,7 @@
   }
 
   &__time-day {
-    width: 213px;
+    width: 188px;
     padding-left: 25px;
     padding-bottom: 60px;
     border-bottom: 1px solid $color-orange;
@@ -27,7 +27,7 @@
     justify-content: start;
     align-items: center;
     cursor: pointer;
-    width: 213px;
+    width: 188px;
     padding-left: 25px;
     list-style-type: none;
     height: 118px;

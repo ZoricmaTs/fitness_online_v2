@@ -6,7 +6,7 @@
         <img v-if="imageUrl" :src="imageUrl" height="146" />
       </div>
       <div>
-        <label for="file-upload" class="custom-file-upload">Изменить</label>
+        <label for="file-upload" class="custom-file-upload page__link">Изменить</label>
         <input id="file-upload" type="file" ref="file" @change="selectFile" />
       </div>
     </form>
@@ -162,7 +162,7 @@
         @click="saveAboutMe"
       >Сохранить</button>
     </section>
-    <div class="btn-block">
+    <div class>
       <button
         class="btn__min btn__title_color_orangeb text__heading_size_s"
         @click="saveProfile"
@@ -303,9 +303,9 @@ export default {
             if (response.data.success == true) {
               console.log(response.data)
               this.infoUser.profile_photo_file_id = response.data.id
-              this.imageUrl = `http://80.89.238.253:5000/media/files/${infoUser.profile_photo_file_id}?token=${localStorage.token}`
+              this.imageUrl = `http://80.89.238.253:5000/media/files/${this.infoUser.profile_photo_file_id}?token=${localStorage.token}`
+              this.saveProfileField()
             }
-            this.saveProfileField()
           })
           .catch(err => {})
       } else {
@@ -367,6 +367,8 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  margin-bottom: 30px;
+  padding-left: 105px;
 }
 input[type='file'] {
   display: none;
@@ -374,7 +376,5 @@ input[type='file'] {
 .custom-file-upload {
   display: inline-block;
   padding: 6px 12px;
-  cursor: pointer;
-  text-decoration: underline;
 }
 </style>

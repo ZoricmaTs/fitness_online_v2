@@ -26,15 +26,15 @@
     margin-bottom: 20px;
   }
   &__wrapper {
-    width: 560px;
+    width: 605px;
     display: grid;
-    grid-template-columns: 125px 188px 110px;
+    grid-template-columns: 188px 293px 110px;
     grid-template-rows: auto;
     row-gap: 45px;
-    column-gap: 50px;
+    column-gap: 20px;
     justify-items: start;
     align-items: center;
-    padding: 0 124px;
+    padding: 0 105px;
     padding-bottom: 45px;
   }
   &__link {

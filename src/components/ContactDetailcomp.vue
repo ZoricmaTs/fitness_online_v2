@@ -7,7 +7,7 @@
       то обязательно укажите e-mail, к которому привязан ваш аккаунт.
     </p>
     <div class="contact__link">
-      <span>E-mail:</span>
+      <span>E-mail:&nbsp;</span>
       <a
         href="#"
         class="footer-block__link-email footer-block__link-email_color-team_gray text__heading_size_m"
