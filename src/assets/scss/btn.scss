@@ -102,6 +102,12 @@
   flex-direction: row;
   justify-content: center;
   width: 396px;
+  &__right {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 84px;
+  }
 }
 .marg20 {
   margin-left: 20px;

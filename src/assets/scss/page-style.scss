@@ -63,15 +63,19 @@
     }
   }
   &__labelcheck {
-    // display: flex;
-    // flex-wrap: wrap;
     padding-left: 103px;
-    max-width: 521px;
+    max-width: 209px;
   }
 }
 textarea {
   overflow: auto;
   resize: none;
+  width: 293px;
+  &:hover,
+  &:focus {
+    border: 2px solid #db3d1a;
+    box-sizing: border-box;
+  }
 }
 
 .setting {

@@ -1,48 +1,52 @@
 <template>
   <div class="right-sidebar">
-    <ul class="right-sidebar__menu">
-      <li class="right-sidebar__menu-item text__heading_size_m">
-        <router-link class="navb__link" :to="{ name: 'settingUser' }">
+    <div class="right-sidebar__menu">
+      <div>
+        <div class="right-sidebar__menu-item text__heading_size_m">
           <img
             class="right-sidebar__img"
-            src="../assets/img/gear.svg"
-            alt="settings"
+            src="../assets/img/diet.svg"
+            alt="exercises"
             width="20"
             height="20"
           />
-        </router-link>
-        <span class="right-sidebar__numb text__heading_size_m"></span>
-      </li>
-      <li class="right-sidebar__menu-item text__heading_size_m">
-        <img
-          class="right-sidebar__img"
-          src="../assets/img/bell.svg"
-          alt="notice"
-          width="20"
-          height="20"
-        />
-      </li>
-      <li class="right-sidebar__menu-item text__heading_size_m">
-        <img
-          class="right-sidebar__img"
-          src="../assets/img/diet.svg"
-          alt="exercises"
-          width="20"
-          height="20"
-        />
-        <span class="right-sidebar__numb exercises__numb text__heading_size_m">5</span>
-      </li>
-      <li class="right-sidebar__menu-item text__heading_size_m">
-        <img
-          class="right-sidebar__img"
-          src="../assets/img/sms.svg"
-          alt="message"
-          width="20"
-          height="20"
-        />
-        <span class="right-sidebar__numb message__numb text__heading_size_m"></span>
-      </li>
-    </ul>
+          <span class="right-sidebar__numb exercises__numb text__heading_size_m">5</span>
+        </div>
+        <div class="right-sidebar__menu-item text__heading_size_m">
+          <img
+            class="right-sidebar__img"
+            src="../assets/img/sms.svg"
+            alt="message"
+            width="20"
+            height="20"
+          />
+          <span class="right-sidebar__numb message__numb text__heading_size_m"></span>
+        </div>
+      </div>
+      <div>
+        <div class="right-sidebar__menu-item text__heading_size_m">
+          <router-link class="navb__link" :to="{ name: 'settingUser' }">
+            <img
+              class="right-sidebar__img"
+              src="../assets/img/gear.svg"
+              alt="settings"
+              width="20"
+              height="20"
+            />
+          </router-link>
+          <span class="right-sidebar__numb text__heading_size_m"></span>
+        </div>
+        <div class="right-sidebar__menu-item text__heading_size_m">
+          <img
+            class="right-sidebar__img"
+            src="../assets/img/bell.svg"
+            alt="notice"
+            width="20"
+            height="20"
+          />
+        </div>
+      </div>
+    </div>
     <div class="right-sidebar__about">
       <img
         class="right-sidebar__avatar"

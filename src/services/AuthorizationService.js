@@ -110,5 +110,8 @@ export default {
     return apiClientGet.get(
       `/training_type_get?token=${localStorage.token}&limit=20&offset=0`
     )
+  },
+  getUserTrainingTypes() {
+    return apiClientGet.get(`/get_user_by_id?token=${localStorage.token}`)
   }
 }
