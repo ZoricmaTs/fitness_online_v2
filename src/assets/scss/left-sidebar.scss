@@ -39,4 +39,8 @@
       transition: all 0.2s ease;
     }
   }
+  &__menu-link {
+    text-decoration: none;
+    color: $color-white;
+  }
 }

@@ -12,6 +12,7 @@ import ContactDetailUser from '../views/User/ContactDetailUser.vue'
 import OurTrainers from '../views/User/OurTrainers.vue'
 import AboutServiceAuth from '../views/User/AboutServiceAuth.vue'
 import AboutServiceTrainer from '../views/Trainer/AboutServiceTrainer.vue'
+import AdvancementsTrainer from '../views/Trainer/AdvancementsTrainer.vue'
 
 import SettingUser from '../views/User/SettingUser.vue'
 import SettingTrainer from '../views/Trainer/SettingTrainer.vue'
@@ -44,6 +45,13 @@ const routes = [
     name: 'contactdetail',
     component: ContactDetail
   },
+  {
+    path: '/profiletrainerstart/:id/advancements',
+    name: 'advancements',
+    component: AdvancementsTrainer,
+    props: true
+  },
+
   {
     path: '/profiletrainerstart/:id/contactdetail',
     name: 'contactDetailTrainer',
