@@ -1,5 +1,10 @@
 @import '@/assets/scss/variables.scss';
 
+.contact-block {
+  height: 100%;
+  padding-right: 20px;
+  padding-left: 20px;
+}
 .contact {
   &__body {
     font-style: normal;
@@ -9,5 +14,9 @@
     margin-bottom: 30px;
   }
   &__link {
+    @include font-size(18px);
+  }
+  &__link:nth-of-type(2) {
+    margin-top: 10px;
   }
 }
