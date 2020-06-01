@@ -6,12 +6,8 @@
     </div>
     <ul class="left-sidebar__menu">
       <li class="left-sidebar__menu-item text__heading_size_h3">Достижения</li>
-      <li class="left-sidebar__menu-item text__heading_size_h3">
-        Календарь тренировок
-      </li>
-      <li class="left-sidebar__menu-item text__heading_size_h3">
-        Записи тренировок
-      </li>
+      <li class="left-sidebar__menu-item text__heading_size_h3">Календарь тренировок</li>
+      <li class="left-sidebar__menu-item text__heading_size_h3">Записи тренировок</li>
     </ul>
   </div>
 </template>
