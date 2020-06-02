@@ -10,10 +10,11 @@
   padding-top: 37px;
   background-color: $color-blue;
   background-image: url('../assets/img/signupbg.png');
-  // background-size: cover;
-  background-size: 100% auto;
-  background-position: bottom;
+  background-size: cover;
+  // background-size: 100% auto;
+  //background-position: bottom;
   background-repeat: no-repeat;
+  height: 100vh;
 }
 .singin-bg {
   display: flex;
@@ -25,9 +26,8 @@
   background-image: url('../assets/img/signinbg.png');
   background-size: cover;
   // background-size: 100% auto;
-  background-position: bottom;
   background-repeat: no-repeat;
-  // height: 100vh;
+  height: 100vh;
 }
 .singin {
   margin-bottom: 126px; //пересмотреть на мобилке
