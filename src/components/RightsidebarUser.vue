@@ -10,7 +10,9 @@
             width="20"
             height="20"
           />
-          <span class="right-sidebar__numb exercises__numb text__heading_size_m">5</span>
+          <span class="right-sidebar__numb exercises__numb text__heading_size_m"
+            >&nbsp;</span
+          >
         </div>
         <div class="right-sidebar__menu-item text__heading_size_m">
           <img
@@ -20,7 +22,9 @@
             width="20"
             height="20"
           />
-          <span class="right-sidebar__numb message__numb text__heading_size_m"></span>
+          <span
+            class="right-sidebar__numb message__numb text__heading_size_m"
+          ></span>
         </div>
       </div>
       <div>
@@ -48,10 +52,20 @@
       </div>
     </div>
     <div class="right-sidebar__about">
-      <img class="right-sidebar__avatar" :src="imageUrl" alt="message" width="146" height="146" />
-      <h2 class="right-sidebar__first-name text__heading_size_h2">{{ infoUser.first_name }}</h2>
+      <img
+        class="right-sidebar__avatar"
+        :src="imageUrl"
+        alt="message"
+        width="146"
+        height="146"
+      />
+      <h2 class="right-sidebar__first-name text__heading_size_h2">
+        {{ infoUser.first_name }}
+      </h2>
       <p class="right-sidebar__heading">О себе</p>
-      <p class="right-sidebar__body text__heading_size_s">{{ infoUser.about_me }}</p>
+      <p class="right-sidebar__body text__heading_size_s">
+        {{ infoUser.about_me }}
+      </p>
     </div>
   </div>
 </template>
@@ -83,8 +97,10 @@ export default {
         user_id: serverInfoUser.user_id
       }
       // alert(serverInfoUser.profile_photo_file_id)
-      // this.infoUser.profile_photo_file_id =
-      //   'b268398ba9ab4a8bbeb7ebb54def38491edbc753'
+      if (this.infoUser.profile_photo_file_id == null) {
+        this.infoUser.profile_photo_file_id =
+          '6c080add65e3f4b7a1376737235175975b34109b'
+      }
       if (this.infoUser.profile_photo_file_id != '') {
         this.imageUrl = `http://80.89.238.253:5000/media/files/${this.infoUser.profile_photo_file_id}?token=${localStorage.token}`
       }

@@ -1,35 +1,51 @@
 <template>
   <div class="page__block">
     <h2 class="page__heading text__heading_size_l">Настройки профиля</h2>
-    <form @submit.prevent="sendFile" enctype="multipart/form-data" class="photo-edit">
+    <form
+      @submit.prevent="sendFile"
+      enctype="multipart/form-data"
+      class="photo-edit"
+    >
       <div id="preview">
         <img v-if="imageUrl" :src="imageUrl" height="146" />
       </div>
       <div>
-        <label for="file-upload" class="custom-file-upload page__link">Изменить</label>
+        <label for="file-upload" class="custom-file-upload page__link"
+          >Изменить</label
+        >
         <input id="file-upload" type="file" ref="file" @change="selectFile" />
       </div>
     </form>
     <h3 class="page__heading-min text__heading_size_h3">Основное</h3>
     <section class="page__wrapper">
       <span class="page__body text__heading_size_m">Имя</span>
-      <span class="page__body text__heading_size_m">{{ infoUser.first_name }}</span>
+      <span class="page__body text__heading_size_m">{{
+        infoUser.first_name
+      }}</span>
       <span
         class="page__link"
         @click="showEditFirstName = !showEditFirstName"
-      >{{ showEditFirstName ? 'Отмена' : 'Изменить' }}</span>
+        >{{ showEditFirstName ? 'Отмена' : 'Изменить' }}</span
+      >
 
-      <span v-show="showEditFirstName" class="page__body text__heading_size_m">Новое имя</span>
+      <span v-show="showEditFirstName" class="page__body text__heading_size_m"
+        >Новое имя</span
+      >
       <span v-show="showEditFirstName">
-        <span v-if="$v.new_first_name.$error" class="setting__err text__heading_size_s">
+        <span
+          v-if="$v.new_first_name.$error"
+          class="setting__err text__heading_size_s"
+        >
           <template v-if="!$v.new_first_name.minLength">
             Длина имени не должна быть менее
             {{ $v.new_first_name.$params.minLength.min }} символов
           </template>
-          <template v-if="!$v.new_first_name.maxLength">Слишком длинное имя</template>
-          <template
-            v-else-if="!$v.new_first_name.alpha"
-          >Имя должно содержать латинские или русские буквы.</template>
+          <template v-if="!$v.new_first_name.maxLength"
+            >Слишком длинное имя</template
+          >
+          <template v-else-if="!$v.new_first_name.alpha"
+            >Имя должно содержать латинские или русские буквы.</template
+          >
         </span>
         <input
           v-show="showEditFirstName"
@@ -45,27 +61,36 @@
         v-show="showEditFirstName"
         class="btn__min btn__title_color_orangeb text__heading_size_s"
         @click="saveFirstName"
-      >Сохранить</button>
+      >
+        Сохранить
+      </button>
 
       <span class="page__body text__heading_size_m">E-mail</span>
       <span class="page__body text__heading_size_m">{{ infoUser.email }}</span>
       <div class="correct">
         <span class="page__link" @click="showEditEmail = !showEditEmail">
-          {{
-          showEditEmail ? 'Отмена' : 'Изменить'
-          }}
+          {{ showEditEmail ? 'Отмена' : 'Изменить' }}
         </span>
       </div>
 
-      <span v-show="showEditEmail" class="page__body text__heading_size_m">Новый email</span>
+      <span v-show="showEditEmail" class="page__body text__heading_size_m"
+        >Новый email</span
+      >
       <span v-show="showEditEmail">
-        <span v-if="$v.new_email.$error" class="setting__err text__heading_size_s">
+        <span
+          v-if="$v.new_email.$error"
+          class="setting__err text__heading_size_s"
+        >
           <template v-if="!$v.new_email.minLength">
             Длина email не должна быть менее
             {{ $v.new_email.$params.minLength.min }} символов
           </template>
-          <template v-if="!$v.new_email.maxLength">Слишком длинный E-mail</template>
-          <template v-else-if="!$v.new_email.email">Некорректный email</template>
+          <template v-if="!$v.new_email.maxLength"
+            >Слишком длинный E-mail</template
+          >
+          <template v-else-if="!$v.new_email.email"
+            >Некорректный email</template
+          >
         </span>
         <input
           v-show="showEditEmail"
@@ -81,7 +106,9 @@
         v-show="showEditEmail"
         class="btn__min btn__title_color_orangeb text__heading_size_s"
         @click="saveEmail"
-      >Сохранить</button>
+      >
+        Сохранить
+      </button>
       <!--                           ////////////////////////////////////////password-->
       <span class="page__body text__heading_size_m">Пароль</span>
       <span class="page__body text__heading_size_m">******</span>
@@ -89,10 +116,13 @@
         <span
           class="page__link"
           @click="showEditPassword = !showEditPassword"
-        >{{ showEditPassword ? 'Отмена' : 'Изменить' }}</span>
+          >{{ showEditPassword ? 'Отмена' : 'Изменить' }}</span
+        >
       </div>
 
-      <span v-show="showEditPassword" class="page__body text__heading_size_m">Старый пароль</span>
+      <span v-show="showEditPassword" class="page__body text__heading_size_m"
+        >Старый пароль</span
+      >
       <span v-show="showEditPassword">
         <input
           v-show="showEditPassword"
@@ -103,14 +133,21 @@
       </span>
       <span v-show="showEditPassword">&nbsp;</span>
       <!--                           ////////////////////////////////////////password-->
-      <span v-show="showEditPassword" class="page__body text__heading_size_m">Новый пароль</span>
+      <span v-show="showEditPassword" class="page__body text__heading_size_m"
+        >Новый пароль</span
+      >
       <span v-show="showEditPassword">
-        <span v-if="$v.new_password.$error" class="setting__err text__heading_size_s">
+        <span
+          v-if="$v.new_password.$error"
+          class="setting__err text__heading_size_s"
+        >
           <template v-if="!$v.password.minLength">
             Длина пароля не должна быть менее
             {{ $v.new_password.$params.minLength.min }} символов
           </template>
-          <template v-if="!$v.new_password.maxLength">Слишком длинный пароль</template>
+          <template v-if="!$v.new_password.maxLength"
+            >Слишком длинный пароль</template
+          >
         </span>
         <input
           v-show="showEditPassword"
@@ -122,10 +159,17 @@
       </span>
       <span v-show="showEditPassword">&nbsp;</span>
 
-      <span v-show="showEditPassword" class="page__body text__heading_size_m">Повторите пароль</span>
+      <span v-show="showEditPassword" class="page__body text__heading_size_m"
+        >Повторите пароль</span
+      >
       <span v-show="showEditPassword">
-        <span v-if="$v.new_password_confirmation.$error" class="setting__err text__heading_size_s">
-          <template v-if="!$v.new_password_confirmation.sameAsPassword">Пароли должны совпадать</template>
+        <span
+          v-if="$v.new_password_confirmation.$error"
+          class="setting__err text__heading_size_s"
+        >
+          <template v-if="!$v.new_password_confirmation.sameAsPassword"
+            >Пароли должны совпадать</template
+          >
         </span>
         <input
           v-show="showEditPassword"
@@ -139,18 +183,17 @@
         v-show="showEditPassword"
         class="btn__min btn__title_color_orangeb text__heading_size_s"
         @click="savePassword"
-      >Сохранить</button>
+      >
+        Сохранить
+      </button>
 
       <span class="page__body text__heading_size_m">О себе</span>
       <span class="page__body text__heading_size_m">
-        {{
-        infoUser.about_me
-        }}
+        {{ infoUser.about_me }}
       </span>
-      <span
-        class="page__link"
-        @click="showEditAboutMe = !showEditAboutMe"
-      >{{ showEditAboutMe ? 'Отмена' : 'Изменить' }}</span>
+      <span class="page__link" @click="showEditAboutMe = !showEditAboutMe">{{
+        showEditAboutMe ? 'Отмена' : 'Изменить'
+      }}</span>
 
       <span v-show="showEditAboutMe">&nbsp;</span>
       <textarea
@@ -164,14 +207,22 @@
         v-show="showEditAboutMe"
         class="btn__min btn__title_color_orangeb text__heading_size_s"
         @click="saveAboutMe"
-      >Сохранить</button>
+      >
+        Сохранить
+      </button>
     </section>
     <div class="btn-block__right">
       <button
         class="btn__min btn__title_color_orangeb text__heading_size_s"
         @click="saveProfile"
-      >Сохранить</button>
-      <button class="btn__min btn__title_color_transp-orange text__heading_size_s marg20">Отмена</button>
+      >
+        Сохранить
+      </button>
+      <button
+        class="btn__min btn__title_color_transp-orange text__heading_size_s marg20"
+      >
+        Отмена
+      </button>
     </div>
   </div>
 </template>
@@ -191,7 +242,7 @@ export default {
   data() {
     return {
       file: '',
-      imageUrl: '',
+      imageUrl: '../assets/img/defaultUserIcon.jpg',
       comment: '',
       imageLink: '',
       infoUser: {},
@@ -357,9 +408,16 @@ export default {
       }
       // alert(serverInfoUser.profile_photo_file_id)
       // this.infoUser.profile_photo_file_id =
-      // 'b268398ba9ab4a8bbeb7ebb54def38491edbc753'
+      // "6c080add65e3f4b7a1376737235175975b34109b",
+
+      if (this.infoUser.profile_photo_file_id == null) {
+        this.infoUser.profile_photo_file_id =
+          '6c080add65e3f4b7a1376737235175975b34109b'
+      }
       if (this.infoUser.profile_photo_file_id != '') {
         this.imageUrl = `http://80.89.238.253:5000/media/files/${this.infoUser.profile_photo_file_id}?token=${localStorage.token}`
+      } else {
+        //this.imageUrl = require('../assets/img/defaultUserIcon.jpg')
       }
     })
   }
