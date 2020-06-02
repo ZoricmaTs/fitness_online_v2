@@ -11,7 +11,9 @@
       </div>
 
       <div class="column">
-        <RightsidebarTrainer />
+        <div>
+          <RightsidebarTrainer />
+        </div>
       </div>
     </div>
   </div>

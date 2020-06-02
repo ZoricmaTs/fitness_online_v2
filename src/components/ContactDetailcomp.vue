@@ -1,6 +1,6 @@
 <template>
-  <section class="about-serv contact-block">
-    <h2 class="page__heading text__heading_size_l">Наши контактные данные:</h2>
+  <section class="contact-block">
+    <h2 class="contact__heading text__heading_size_l">Наши контактные данные:</h2>
     <!-- <p class="contact__body">
       Если у Вас возникли сложности технического характера, напишите нам письмо
       с описанием ситуации. Если вы являетесь зарегистрированным пользователем,

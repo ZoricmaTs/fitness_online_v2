@@ -30,6 +30,7 @@ body {
 .block-grid-min {
   padding-left: 238px;
   padding-right: 238px;
+  background-color: $color-blue;
 }
 .bg-color {
   background-color: $color-blue;

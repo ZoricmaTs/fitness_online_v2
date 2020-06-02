@@ -1,22 +1,31 @@
 @import '@/assets/scss/variables.scss';
 
 .contact-block {
-  height: 100%;
-  padding-right: 20px;
-  padding-left: 20px;
+  // padding-right: 20px;
+  // padding-left: 20px;
+  // background-color: $color-blue;
+  // height: 100vh;
 }
+
 .contact {
+  &__heading {
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+    color: $color-white;
+    // margin-bottom: 30px;
+  }
   &__body {
     font-style: normal;
     font-weight: 500;
     @include font-size(16px);
     line-height: 19px;
-    margin-bottom: 30px;
+    // margin-bottom: 30px;
   }
   &__link {
     @include font-size(18px);
   }
   &__link:nth-of-type(2) {
-    margin-top: 10px;
+    // margin-top: 10px;
   }
 }
