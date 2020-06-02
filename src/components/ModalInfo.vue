@@ -23,10 +23,7 @@
 export default {
   name: '',
   props: {
-    showActionButton: { type: Boolean },
-    showCloseButton: { type: Boolean },
-    showCloseCross: { type: Boolean },
-    disabledActionButton: { type: Boolean }
+    showCloseCross: { type: Boolean, default: true }
   },
   methods: {
     close() {

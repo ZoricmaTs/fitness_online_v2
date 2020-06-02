@@ -108,6 +108,11 @@
     justify-content: flex-end;
     margin-right: 84px;
   }
+  &__modal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 .marg20 {
   margin-left: 20px;

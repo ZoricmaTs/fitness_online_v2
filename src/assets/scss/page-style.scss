@@ -71,9 +71,11 @@
 textarea {
   overflow: auto;
   resize: none;
-  width: 293px;
+  width: 283px;
+  padding: 5px;
   &:hover,
   &:focus {
+    outline: none;
     border: 2px solid #db3d1a;
     box-sizing: border-box;
   }
@@ -83,23 +85,4 @@ textarea {
   &__err {
     color: $color-orange;
   }
-}
-
-.btn-add-img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  width: 189px;
-  height: 260px;
-  border: 1px dashed $color-dark-gray;
-  box-sizing: border-box;
-  &__img {
-  }
-}
-.btn-add-img-modal {
-  width: 188px;
-  height: 220px;
-  background: $color-dark-gray;
-  opacity: 0.3;
 }
