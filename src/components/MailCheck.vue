@@ -14,13 +14,13 @@
           class="form-modal-info__text text__heading_size_h2"
         >Вы успешно зарегистрированы в приложении “Fitness-online”</p>
       </div>
-      <!--<button type="submit" class="form-modal-info__btn" @click="onClose">ГОТОВО</button>-->
     </div>
   </ModalInfo>
 </body>
 </template>
 
 <script>
+import AuthorizationService from '@/services/AuthorizationService.js'
 import ModalInfo from '@/components/ModalInfo.vue'
 
 export default {
@@ -33,7 +33,17 @@ export default {
 
   methods: {
     onClose() {
-      this.$emit('close')
+      if (localStorage.role == 'trainer') {
+        this.$router.push({
+          name: 'aboutserviceTrainer',
+          params: { id: localStorage.user_id }
+        })
+      } else {
+        this.$router.push({
+          name: 'aboutserviceUser',
+          params: { id: localStorage.user_id }
+        })
+      }
     }
   }
 }

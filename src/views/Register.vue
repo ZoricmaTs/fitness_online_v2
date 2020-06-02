@@ -212,6 +212,7 @@ export default {
     onRegister() {
       this.showModalMailCheck = true
     },
+
     getRoleRegister() {
       this.$v.$touch()
       if (this.$v.$invalid) {
@@ -233,8 +234,18 @@ export default {
               confirmation_code,
               response.data.token
             ).then(response => {
-              this.onRegister()
-              // alert('Вы успешно зарегистрированы')
+              AuthorizationService.login(this.email, this.password).then(
+                response => {
+                  if (response.data.success == true) {
+                    const userI = response.data
+                    localStorage.token = response.data.token
+                    localStorage.email = this.email
+                    localStorage.role = response.data.role
+                    localStorage.user_id = response.data.user_id
+                    this.onRegister()
+                  }
+                }
+              )
             })
           } else {
             if (response.data.database_error.indexOf('already exists') != -1) {

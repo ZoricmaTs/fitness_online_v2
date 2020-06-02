@@ -48,13 +48,7 @@
       </div>
     </div>
     <div class="right-sidebar__about">
-      <img
-        class="right-sidebar__avatar"
-        src="../assets/img/avatar.png"
-        alt="message"
-        width="146"
-        height="146"
-      />
+      <img class="right-sidebar__avatar" :src="imageUrl" alt="message" width="146" height="146" />
       <h2 class="right-sidebar__first-name text__heading_size_h2">{{ infoUser.first_name }}</h2>
       <p class="right-sidebar__heading">О себе</p>
       <p class="right-sidebar__body text__heading_size_s">{{ infoUser.about_me }}</p>

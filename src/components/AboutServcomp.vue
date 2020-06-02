@@ -22,7 +22,7 @@
           width="209"
           height="209"
         />
-        <p class="about-serv__body-step">Зарегистрируйтесь и настройте профиль</p>
+        <p class="about-serv__body-step">Зарегистрируйтесь и настройте профиль.</p>
       </div>
       <div class="about-serv__block-step">
         <p class="about-serv__heading-step">Шаг 2</p>
@@ -35,7 +35,7 @@
         />
         <p
           class="about-serv__body-step"
-        >Оцените выбор направлений и просмотрите демо-ролики разных тренеров</p>
+        >Оцените выбор направлений и просмотрите демо-ролики разных тренеров.</p>
       </div>
       <div class="about-serv__block-step">
         <p class="about-serv__heading-step">Шаг 3</p>

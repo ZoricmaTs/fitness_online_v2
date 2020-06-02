@@ -24,7 +24,7 @@
               width="209"
               height="209"
             />
-            <p class="about-serv__body-step">Зарегистрируйтесь и настройте профиль</p>
+            <p class="about-serv__body-step">Зарегистрируйтесь и настройте профиль.</p>
           </div>
           <div class="about-serv__block-step">
             <p class="about-serv__heading-step">Шаг 2</p>
@@ -37,7 +37,7 @@
             />
             <p
               class="about-serv__body-step"
-            >Добавьте свои сертификаты и награды в раздел “Достижения”</p>
+            >Добавьте свои сертификаты и награды в раздел “Достижения”.</p>
           </div>
           <div class="about-serv__block-step">
             <p class="about-serv__heading-step">Шаг 3</p>
@@ -49,8 +49,8 @@
               height="209"
             />
             <p class="about-serv__body-step">
-              Запишити демо-ролики по направлениям, в которых вы тренируете и
-              расставьте теги, чтобы ваши клиенты не потерялись
+              Запишите демо-ролики по направлениям, в которых вы тренируете, и
+              расставьте теги, чтобы ваши клиенты не потерялись.
             </p>
           </div>
         </section>
@@ -59,7 +59,6 @@
   </div>
 </template>
 <script>
-// import AboutServcomp from '@/components/AboutServcomp.vue'
 import BasePageTrainer from '@/views/Trainer/BasePageTrainer.vue'
 export default {
   components: {
