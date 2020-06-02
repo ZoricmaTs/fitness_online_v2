@@ -28,7 +28,8 @@
         class="form-modal-info__heading text__heading_size_l"
       >Добавить новый сертификат</span>
       <div class slot="body">
-        <div class="btn-add-img-modal"></div>
+        <Imageinput v-model="imageData" />
+
         <p class="form-modal-info__textp">Описание</p>
         <textarea
           class="form-modal-info__textarea text__heading_size_m"
@@ -53,13 +54,16 @@
 <script>
 import AuthorizationService from '@/services/AuthorizationService.js'
 import ModalInfo from '@/components/ModalInfo.vue'
+import Imageinput from '@/components/Imageinput.vue'
 
 export default {
   components: {
-    ModalInfo
+    ModalInfo,
+    Imageinput
   },
   data() {
     return {
+      imageData: null,
       showModalAddadvancement: false,
       advancements: [
         {

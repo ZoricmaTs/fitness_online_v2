@@ -61,8 +61,8 @@
   &__text {
     font-style: normal;
     font-weight: normal;
-    @include font-size(16px);
-    line-height: 19px;
+    @include font-size(14px);
+    line-height: 30px;
   }
   &__textp {
     font-style: normal;
@@ -74,7 +74,7 @@
   &__textarea {
     border: 1px solid #312829 !important;
     box-sizing: border-box;
-    margin-bottom: 78px;
+    margin-bottom: 40px;
   }
 }
 .btn-add-img {
@@ -112,4 +112,16 @@
     // gap: 20px;
     margin: -10px;
   }
+}
+
+.file-input {
+  display: none;
+}
+.image-input {
+  display: block;
+  width: 188px;
+  height: 220px;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center center;
 }
