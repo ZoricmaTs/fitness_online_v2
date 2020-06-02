@@ -14,8 +14,6 @@
               >Наши тренеры</router-link
             >
           </li>
-
-          <li></li>
           <li class="navb__item">Виды тренировок</li>
           <li class="navb__item">Вопросы и ответы</li>
           <li class="navb__item">

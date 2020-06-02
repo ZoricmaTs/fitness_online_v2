@@ -5,21 +5,31 @@
       <nav class="navb__auth text__heading_size_m">
         <ul class="navb__list-auth">
           <li class="navb__item">
-            <router-link class="navb__link" :to="{ name: 'aboutserviceTrainer' }">О сервисе</router-link>
+            <router-link
+              class="navb__link"
+              :to="{ name: 'aboutserviceTrainer' }"
+              >О сервисе</router-link
+            >
           </li>
           <li class="navb__item">Наши тренеры</li>
-
-          <li></li>
           <li class="navb__item">Виды тренировок</li>
           <li class="navb__item">Вопросы и ответы</li>
           <li class="navb__item">
-            <router-link class="navb__link" :to="{ name: 'contactDetailTrainer' }">Контакты</router-link>
+            <router-link
+              class="navb__link"
+              :to="{ name: 'contactDetailTrainer' }"
+              >Контакты</router-link
+            >
           </li>
         </ul>
       </nav>
       <div class="exit-block">
         <div class="exit-block__text">{{ email }}</div>
-        <img class="exit-block__btn" src="../assets/img/exit.svg" @click="logout" />
+        <img
+          class="exit-block__btn"
+          src="../assets/img/exit.svg"
+          @click="logout"
+        />
       </div>
     </div>
   </header>
