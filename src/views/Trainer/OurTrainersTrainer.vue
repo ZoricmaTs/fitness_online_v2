@@ -1,17 +1,17 @@
 <template>
-  <div>
-    <BasePageUser>
+  <div class="bg-color">
+    <BasePageTrainer>
       <OurTrainerCard />
-    </BasePageUser>
+    </BasePageTrainer>
   </div>
 </template>
 <script>
-import BasePageUser from '@/views/User/BasePageUser.vue'
 import OurTrainerCard from '@/components/OurTrainerCard.vue'
+import BasePageTrainer from '@/views/Trainer/BasePageTrainer.vue'
 export default {
   components: {
-    BasePageUser,
-    OurTrainerCard
+    OurTrainerCard,
+    BasePageTrainer
   }
 }
 </script>

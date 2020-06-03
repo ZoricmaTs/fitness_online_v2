@@ -1,9 +1,11 @@
 <template>
-  <section>
+  <section class="page__block-height page__block ">
     <h2 class="page__heading text__heading_size_l">Наши тренеры</h2>
     <div>
       <h2 class="page__heading text__heading_size_l">Фильтр:</h2>
-      <select>все</select>
+      <select
+        >все</select
+      >
     </div>
     <div class="ourtrainers__block">
       <img class="ourtrainers__img" />

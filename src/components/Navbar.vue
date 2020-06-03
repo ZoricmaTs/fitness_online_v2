@@ -14,7 +14,9 @@
             <router-link class="navb__link" :to="{ name: 'aboutservice' }">О сервисе</router-link>
           </li>
 
-          <li class="navb__item">Наши тренеры</li>
+          <li class="navb__item">
+            <router-link class="navb__link" :to="{ name: 'ourTrainers' }">Наши тренеры</router-link>
+          </li>
           <li class="navb__item">Виды тренировок</li>
           <li class="navb__item">Вопросы и ответы</li>
           <li class="navb__item">

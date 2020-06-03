@@ -9,7 +9,9 @@ import AboutService from '../views/AboutService.vue'
 import ContactDetail from '../views/ContactDetail.vue'
 import ContactDetailTrainer from '../views/Trainer/ContactDetailTrainer.vue'
 import ContactDetailUser from '../views/User/ContactDetailUser.vue'
-import OurTrainers from '../views/User/OurTrainers.vue'
+import OurTrainersUser from '../views/User/OurTrainersUser.vue'
+import OurTrainersTrainer from '../views/Trainer/OurTrainersTrainer.vue'
+import OurTrainers from '../views/OurTrainers.vue'
 import AboutServiceAuth from '../views/User/AboutServiceAuth.vue'
 import AboutServiceTrainer from '../views/Trainer/AboutServiceTrainer.vue'
 import AdvancementsTrainer from '../views/Trainer/AdvancementsTrainer.vue'
@@ -94,12 +96,22 @@ const routes = [
     props: true
   },
   {
+    path: '/ourtrainers',
+    name: 'ourTrainers',
+    component: OurTrainers
+  },
+  {
     path: '/profileuserstart/:id/ourtrainers',
     name: 'ourTrainersUser',
-    component: OurTrainers,
+    component: OurTrainersUser,
     props: true
   },
-
+  {
+    path: '/profiletrainerstart/:id/ourtrainers',
+    name: 'ourTrainersTrainer',
+    component: OurTrainersTrainer,
+    props: true
+  },
   {
     path: '/email_confirmation',
     name: 'email_confirmation', //для роутеров
