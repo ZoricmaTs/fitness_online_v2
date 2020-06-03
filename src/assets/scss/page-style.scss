@@ -7,6 +7,10 @@
     background-color: $color-blue;
     // height: 100vh;
   }
+  &__block-height {
+    background-color: $color-blue;
+    min-height: 100vh;
+  }
   &__block-lr {
     padding-right: 20px;
     padding-left: 20px;
