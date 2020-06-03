@@ -2,19 +2,16 @@
   <div class="page__block-lr">
     <h3 class="page__heading-min text__heading_size_h3">Направления</h3>
     <div class="page__labelcheck">
-      <label
-        class="check option-check"
-        v-for="trainingType in trainingTypes"
-        :key="trainingType.training_type_id"
-      >
-        <input class="check__input" type="checkbox" />
+      <label class="check option-check" v-for="item in trainingTypes" :key="item.training_type_id">
+        <input
+          class="check__input"
+          :id="item.training_type_id"
+          type="checkbox"
+          v-model="item.checked"
+        />
         <span class="check__box-training"></span>
         <div class="check__text">
-          <span class="check__text-body_color_gray">
-            {{
-            trainingType.name
-            }}
-          </span>
+          <label :for="item.training_type_id" class="check__text-body_color_gray">{{ item.name }}</label>
         </div>
       </label>
     </div>
@@ -34,17 +31,33 @@ export default {
     setCheckbox() {}
   },
   created() {
-    AuthorizationService.getTrainingTypes().then(responce => {
-      this.trainingTypes = responce.data
-    }),
-      AuthorizationService.getUserTrainingTypes().then(responce => {
-        this.userTrainingTypes = responce.data.training_types
+    AuthorizationService.userInfo(
+      localStorage.user_id,
+      localStorage.token
+    ).then(response => {
+      let serverInfoUser = response.data
+      this.userTrainingTypes = serverInfoUser.training_types
+
+      AuthorizationService.getTrainingTypes().then(responce => {
+        var training_types = []
+        var alltrainingTypes = responce.data
+        alltrainingTypes.forEach(element => {
+          if (
+            this.userTrainingTypes.find(
+              o => o.training_type_id == element.training_type_id
+            )
+          ) {
+            element.checked = true
+            training_types.push(element)
+          } else {
+            element.checked = false
+            training_types.push(element)
+          }
+        })
+        this.trainingTypes = training_types
       })
+    })
   }
-  //     true-value="userTrainingTypes.training_type_id
-  // ===trainingType.training_type_id"
-  //   false-value="userTrainingTypes.training_type_id
-  // !==trainingType.training_type_id"
 }
 </script>
 

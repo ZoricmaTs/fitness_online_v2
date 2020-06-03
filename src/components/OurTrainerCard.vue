@@ -3,12 +3,11 @@
     <h2 class="page__heading text__heading_size_l">Наши тренеры</h2>
     <div>
       <h2 class="page__heading text__heading_size_l">Фильтр:</h2>
-      <select
-        >все</select
-      >
+      <select>все</select>
     </div>
-
-    <img src />
+    <div class="ourtrainers__block">
+      <img class="ourtrainers__img" />
+    </div>
   </section>
 </template>
 

@@ -5,6 +5,7 @@
     padding-left: 20px;
     padding-top: 45px;
     background-color: $color-blue;
+    // height: 100vh;
   }
   &__block-lr {
     padding-right: 20px;
@@ -65,8 +66,9 @@
   &__labelcheck {
     padding-left: 103px;
     max-width: 209px;
-  }
-  &__textarea {
+    display: grid;
+    grid-template-columns: 40fr 40fr;
+    align-items: start;
   }
 }
 textarea {

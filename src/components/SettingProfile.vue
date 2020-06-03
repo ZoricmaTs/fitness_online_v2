@@ -218,7 +218,7 @@ export default {
   },
   validations: {
     new_first_name: {
-      minLength: minLength(1),
+      minLength: minLength(2),
       maxLength: maxLength(60),
       alpha: val => /^[a-zа-яё'\s\-]*$/i.test(val)
     },

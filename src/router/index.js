@@ -109,7 +109,9 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  routes
+  routes,
+  linkActiveClass: 'active', // помечать активными ссылками
+  linkExactActiveClass: 'exact-active'
 })
 
 export default router

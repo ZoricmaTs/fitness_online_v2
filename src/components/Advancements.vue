@@ -1,5 +1,5 @@
 <template>
-  <section class="page__block">
+  <section class="page__block page__block-new">
     <h2 class="page__heading text__heading_size_l">Дипломы, сертификаты и награды</h2>
     <section class="add-img__block">
       <div class="add-img" v-for="advancement in advancements" :key="advancement.achievement_id">

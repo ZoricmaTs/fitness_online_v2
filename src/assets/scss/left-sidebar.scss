@@ -3,9 +3,7 @@
   //position: relative;
 }
 .left-sidebar {
-  //overflow: hidden;
   height: 100%;
-  // padding-top: 60px;
   padding-right: 60px;
   max-width: 153px;
   background-color: $color-dark-gray;
@@ -45,5 +43,10 @@
   &__menu-link {
     text-decoration: none;
     color: $color-white;
+  }
+  &__menu-link.active div {
+    background-color: $color-blue;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
   }
 }

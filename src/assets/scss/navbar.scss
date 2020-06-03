@@ -74,12 +74,13 @@
     align-items: center;
     margin-bottom: 0;
   }
+  &__item {
+  }
   &__list-auth {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-
     max-width: 570px;
   }
 }
@@ -92,6 +93,12 @@
     text-decoration: none;
   }
 }
+.navb__link.active {
+  background-color: $color-blue;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
 .navb__soc {
   margin-left: 95px;
 }
