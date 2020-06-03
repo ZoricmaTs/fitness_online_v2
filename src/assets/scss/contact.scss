@@ -1,10 +1,10 @@
 @import '@/assets/scss/variables.scss';
 
 .contact-block {
-  // padding-right: 20px;
-  // padding-left: 20px;
-  // background-color: $color-blue;
-  // height: 100vh;
+  padding-right: 20px;
+  padding-left: 20px;
+  background-color: $color-blue;
+  height: 100vh;
 }
 
 .contact {
@@ -13,7 +13,8 @@
     font-weight: 600;
     line-height: 28px;
     color: $color-white;
-    // margin-bottom: 30px;
+    margin-bottom: 30px;
+    padding-top: 60px;
   }
   &__body {
     font-style: normal;
