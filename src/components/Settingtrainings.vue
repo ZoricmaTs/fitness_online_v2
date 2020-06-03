@@ -15,6 +15,16 @@
         </div>
       </label>
     </div>
+    <div class="btn-block__right">
+      <button
+        class="btn__min btn__title_color_orangeb text__heading_size_s"
+        @click="saveTrainingTypes"
+      >Сохранить</button>
+      <button
+        class="btn__min btn__title_color_transp-orange text__heading_size_s marg20"
+        @click="changeCancelTrainigType"
+      >Отмена</button>
+    </div>
   </div>
 </template>
 
@@ -28,7 +38,69 @@ export default {
     }
   },
   methods: {
-    setCheckbox() {}
+    setCheckbox() {},
+    saveTrainingTypes() {
+      var checkedTrainingTypes = this.trainingTypes.filter(
+        o => o.checked == true
+      )
+
+      let needAddToUser = []
+      checkedTrainingTypes.forEach(element => {
+        if (
+          this.userTrainingTypes.find(
+            o => o.training_type_id != element.training_type_id
+          )
+        ) {
+          needAddToUser.push(element.training_type_id)
+          AuthorizationService.addTrainingTypeToUser(
+            localStorage.user_id,
+            element.training_type_id
+          ).then(resp => {})
+        }
+      })
+      console.log(needAddToUser)
+
+      let needRemoveToUser = []
+      var uncheckedTrainingTypes = this.trainingTypes.filter(
+        o => o.checked == false
+      )
+      uncheckedTrainingTypes.forEach(element => {
+        if (
+          this.userTrainingTypes.find(
+            o => o.training_type_id == element.training_type_id
+          )
+        ) {
+          needRemoveToUser.push(element.training_type_id)
+          AuthorizationService.removeTrainingTypeToUser(
+            localStorage.user_id,
+            element.training_type_id
+          ).then(resp => {})
+        }
+      })
+
+      console.log(needRemoveToUser)
+      setTimeout(() => {
+        location.reload()
+      }, 1500)
+    },
+    changeCancelTrainigType() {
+      var training_types = []
+      var alltrainingTypes = this.trainingTypes
+      alltrainingTypes.forEach(element => {
+        if (
+          this.userTrainingTypes.find(
+            o => o.training_type_id == element.training_type_id
+          )
+        ) {
+          element.checked = true
+          training_types.push(element)
+        } else {
+          element.checked = false
+          training_types.push(element)
+        }
+      })
+      this.trainingTypes = training_types
+    }
   },
   created() {
     AuthorizationService.userInfo(

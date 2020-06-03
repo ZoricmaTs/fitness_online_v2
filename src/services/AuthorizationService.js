@@ -113,5 +113,30 @@ export default {
   },
   getUserTrainingTypes() {
     return apiClientGet.get(`/get_user_by_id?token=${localStorage.token}`)
-  }
+  },
+  addTrainingTypeToUser(
+    user_id,
+    training_type_id   
+  ) {
+    var bodyFormData = new FormData()
+    bodyFormData.set('user_id', user_id)
+    bodyFormData.set('training_type_id', training_type_id)
+    return apiClientPost.post(
+      `/match_preference?token=${localStorage.token}`,
+      bodyFormData
+    )
+  },
+
+  removeTrainingTypeToUser(
+    user_id,
+    training_type_id   
+  ) {
+    var bodyFormData = new FormData()
+    bodyFormData.set('user_id', user_id)
+    bodyFormData.set('training_type_id', training_type_id)
+    return apiClientPost.post(
+      `/unmatch_preference?token=${localStorage.token}`,
+      bodyFormData
+    )
+  },
 }
