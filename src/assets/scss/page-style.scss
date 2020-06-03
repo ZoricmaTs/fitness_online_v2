@@ -48,6 +48,7 @@
     @include font-size(16px);
     line-height: 19px;
     text-decoration: underline;
+    cursor: pointer;
   }
   &__input {
     font-style: normal;
