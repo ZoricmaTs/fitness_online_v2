@@ -1,18 +1,17 @@
 <template>
   <div>
     <BasePageUser>
-      <div>
-        Наши тренерыeurioeuwriouewoiruewoi eriowuoiewuroiew ieuriouewoiruqweo
-        ioewuroieuwori
-      </div>
+      <OurTrainerCard />
     </BasePageUser>
   </div>
 </template>
 <script>
 import BasePageUser from '@/views/User/BasePageUser.vue'
+import OurTrainerCard from '@/components/OurTrainerCard.vue'
 export default {
   components: {
-    BasePageUser
+    BasePageUser,
+    OurTrainerCard
   }
 }
 </script>
