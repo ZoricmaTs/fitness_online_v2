@@ -15,6 +15,9 @@ import OurTrainers from '../views/OurTrainers.vue'
 import AboutServiceAuth from '../views/User/AboutServiceAuth.vue'
 import AboutServiceTrainer from '../views/Trainer/AboutServiceTrainer.vue'
 import AdvancementsTrainer from '../views/Trainer/AdvancementsTrainer.vue'
+import QuestionsUser from '../views/User/QuestionsUser.vue'
+import QuestionsTrainer from '../views/Trainer/QuestionsTrainer.vue'
+import Questions from '../views/Questions.vue'
 
 import SettingUser from '../views/User/SettingUser.vue'
 import SettingTrainer from '../views/Trainer/SettingTrainer.vue'
@@ -110,6 +113,23 @@ const routes = [
     path: '/profiletrainerstart/:id/ourtrainers',
     name: 'ourTrainersTrainer',
     component: OurTrainersTrainer,
+    props: true
+  },
+  {
+    path: '/questions',
+    name: 'questions',
+    component: Questions
+  },
+  {
+    path: '/profileuserstart/:id/questions',
+    name: 'questionsUser',
+    component: QuestionsUser,
+    props: true
+  },
+  {
+    path: '/profiletrainerstart/:id/questions',
+    name: 'questionsTrainer',
+    component: QuestionsTrainer,
     props: true
   },
   {

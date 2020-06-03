@@ -19,7 +19,7 @@
 
   &__heading {
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 28px;
     color: $color-white;
     margin-bottom: 30px;
@@ -70,9 +70,11 @@
   }
   &__labelcheck {
     padding-left: 103px;
-    max-width: 209px;
     display: grid;
-    grid-template-columns: 40fr 40fr;
+    grid-template-columns: 188px 188px;
+    grid-template-row: auto;
+    column-gap: 104px;
+    row-gap: 5px;
     align-items: start;
   }
 }

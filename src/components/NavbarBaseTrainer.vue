@@ -11,7 +11,9 @@
             <router-link class="navb__link" :to="{ name: 'ourTrainersTrainer' }">Наши тренеры</router-link>
           </li>
           <li class="navb__item">Виды тренировок</li>
-          <li class="navb__item">Вопросы и ответы</li>
+          <li class="navb__item">
+            <router-link class="navb__link" :to="{ name: 'questionsTrainer' }">Вопросы и ответы</router-link>
+          </li>
           <li class="navb__item">
             <router-link class="navb__link" :to="{ name: 'contactDetailTrainer' }">Контакты</router-link>
           </li>
