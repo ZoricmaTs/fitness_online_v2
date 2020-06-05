@@ -50,7 +50,7 @@ export default {
     var bodyFormData = new FormData() //+
     bodyFormData.set('email', email)
     bodyFormData.set('confirmation_code', confirmation_code)
-    return apiClientPost.post(`/confirm?token=${token}`, bodyFormData)
+    return apiClientPost.post(`/confirm`, bodyFormData)
   },
   sendFileMedia(file, comment) {
     const formData = new FormData()
@@ -114,10 +114,7 @@ export default {
   getUserTrainingTypes() {
     return apiClientGet.get(`/get_user_by_id?token=${localStorage.token}`)
   },
-  addTrainingTypeToUser(
-    user_id,
-    training_type_id   
-  ) {
+  addTrainingTypeToUser(user_id, training_type_id) {
     var bodyFormData = new FormData()
     bodyFormData.set('user_id', user_id)
     bodyFormData.set('training_type_id', training_type_id)
@@ -127,10 +124,7 @@ export default {
     )
   },
 
-  removeTrainingTypeToUser(
-    user_id,
-    training_type_id   
-  ) {
+  removeTrainingTypeToUser(user_id, training_type_id) {
     var bodyFormData = new FormData()
     bodyFormData.set('user_id', user_id)
     bodyFormData.set('training_type_id', training_type_id)
@@ -138,5 +132,5 @@ export default {
       `/unmatch_preference?token=${localStorage.token}`,
       bodyFormData
     )
-  },
+  }
 }

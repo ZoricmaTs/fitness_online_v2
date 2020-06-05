@@ -10,9 +10,7 @@
             width="20"
             height="20"
           />
-          <span class="right-sidebar__numb exercises__numb text__heading_size_m"
-            >&nbsp;</span
-          >
+          <span class="right-sidebar__numb exercises__numb text__heading_size_m">&nbsp;</span>
         </div>
         <div class="right-sidebar__menu-item text__heading_size_m">
           <img
@@ -22,9 +20,7 @@
             width="20"
             height="20"
           />
-          <span
-            class="right-sidebar__numb message__numb text__heading_size_m"
-          ></span>
+          <span class="right-sidebar__numb message__numb text__heading_size_m"></span>
         </div>
       </div>
       <div>
@@ -52,20 +48,10 @@
       </div>
     </div>
     <div class="right-sidebar__about">
-      <img
-        class="right-sidebar__avatar"
-        :src="imageUrl"
-        alt="message"
-        width="146"
-        height="146"
-      />
-      <h2 class="right-sidebar__first-name text__heading_size_h2">
-        {{ infoUser.first_name }}
-      </h2>
+      <img class="right-sidebar__avatar" :src="imageUrl" alt="message" width="146" height="146" />
+      <h2 class="right-sidebar__first-name text__heading_size_h2">{{ infoUser.first_name }}</h2>
       <p class="right-sidebar__heading">О себе</p>
-      <p class="right-sidebar__body text__heading_size_s">
-        {{ infoUser.about_me }}
-      </p>
+      <p class="right-sidebar__body text__heading_size_s">{{ infoUser.about_me }}</p>
     </div>
   </div>
 </template>

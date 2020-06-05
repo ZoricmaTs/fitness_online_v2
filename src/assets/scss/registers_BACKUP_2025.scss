@@ -8,10 +8,14 @@
   padding-right: 164px;
   padding-top: 37px;
   background-color: $color-blue;
-  background-image: url('../assets/img/bgsignupnew.png');
+  background-image: url('../assets/img/signupbg.png');
   background-size: cover;
   background-repeat: no-repeat;
+<<<<<<< HEAD
+  height: 100%;
+=======
   min-height: 100vh;
+>>>>>>> 50991ad... bg style
 }
 .singin-bg {
   display: flex;
@@ -20,10 +24,14 @@
   padding-right: 164px;
   padding-top: 40px;
   background-color: $color-blue;
-  background-image: url('../assets/img/bgsigninnew.png');
+  background-image: url('../assets/img/signinbg.png');
   background-size: cover;
   background-repeat: no-repeat;
+<<<<<<< HEAD
+  height: 100%;
+=======
   min-height: 100vh;
+>>>>>>> 50991ad... bg style
 }
 .singin {
   margin-bottom: 126px; //пересмотреть на мобилке
