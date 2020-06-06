@@ -106,6 +106,12 @@ export default {
       bodyFormData
     )
   },
+  //наши тренеры
+  getTrainers() {
+    return apiClientGet.get(
+      `/get_trainers?limit=100&offset=0&token=${localStorage.token}`
+    )
+  },
   getTrainingTypes() {
     return apiClientGet.get(
       `/training_type_get?token=${localStorage.token}&limit=20&offset=0`

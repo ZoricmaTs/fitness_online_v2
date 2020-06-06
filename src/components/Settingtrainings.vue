@@ -40,7 +40,7 @@ export default {
   methods: {
     setCheckbox() {},
     saveTrainingTypes() {
-      var checkedTrainingTypes = this.trainingTypes.filter(
+      let checkedTrainingTypes = this.trainingTypes.filter(
         o => o.checked == true
       )
 
@@ -61,7 +61,7 @@ export default {
       console.log(needAddToUser)
 
       let needRemoveToUser = []
-      var uncheckedTrainingTypes = this.trainingTypes.filter(
+      let uncheckedTrainingTypes = this.trainingTypes.filter(
         o => o.checked == false
       )
       uncheckedTrainingTypes.forEach(element => {
@@ -84,8 +84,8 @@ export default {
       }, 1500)
     },
     changeCancelTrainigType() {
-      var training_types = []
-      var alltrainingTypes = this.trainingTypes
+      let training_types = []
+      let alltrainingTypes = this.trainingTypes
       alltrainingTypes.forEach(element => {
         if (
           this.userTrainingTypes.find(
@@ -111,8 +111,8 @@ export default {
       this.userTrainingTypes = serverInfoUser.training_types
 
       AuthorizationService.getTrainingTypes().then(responce => {
-        var training_types = []
-        var alltrainingTypes = responce.data
+        let training_types = []
+        let alltrainingTypes = responce.data
         alltrainingTypes.forEach(element => {
           if (
             this.userTrainingTypes.find(
