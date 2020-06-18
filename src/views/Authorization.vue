@@ -111,11 +111,11 @@ export default {
 
   methods: {
     getRole() {
-      // this.$router.push({
-      //   name: 'aboutserviceUser',
-      //   params: { id: 37 }
-      // })
-      // return
+      this.$router.push({
+        name: 'aboutserviceTrainer',
+        params: { id: 42 }
+      }) //заплатка
+      return
       AuthorizationService.login(this.email, this.password).then(response => {
         if (response.data.success == true) {
           const userI = response.data
