@@ -3,13 +3,12 @@
 .btn {
   &__big {
     outline: none;
-    max-width: 338px;
+    max-width: 296px;
     border-radius: 0 !important;
     font-style: normal;
     font-weight: normal;
-    padding: 20px 50px;
+    padding: 18px;
     margin: 0 auto;
-    letter-spacing: 0.05em;
     box-sizing: border-box;
     cursor: pointer;
   }
@@ -18,11 +17,13 @@
     border-radius: 0 !important;
     font-style: normal;
     font-weight: normal;
-    letter-spacing: 0.05em;
-    min-width: 188px;
-    padding: 20px 0;
+    max-width: 360px;
+    padding: 20px;
     box-sizing: border-box;
     cursor: pointer;
+  }
+  &__link {
+    text-decoration: none;
   }
   &__min {
     font-family: 'Raleway', sans-serif;
@@ -36,16 +37,16 @@
     outline: none;
     cursor: pointer;
   }
-  &__title_color_orangew {
+  &__title_color_green {
     outline: none;
-    border: 2px solid $color-orange;
-    color: $color-white;
-    background-color: $color-orange;
+    border: 2px solid #05ad5c;
+    color: #20194b;
+    background-color: #05ad5c;
     &:focus,
     &:hover {
       border-radius: 0 !important;
-      background: $color-dark-orange;
-      border: $color-dark-orange solid 2px;
+      background: #3c9a6d;
+      border: #3c9a6d solid 2px;
     }
   }
   &__title_color_orangeb {
@@ -114,7 +115,4 @@
     flex-direction: row;
     justify-content: space-between;
   }
-}
-.marg20 {
-  margin-left: 20px;
 }

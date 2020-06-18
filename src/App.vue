@@ -6,11 +6,11 @@
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap'); //fitness
-@import url('https://fonts.googleapis.com/css2?family=Jura:wght@400;500&display=swap'); //онлайн
-@import '@/assets/scss/main.scss';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Nothing+You+Could+Do&display=swap');
 @import '@/assets/scss/variables.scss';
 @import '@/assets/scss/page-style.scss';
+@import '@/assets/scss/btn.scss';
+@import '@/assets/scss/footer.scss';
 body {
   font-family: 'Raleway', sans-serif;
   font-style: normal;
@@ -24,8 +24,8 @@ body {
   //line-height: 0;
 }
 .block-grid {
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .block-grid-min {
   padding-left: 238px;

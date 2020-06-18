@@ -1,8 +1,8 @@
 <template>
-  <footer class="footer-block__color_gray block-grid">
+  <footer class="footer-block__color_gray footer">
     <section class="footer-block">
       <div class="footer-block__logo">
-        <h1 class="logo__min">Fitness</h1>
+        <h1 class="logo__footer">Fitness</h1>
         <p class="footer-block__text">
           Сервис по подбору тренера и тренировок. Занятия и общение в онлайн
           режиме из любой точки планеты.

@@ -1,43 +1,44 @@
 @import '@/assets/scss/variables.scss';
 
 .logo {
-  &__min {
+  &__navb {
     position: relative;
-    font-family: 'Sacramento';
+    font-family: 'Nothing You Could Do', cursive;
     font-style: normal;
     font-weight: normal;
-    @include font-size(40px);
-    color: $color-blue;
-    width: 133px;
-    height: 56px;
+    @include font-size(45px);
+    color: #05ad5c;
+    width: 142px;
+    height: 60px;
+    margin-top: 20px;
     &::after {
       position: absolute;
       bottom: 0px;
-      right: 5px;
-      font-family: 'Jura';
-      @include font-size(15px);
+      right: -22px;
+      font-family: 'Montserrat', sans-serif;
+      @include font-size(11px);
       content: 'онлайн';
-      color: $color-orange;
+      color: #e9e9e9;
     }
   }
-  &__title {
+  &__footer {
     position: relative;
-    font-family: 'Sacramento';
+    font-family: 'Nothing You Could Do', cursive;
     font-style: normal;
     font-weight: normal;
     max-width: 488px;
     max-height: 177px;
     //border: 1px solid white;
-    @include font-size(160px);
-    color: $color-orange;
+    @include font-size(40px);
+    color: #e9e9e9;
     &::after {
       position: absolute;
       bottom: 20px;
       right: 5px;
-      font-family: 'Jura';
-      @include font-size($font-size-body20);
+      font-family: 'Montserrat', sans-serif;
+      @include font-size(16px);
       content: 'онлайн';
-      color: $color-dark-gray;
+      color: #e9e9e9;
     }
   }
 }
@@ -45,73 +46,70 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: $color-white;
 }
-.navb-soc {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 885px;
+.navb-block-title {
+  background-image: url('../assets/img/title-img.png');
+  background-size: cover;
+  // background-position: left;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
 }
-
+.text-title {
+  position: absolute;
+  font-style: normal;
+  font-weight: 600;
+  @include font-size(90px);
+  line-height: 106px;
+  color: #e9e9e9;
+  max-width: 518px;
+  max-height: 318px;
+  top: calc(50% - 318px / 2 - 66.5px);
+  // margin-top: calc(50% - 318px / 2 - 14px);
+  // margin-bottom: 60px;
+}
+.title-link {
+  position: absolute;
+  top: calc(50% - 73px / 2 + 189px);
+}
 //navbar----------------------------------------------------------------------
 .navb__auth {
   margin: auto 0;
 }
-.navb__auth-block {
-  min-width: 813px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
+
 .navb {
+  position: relative;
   width: 706px;
-  margin: auto 0;
+
   &__list {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0;
-  }
-  &__item {
-  }
-  &__list-auth {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 570px;
+    height: 60px;
   }
 }
 .navb__link {
-  color: $color-dark-gray;
+  color: #e9e9e9;
   text-decoration: none;
+  padding: 20px;
   &:focus,
   &:hover {
-    color: $color-dark-gray;
+    color: #20194b;
+    background-color: #05ad5c;
     text-decoration: none;
   }
 }
 .navb__link.active {
-  background-color: $color-blue;
+  background-color: #05ad5c;
+  color: #20194b;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
 
-.navb__soc {
-  margin-left: 95px;
-}
 .navb__item {
   list-style-type: none;
   cursor: pointer;
-  padding: 0 5px;
-  &:focus {
-    background-color: $color-blue;
-  }
-  &:hover {
-    background-color: $color-blue;
-  }
 }
 .social {
   &__list {
