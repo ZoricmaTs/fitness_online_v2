@@ -10,13 +10,19 @@
           <a href="#trainings" class="navb__link">Тренировки</a>
         </li>
         <li class="navb__item">
-          <router-link class="navb__item navb__link" :to="{ name: 'schedule' }">Расписание</router-link>
+          <router-link class="navb__item navb__link" :to="{ name: 'schedule' }"
+            >Расписание</router-link
+          >
         </li>
         <li class="navb__item">
-          <router-link class="navb__item navb__link" :to="{ name: 'contacts' }">Контакты</router-link>
+          <router-link class="navb__item navb__link" :to="{ name: 'contacts' }"
+            >Контакты</router-link
+          >
         </li>
         <li class="navb__item">
-          <router-link class="navb__item navb__link" :to="{ name: 'signin' }">Вход</router-link>
+          <router-link class="navb__item navb__link" :to="{ name: 'signin' }"
+            >Вход</router-link
+          >
         </li>
       </ul>
     </nav>

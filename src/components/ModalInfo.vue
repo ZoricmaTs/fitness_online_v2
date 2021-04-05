@@ -5,8 +5,18 @@
         <div class="modal-container">
           <div class="modal-heading">
             <slot name="header"></slot>
-            <a href="#" class="modal-close" v-show="showCloseCross" @click.prevent="close">
-              <img src="../assets/img/close-modal-new.svg" width="20" heigth="20" alt="closed" />
+            <a
+              href="#"
+              class="modal-close"
+              v-show="showCloseCross"
+              @click.prevent="close"
+            >
+              <img
+                src="../assets/img/close-modal-new.svg"
+                width="20"
+                heigth="20"
+                alt="closed"
+              />
             </a>
           </div>
 

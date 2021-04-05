@@ -1,9 +1,20 @@
 <template>
   <section class="page__block page__block-height">
-    <h2 class="page__heading text__heading_size_l">Дипломы, сертификаты и награды</h2>
+    <h2 class="page__heading text__heading_size_l">
+      Дипломы, сертификаты и награды
+    </h2>
     <section class="add-img__block">
-      <div class="add-img" v-for="advancement in advancements" :key="advancement.achievement_id">
-        <img class="add-img__img" :src="advancement.attachment_ul" width="189" alt="advancement" />
+      <div
+        class="add-img"
+        v-for="advancement in advancements"
+        :key="advancement.achievement_id"
+      >
+        <img
+          class="add-img__img"
+          :src="advancement.attachment_ul"
+          width="189"
+          alt="advancement"
+        />
       </div>
       <div class="add-img" @click="showModalAddadvancement = true">
         <div class="btn-add-img">
@@ -23,10 +34,9 @@
       @close="showModalAddadvancement = false"
       v-show="showModalAddadvancement"
     >
-      <span
-        slot="header"
-        class="form-modal-info__heading text__heading_size_l"
-      >Добавить новый сертификат</span>
+      <span slot="header" class="form-modal-info__heading text__heading_size_l"
+        >Добавить новый сертификат</span
+      >
       <div class slot="body">
         <Imageinput v-model="imageData" />
 
@@ -40,11 +50,15 @@
           <button
             class="btn__title btn__title_color_transp-orange text__heading_size_h3"
             @click="showModalAddadvancement = !showModalAddadvancement"
-          >Отмена</button>
+          >
+            Отмена
+          </button>
           <button
             class="btn__title btn__title_color_orangeb text__heading_size_h3"
             @click="showModalAddadvancement = !showModalAddadvancement"
-          >Сохранить</button>
+          >
+            Сохранить
+          </button>
         </div>
       </div>
     </ModalInfo>

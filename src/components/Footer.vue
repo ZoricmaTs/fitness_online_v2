@@ -10,7 +10,8 @@
         <a
           href="#"
           class="footer-block__link-email footer-block__link-email_color-team_gray text__heading_size_m"
-        >fitness-online@fitness.com</a>
+          >fitness-online@fitness.com</a
+        >
       </div>
       <div class="footer-block__menu">
         <p class="footer-block__menu-heading">
@@ -22,34 +23,43 @@
             <router-link
               class="footer-block__menu-link_team_gray text__heading_size_m"
               :to="{ name: 'signup' }"
-            >Регистрация</router-link>
+              >Регистрация</router-link
+            >
           </li>
           <li class="footer-block__menu-item">
             <router-link
               class="footer-block__menu-link_team_gray text__heading_size_m"
               :to="{ name: 'signin' }"
-            >Вход</router-link>
+              >Вход</router-link
+            >
           </li>
           <li class="footer-block__menu-item">
             <router-link
               class="footer-block__menu-link_team_gray text__heading_size_m"
               :to="{ name: 'aboutservice' }"
-            >О сервисе</router-link>
-          </li>
-          <li class="footer-block__menu-item">
-            <a class="footer-block__menu-link_team_gray text__heading_size_m" href="#">Направления</a>
+              >О сервисе</router-link
+            >
           </li>
           <li class="footer-block__menu-item">
             <a
               class="footer-block__menu-link_team_gray text__heading_size_m"
               href="#"
-            >Вопросы и ответы</a>
+              >Направления</a
+            >
+          </li>
+          <li class="footer-block__menu-item">
+            <a
+              class="footer-block__menu-link_team_gray text__heading_size_m"
+              href="#"
+              >Вопросы и ответы</a
+            >
           </li>
           <li class="footer-block__menu-item">
             <router-link
               class="footer-block__menu-link_team_gray text__heading_size_m"
               :to="{ name: 'contactdetail' }"
-            >Контакты</router-link>
+              >Контакты</router-link
+            >
           </li>
         </ul>
       </div>
@@ -104,7 +114,9 @@
     <section class="footer-blockcopy">
       <p
         class="footer-blockcopy__text footer-blockcopy__text_team_gray text__heading_size_m"
-      >Copyright © 2020</p>
+      >
+        Copyright © 2020
+      </p>
       <ul class="social__list social__heading">
         <li class="social__item">
           <a class="social__link" href="https://www.facebook.com">
@@ -118,17 +130,32 @@
         </li>
         <li class="social__item">
           <a class="social__link" href="https://vk.com">
-            <img src="../assets/img/vkw.svg" width="15" height="15" alt="social media vkontakte" />
+            <img
+              src="../assets/img/vkw.svg"
+              width="15"
+              height="15"
+              alt="social media vkontakte"
+            />
           </a>
         </li>
         <li class="social__item">
           <a class="social__link" href="https://www.instagram.com/?hl=ru">
-            <img src="../assets/img/instw.svg" width="15" height="15" alt="social media instagram" />
+            <img
+              src="../assets/img/instw.svg"
+              width="15"
+              height="15"
+              alt="social media instagram"
+            />
           </a>
         </li>
         <li class="social__item">
           <a class="social__link" href="https://twitter.com/explore">
-            <img src="../assets/img/twitterw.svg" width="15" height="13" alt="social media twitter" />
+            <img
+              src="../assets/img/twitterw.svg"
+              width="15"
+              height="13"
+              alt="social media twitter"
+            />
           </a>
         </li>
       </ul>

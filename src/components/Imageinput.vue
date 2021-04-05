@@ -6,7 +6,12 @@
       @click="chooseImage"
     >
       <div class="btn-add-img-modal" v-if="!imageData"></div>
-      <input class="file-input" ref="fileInput" type="file" @input="onSelectFile" />
+      <input
+        class="file-input"
+        ref="fileInput"
+        type="file"
+        @input="onSelectFile"
+      />
     </div>
   </form>
 </template>

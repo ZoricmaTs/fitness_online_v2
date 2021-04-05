@@ -9,7 +9,8 @@
             <a
               href="#training-online"
               class="text__heading_size_h2 title-link btn__title btn__title_color_green btn__link"
-            >Приступить к тренировке</a>
+              >Приступить к тренировке</a
+            >
           </router-link>
         </div>
       </section>
